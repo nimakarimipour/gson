@@ -37,7 +37,6 @@ import java.util.concurrent.atomic.AtomicLongArray;
 
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
-import com.google.gson.internal.GsonBuildConfig;
 import com.google.gson.internal.Primitives;
 import com.google.gson.internal.Streams;
 import com.google.gson.internal.bind.ArrayTypeAdapter;
@@ -122,7 +121,7 @@ public final class Gson {
    * The proxy is wired up once the initial adapter has been created.
    */
   private final ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>> calls
-      = new ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>>();
+          = new ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>>();
 
   private final Map<TypeToken<?>, TypeAdapter<?>> typeTokenCache = new ConcurrentHashMap<TypeToken<?>, TypeAdapter<?>>();
 
@@ -184,22 +183,22 @@ public final class Gson {
    */
   public Gson() {
     this(Excluder.DEFAULT, FieldNamingPolicy.IDENTITY,
-        Collections.<Type, InstanceCreator<?>>emptyMap(), DEFAULT_SERIALIZE_NULLS,
-        DEFAULT_COMPLEX_MAP_KEYS, DEFAULT_JSON_NON_EXECUTABLE, DEFAULT_ESCAPE_HTML,
-        DEFAULT_PRETTY_PRINT, DEFAULT_LENIENT, DEFAULT_SPECIALIZE_FLOAT_VALUES,
-        LongSerializationPolicy.DEFAULT, null, DateFormat.DEFAULT, DateFormat.DEFAULT,
-        Collections.<TypeAdapterFactory>emptyList(), Collections.<TypeAdapterFactory>emptyList(),
-        Collections.<TypeAdapterFactory>emptyList());
+            Collections.<Type, InstanceCreator<?>>emptyMap(), DEFAULT_SERIALIZE_NULLS,
+            DEFAULT_COMPLEX_MAP_KEYS, DEFAULT_JSON_NON_EXECUTABLE, DEFAULT_ESCAPE_HTML,
+            DEFAULT_PRETTY_PRINT, DEFAULT_LENIENT, DEFAULT_SPECIALIZE_FLOAT_VALUES,
+            LongSerializationPolicy.DEFAULT, null, DateFormat.DEFAULT, DateFormat.DEFAULT,
+            Collections.<TypeAdapterFactory>emptyList(), Collections.<TypeAdapterFactory>emptyList(),
+            Collections.<TypeAdapterFactory>emptyList());
   }
 
   Gson(Excluder excluder, FieldNamingStrategy fieldNamingStrategy,
-      Map<Type, InstanceCreator<?>> instanceCreators, boolean serializeNulls,
-      boolean complexMapKeySerialization, boolean generateNonExecutableGson, boolean htmlSafe,
-      boolean prettyPrinting, boolean lenient, boolean serializeSpecialFloatingPointValues,
-      LongSerializationPolicy longSerializationPolicy, String datePattern, int dateStyle,
-      int timeStyle, List<TypeAdapterFactory> builderFactories,
-      List<TypeAdapterFactory> builderHierarchyFactories,
-      List<TypeAdapterFactory> factoriesToBeAdded) {
+       Map<Type, InstanceCreator<?>> instanceCreators, boolean serializeNulls,
+       boolean complexMapKeySerialization, boolean generateNonExecutableGson, boolean htmlSafe,
+       boolean prettyPrinting, boolean lenient, boolean serializeSpecialFloatingPointValues,
+       LongSerializationPolicy longSerializationPolicy, String datePattern, int dateStyle,
+       int timeStyle, List<TypeAdapterFactory> builderFactories,
+       List<TypeAdapterFactory> builderHierarchyFactories,
+       List<TypeAdapterFactory> factoriesToBeAdded) {
     this.excluder = excluder;
     this.fieldNamingStrategy = fieldNamingStrategy;
     this.instanceCreators = instanceCreators;
@@ -275,7 +274,7 @@ public final class Gson {
     factories.add(jsonAdapterFactory);
     factories.add(TypeAdapters.ENUM_FACTORY);
     factories.add(new ReflectiveTypeAdapterFactory(
-        constructorConstructor, fieldNamingStrategy, excluder, jsonAdapterFactory));
+            constructorConstructor, fieldNamingStrategy, excluder, jsonAdapterFactory));
 
     this.factories = Collections.unmodifiableList(factories);
   }
@@ -357,8 +356,8 @@ public final class Gson {
   static void checkValidFloatingPoint(double value) {
     if (Double.isNaN(value) || Double.isInfinite(value)) {
       throw new IllegalArgumentException(value
-          + " is not a valid double value as per JSON specification. To override this"
-          + " behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.");
+              + " is not a valid double value as per JSON specification. To override this"
+              + " behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.");
     }
   }
 
@@ -409,8 +408,8 @@ public final class Gson {
         List<Long> list = new ArrayList<Long>();
         in.beginArray();
         while (in.hasNext()) {
-            long value = longAdapter.read(in).longValue();
-            list.add(value);
+          long value = longAdapter.read(in).longValue();
+          list.add(value);
         }
         in.endArray();
         int length = list.size();
@@ -462,7 +461,7 @@ public final class Gson {
           return candidate;
         }
       }
-      throw new IllegalArgumentException("GSON (" + GsonBuildConfig.VERSION + ") cannot handle " + type);
+      throw new IllegalArgumentException("GSON (" + ") cannot handle " + type);
     } finally {
       threadCalls.remove(type);
 
@@ -705,7 +704,7 @@ public final class Gson {
     } catch (IOException e) {
       throw new JsonIOException(e);
     } catch (AssertionError e) {
-      AssertionError error = new AssertionError("AssertionError (GSON " + GsonBuildConfig.VERSION + "): " + e.getMessage());
+      AssertionError error = new AssertionError("AssertionError (GSON " + "): " + e.getMessage());
       error.initCause(e);
       throw error;
     } finally {
@@ -785,7 +784,7 @@ public final class Gson {
     } catch (IOException e) {
       throw new JsonIOException(e);
     } catch (AssertionError e) {
-      AssertionError error = new AssertionError("AssertionError (GSON " + GsonBuildConfig.VERSION + "): " + e.getMessage());
+      AssertionError error = new AssertionError("AssertionError (GSON " + "): " + e.getMessage());
       error.initCause(e);
       throw error;
     } finally {
@@ -946,7 +945,7 @@ public final class Gson {
       // TODO(inder): Figure out whether it is indeed right to rethrow this as JsonSyntaxException
       throw new JsonSyntaxException(e);
     } catch (AssertionError e) {
-      AssertionError error = new AssertionError("AssertionError (GSON " + GsonBuildConfig.VERSION + "): " + e.getMessage());
+      AssertionError error = new AssertionError("AssertionError (GSON " +  "): " + e.getMessage());
       error.initCause(e);
       throw error;
     } finally {
@@ -1031,10 +1030,10 @@ public final class Gson {
   @Override
   public String toString() {
     return new StringBuilder("{serializeNulls:")
-        .append(serializeNulls)
-        .append(",factories:").append(factories)
-        .append(",instanceCreators:").append(constructorConstructor)
-        .append("}")
-        .toString();
+            .append(serializeNulls)
+            .append(",factories:").append(factories)
+            .append(",instanceCreators:").append(constructorConstructor)
+            .append("}")
+            .toString();
   }
 }
