@@ -1,34 +1,13 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'edu.ucr.cs.riple:NullAwayAutoFixer:1.0-SNAPSHOT'
-    }
-}
-
 plugins {
     id("net.ltgt.errorprone") version "0.6"
 }
 
-apply plugin: 'edu.ucr.cs.riple.plugin'
 apply plugin: 'java'
 apply plugin: 'maven'
 
-autoFixMode {
-    fixPath = "/tmp/NullAwayFix"
-    maximumRound = 20
-}
 
-diagnoseMode {
-    fixPath = "/tmp/NullAwayFix/diagnose.json"
-}
 
-annotationEditor {
-    remove = ["org.checkerframework.checker.nullness.qual.Nullable", "org.checkerframework.checker.nullness.qual.NonNull"]
-    subProjects = ["caffeine"]
-}
+
 
 repositories {
     mavenLocal()
@@ -56,7 +35,6 @@ dependencies {
 tasks.withType(JavaCompile) {
     // remove the if condition if you want to run NullAway on test code
     if (!name.toLowerCase().contains("test")) {
-        //options.errorprone.disableWarningsInGeneratedCode = true
         options.errorprone.errorproneArgs += ["-XepDisableAllChecks",
                                               "-Xep:NullAway:ERROR",
                                               "-XepOpt:NullAway:AnnotatedPackages=com.google.gson",
