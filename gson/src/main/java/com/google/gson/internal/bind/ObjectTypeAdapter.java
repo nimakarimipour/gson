@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
@@ -30,10 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Adapts types whose static type is only 'Object'. Uses getClass() on
- * serialization and a primitive/Map/List on deserialization.
- */
 public final class ObjectTypeAdapter extends TypeAdapter<Object> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
     @SuppressWarnings("unchecked")
@@ -51,7 +49,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     this.gson = gson;
   }
 
-  @Override public Object read(JsonReader in) throws IOException {
+  @Override@Nullable public Object read(JsonReader in) throws IOException {
     JsonToken token = in.peek();
     switch (token) {
     case BEGIN_ARRAY:

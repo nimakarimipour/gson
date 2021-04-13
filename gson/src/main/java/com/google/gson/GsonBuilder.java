@@ -16,6 +16,10 @@
 
 package com.google.gson;
 
+import javax.annotation.Nullable;
+
+import com.google.gson.Initializer;
+
 import java.lang.reflect.Type;
 import java.sql.Timestamp;
 import java.text.DateFormat;
@@ -41,40 +45,6 @@ import static com.google.gson.Gson.DEFAULT_PRETTY_PRINT;
 import static com.google.gson.Gson.DEFAULT_SERIALIZE_NULLS;
 import static com.google.gson.Gson.DEFAULT_SPECIALIZE_FLOAT_VALUES;
 
-/**
- * <p>Use this builder to construct a {@link Gson} instance when you need to set configuration
- * options other than the default. For {@link Gson} with default configuration, it is simpler to
- * use {@code new Gson()}. {@code GsonBuilder} is best used by creating it, and then invoking its
- * various configuration methods, and finally calling create.</p>
- *
- * <p>The following is an example shows how to use the {@code GsonBuilder} to construct a Gson
- * instance:
- *
- * <pre>
- * Gson gson = new GsonBuilder()
- *     .registerTypeAdapter(Id.class, new IdTypeAdapter())
- *     .enableComplexMapKeySerialization()
- *     .serializeNulls()
- *     .setDateFormat(DateFormat.LONG)
- *     .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
- *     .setPrettyPrinting()
- *     .setVersion(1.0)
- *     .create();
- * </pre></p>
- *
- * <p>NOTES:
- * <ul>
- * <li> the order of invocation of configuration methods does not matter.</li>
- * <li> The default serialization of {@link Date} and its subclasses in Gson does
- *  not contain time-zone information. So, if you are using date/time instances,
- *  use {@code GsonBuilder} and its {@code setDateFormat} methods.</li>
- *  </ul>
- * </p>
- *
- * @author Inderjeet Singh
- * @author Joel Leitch
- * @author Jesse Wilson
- */
 public final class GsonBuilder {
   private Excluder excluder = Excluder.DEFAULT;
   private LongSerializationPolicy longSerializationPolicy = LongSerializationPolicy.DEFAULT;
@@ -85,6 +55,8 @@ public final class GsonBuilder {
   /** tree-style hierarchy factories. These come after factories for backwards compatibility. */
   private final List<TypeAdapterFactory> hierarchyFactories = new ArrayList<TypeAdapterFactory>();
   private boolean serializeNulls = DEFAULT_SERIALIZE_NULLS;
+
+  @Nullable
   private String datePattern;
   private int dateStyle = DateFormat.DEFAULT;
   private int timeStyle = DateFormat.DEFAULT;
@@ -110,6 +82,7 @@ public final class GsonBuilder {
    *
    * @param gson the gson instance whose configuration should by applied to a new GsonBuilder.
    */
+  @Initializer
   GsonBuilder(Gson gson) {
     this.excluder = gson.excluder;
     this.fieldNamingPolicy = gson.fieldNamingStrategy;
@@ -603,7 +576,7 @@ public final class GsonBuilder {
   }
 
   @SuppressWarnings("unchecked")
-  private void addTypeAdaptersForDate(String datePattern, int dateStyle, int timeStyle,
+  private void addTypeAdaptersForDate(@Nullable String datePattern, int dateStyle, int timeStyle,
       List<TypeAdapterFactory> factories) {
     DefaultDateTypeAdapter dateTypeAdapter;
     TypeAdapter<Timestamp> timestampTypeAdapter;

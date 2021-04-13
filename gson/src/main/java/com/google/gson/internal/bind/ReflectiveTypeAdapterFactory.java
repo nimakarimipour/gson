@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.FieldNamingStrategy;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -42,9 +44,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Type adapter that reflects over the fields and methods of a class.
- */
 public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
   private final ConstructorConstructor constructorConstructor;
   private final FieldNamingStrategy fieldNamingPolicy;
@@ -91,7 +90,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     return fieldNames;
   }
 
-  @Override public <T> TypeAdapter<T> create(Gson gson, final TypeToken<T> type) {
+  @Override@Nullable public <T> TypeAdapter<T> create(Gson gson, final TypeToken<T> type) {
     Class<? super T> raw = type.getRawType();
 
     if (!Object.class.isAssignableFrom(raw)) {
@@ -203,7 +202,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
       this.boundFields = boundFields;
     }
 
-    @Override public T read(JsonReader in) throws IOException {
+    @Override@Nullable public T read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
         in.nextNull();
         return null;

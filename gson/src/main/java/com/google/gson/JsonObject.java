@@ -16,19 +16,13 @@
 
 package com.google.gson;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.Map;
 import java.util.Set;
 
-/**
- * A class representing an object type in Json. An object consists of name-value pairs where names
- * are strings, and values are any other type of {@link JsonElement}. This allows for a creating a
- * tree of JsonElements. The member elements of this object are maintained in order they were added.
- *
- * @author Inderjeet Singh
- * @author Joel Leitch
- */
 public final class JsonObject extends JsonElement {
   private final LinkedTreeMap<String, JsonElement> members =
       new LinkedTreeMap<String, JsonElement>();
@@ -65,6 +59,7 @@ public final class JsonObject extends JsonElement {
    * @return the {@link JsonElement} object that is being removed.
    * @since 1.3
    */
+  @Nullable
   public JsonElement remove(String property) {
     return members.remove(property);
   }

@@ -16,6 +16,8 @@
 
 package com.google.gson.internal;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
@@ -34,19 +36,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * This class selects which fields and types to omit. It is configurable,
- * supporting version attributes {@link Since} and {@link Until}, modifiers,
- * synthetic fields, anonymous and local classes, inner classes, and fields with
- * the {@link Expose} annotation.
- *
- * <p>This class is a type adapter factory; types that are excluded will be
- * adapted to null. It may delegate to another type adapter if only one
- * direction is excluded.
- *
- * @author Joel Leitch
- * @author Jesse Wilson
- */
 public final class Excluder implements TypeAdapterFactory, Cloneable {
   private static final double IGNORE_VERSIONS = -1.0d;
   public static final Excluder DEFAULT = new Excluder();
@@ -108,6 +97,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     return result;
   }
 
+  @Nullable
   public <T> TypeAdapter<T> create(final Gson gson, final TypeToken<T> type) {
     Class<?> rawType = type.getRawType();
     boolean excludeClass = excludeClassChecks(rawType);

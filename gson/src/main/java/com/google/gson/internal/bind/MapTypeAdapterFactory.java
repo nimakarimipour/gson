@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
@@ -37,71 +39,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Adapts maps to either JSON objects or JSON arrays.
- *
- * <h3>Maps as JSON objects</h3>
- * For primitive keys or when complex map key serialization is not enabled, this
- * converts Java {@link Map Maps} to JSON Objects. This requires that map keys
- * can be serialized as strings; this is insufficient for some key types. For
- * example, consider a map whose keys are points on a grid. The default JSON
- * form encodes reasonably: <pre>   {@code
- *   Map<Point, String> original = new LinkedHashMap<Point, String>();
- *   original.put(new Point(5, 6), "a");
- *   original.put(new Point(8, 8), "b");
- *   System.out.println(gson.toJson(original, type));
- * }</pre>
- * The above code prints this JSON object:<pre>   {@code
- *   {
- *     "(5,6)": "a",
- *     "(8,8)": "b"
- *   }
- * }</pre>
- * But GSON is unable to deserialize this value because the JSON string name is
- * just the {@link Object#toString() toString()} of the map key. Attempting to
- * convert the above JSON to an object fails with a parse exception:
- * <pre>com.google.gson.JsonParseException: Expecting object found: "(5,6)"
- *   at com.google.gson.JsonObjectDeserializationVisitor.visitFieldUsingCustomHandler
- *   at com.google.gson.ObjectNavigator.navigateClassFields
- *   ...</pre>
- *
- * <h3>Maps as JSON arrays</h3>
- * An alternative approach taken by this type adapter when it is required and
- * complex map key serialization is enabled is to encode maps as arrays of map
- * entries. Each map entry is a two element array containing a key and a value.
- * This approach is more flexible because any type can be used as the map's key;
- * not just strings. But it's also less portable because the receiver of such
- * JSON must be aware of the map entry convention.
- *
- * <p>Register this adapter when you are creating your GSON instance.
- * <pre>   {@code
- *   Gson gson = new GsonBuilder()
- *     .registerTypeAdapter(Map.class, new MapAsArrayTypeAdapter())
- *     .create();
- * }</pre>
- * This will change the structure of the JSON emitted by the code above. Now we
- * get an array. In this case the arrays elements are map entries:
- * <pre>   {@code
- *   [
- *     [
- *       {
- *         "x": 5,
- *         "y": 6
- *       },
- *       "a",
- *     ],
- *     [
- *       {
- *         "x": 8,
- *         "y": 8
- *       },
- *       "b"
- *     ]
- *   ]
- * }</pre>
- * This format will serialize and deserialize just fine as long as this adapter
- * is registered.
- */
 public final class MapTypeAdapterFactory implements TypeAdapterFactory {
   private final ConstructorConstructor constructorConstructor;
   final boolean complexMapKeySerialization;
@@ -112,7 +49,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
     this.complexMapKeySerialization = complexMapKeySerialization;
   }
 
-  @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
+  @Override@Nullable public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
     Type type = typeToken.getType();
 
     Class<? super T> rawType = typeToken.getRawType();
@@ -157,7 +94,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       this.constructor = constructor;
     }
 
-    @Override public Map<K, V> read(JsonReader in) throws IOException {
+    @Override@Nullable public Map<K, V> read(JsonReader in) throws IOException {
       JsonToken peek = in.peek();
       if (peek == JsonToken.NULL) {
         in.nextNull();

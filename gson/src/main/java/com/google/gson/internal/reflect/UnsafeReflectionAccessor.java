@@ -15,21 +15,18 @@
  */
 package com.google.gson.internal.reflect;
 
+import javax.annotation.Nullable;
+
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import com.google.gson.JsonIOException;
 
-/**
- * An implementation of {@link ReflectionAccessor} based on {@link Unsafe}.
- * <p>
- * NOTE: This implementation is designed for Java 9. Although it should work with earlier Java releases, it is better to
- * use {@link PreJava9ReflectionAccessor} for them.
- */
 @SuppressWarnings({"unchecked", "rawtypes"})
 final class UnsafeReflectionAccessor extends ReflectionAccessor {
 
+  @Nullable
   private static Class unsafeClass;
   private final Object theUnsafe = getUnsafeInstance();
   private final Field overrideField = getOverrideField();
@@ -65,6 +62,7 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     return false;
   }
 
+  @Nullable
   private static Object getUnsafeInstance() {
     try {
       unsafeClass = Class.forName("sun.misc.Unsafe");
@@ -76,6 +74,7 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     }
   }
 
+  @Nullable
   private static Field getOverrideField() {
     try {
       return AccessibleObject.class.getDeclaredField("override");

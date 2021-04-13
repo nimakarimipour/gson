@@ -15,6 +15,8 @@
  */
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
@@ -36,7 +38,7 @@ final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
     this.type = type;
   }
 
-  @Override
+  @Override@Nullable
   public T read(JsonReader in) throws IOException {
     return delegate.read(in);
   }

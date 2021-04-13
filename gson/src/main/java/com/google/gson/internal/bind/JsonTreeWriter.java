@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
@@ -27,9 +29,6 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * This writer creates a JsonElement.
- */
 public final class JsonTreeWriter extends JsonWriter {
   private static final Writer UNWRITABLE_WRITER = new Writer() {
     @Override public void write(char[] buffer, int offset, int counter) {
@@ -49,6 +48,7 @@ public final class JsonTreeWriter extends JsonWriter {
   private final List<JsonElement> stack = new ArrayList<JsonElement>();
 
   /** The name for the next JSON object value. If non-null, the top of the stack is a JsonObject. */
+  @Nullable
   private String pendingName;
 
   /** the JSON element constructed by this writer. */
@@ -144,7 +144,7 @@ public final class JsonTreeWriter extends JsonWriter {
     throw new IllegalStateException();
   }
 
-  @Override public JsonWriter value(String value) throws IOException {
+  @Override public JsonWriter value(@Nullable String value) throws IOException {
     if (value == null) {
       return nullValue();
     }

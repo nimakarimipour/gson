@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -57,9 +59,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
-/**
- * Type adapters for basic types.
- */
 public final class TypeAdapters {
   private TypeAdapters() {
     throw new UnsupportedOperationException();
@@ -792,7 +791,7 @@ public final class TypeAdapters {
         throw new AssertionError(e);
       }
     }
-    @Override public T read(JsonReader in) throws IOException {
+    @Override@Nullable public T read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
         in.nextNull();
         return null;

@@ -16,6 +16,10 @@
 
 package com.google.gson.stream;
 
+import javax.annotation.Nullable;
+
+import com.google.gson.Initializer;
+
 import java.io.Closeable;
 import java.io.Flushable;
 import java.io.IOException;
@@ -30,104 +34,6 @@ import static com.google.gson.stream.JsonScope.NONEMPTY_ARRAY;
 import static com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;
 
-/**
- * Writes a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
- * encoded value to a stream, one token at a time. The stream includes both
- * literal values (strings, numbers, booleans and nulls) as well as the begin
- * and end delimiters of objects and arrays.
- *
- * <h3>Encoding JSON</h3>
- * To encode your data as JSON, create a new {@code JsonWriter}. Each JSON
- * document must contain one top-level array or object. Call methods on the
- * writer as you walk the structure's contents, nesting arrays and objects as
- * necessary:
- * <ul>
- *   <li>To write <strong>arrays</strong>, first call {@link #beginArray()}.
- *       Write each of the array's elements with the appropriate {@link #value}
- *       methods or by nesting other arrays and objects. Finally close the array
- *       using {@link #endArray()}.
- *   <li>To write <strong>objects</strong>, first call {@link #beginObject()}.
- *       Write each of the object's properties by alternating calls to
- *       {@link #name} with the property's value. Write property values with the
- *       appropriate {@link #value} method or by nesting other objects or arrays.
- *       Finally close the object using {@link #endObject()}.
- * </ul>
- *
- * <h3>Example</h3>
- * Suppose we'd like to encode a stream of messages such as the following: <pre> {@code
- * [
- *   {
- *     "id": 912345678901,
- *     "text": "How do I stream JSON in Java?",
- *     "geo": null,
- *     "user": {
- *       "name": "json_newb",
- *       "followers_count": 41
- *      }
- *   },
- *   {
- *     "id": 912345678902,
- *     "text": "@json_newb just use JsonWriter!",
- *     "geo": [50.454722, -104.606667],
- *     "user": {
- *       "name": "jesse",
- *       "followers_count": 2
- *     }
- *   }
- * ]}</pre>
- * This code encodes the above structure: <pre>   {@code
- *   public void writeJsonStream(OutputStream out, List<Message> messages) throws IOException {
- *     JsonWriter writer = new JsonWriter(new OutputStreamWriter(out, "UTF-8"));
- *     writer.setIndent("    ");
- *     writeMessagesArray(writer, messages);
- *     writer.close();
- *   }
- *
- *   public void writeMessagesArray(JsonWriter writer, List<Message> messages) throws IOException {
- *     writer.beginArray();
- *     for (Message message : messages) {
- *       writeMessage(writer, message);
- *     }
- *     writer.endArray();
- *   }
- *
- *   public void writeMessage(JsonWriter writer, Message message) throws IOException {
- *     writer.beginObject();
- *     writer.name("id").value(message.getId());
- *     writer.name("text").value(message.getText());
- *     if (message.getGeo() != null) {
- *       writer.name("geo");
- *       writeDoublesArray(writer, message.getGeo());
- *     } else {
- *       writer.name("geo").nullValue();
- *     }
- *     writer.name("user");
- *     writeUser(writer, message.getUser());
- *     writer.endObject();
- *   }
- *
- *   public void writeUser(JsonWriter writer, User user) throws IOException {
- *     writer.beginObject();
- *     writer.name("name").value(user.getName());
- *     writer.name("followers_count").value(user.getFollowersCount());
- *     writer.endObject();
- *   }
- *
- *   public void writeDoublesArray(JsonWriter writer, List<Double> doubles) throws IOException {
- *     writer.beginArray();
- *     for (Double value : doubles) {
- *       writer.value(value);
- *     }
- *     writer.endArray();
- *   }}</pre>
- *
- * <p>Each {@code JsonWriter} may be used to write a single JSON stream.
- * Instances of this class are not thread safe. Calls that would result in a
- * malformed JSON string will fail with an {@link IllegalStateException}.
- *
- * @author Jesse Wilson
- * @since 1.6
- */
 public class JsonWriter implements Closeable, Flushable {
 
   /*
@@ -175,6 +81,7 @@ public class JsonWriter implements Closeable, Flushable {
    * A string containing a full set of spaces for a single level of
    * indentation, or null for no pretty printing.
    */
+  @Nullable
   private String indent;
 
   /**
@@ -186,6 +93,7 @@ public class JsonWriter implements Closeable, Flushable {
 
   private boolean htmlSafe;
 
+  @Nullable
   private String deferredName;
 
   private boolean serializeNulls = true;
@@ -381,6 +289,7 @@ public class JsonWriter implements Closeable, Flushable {
    * @param name the name of the forthcoming value. May not be null.
    * @return this writer.
    */
+  @Initializer
   public JsonWriter name(String name) throws IOException {
     if (name == null) {
       throw new NullPointerException("name == null");
@@ -409,7 +318,7 @@ public class JsonWriter implements Closeable, Flushable {
    * @param value the literal string value, or null to encode a null literal.
    * @return this writer.
    */
-  public JsonWriter value(String value) throws IOException {
+  public JsonWriter value(@Nullable String value) throws IOException {
     if (value == null) {
       return nullValue();
     }
@@ -592,6 +501,7 @@ public class JsonWriter implements Closeable, Flushable {
     out.write('\"');
   }
 
+  @Initializer
   private void newline() throws IOException {
     if (indent == null) {
       return;

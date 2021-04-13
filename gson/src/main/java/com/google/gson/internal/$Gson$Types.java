@@ -16,6 +16,8 @@
 
 package com.google.gson.internal;
 
+import javax.annotation.Nullable;
+
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;
@@ -30,12 +32,6 @@ import java.util.*;
 import static com.google.gson.internal.$Gson$Preconditions.checkArgument;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
-/**
- * Static methods for working with types.
- *
- * @author Bob Lee
- * @author Jesse Wilson
- */
 public final class $Gson$Types {
   static final Type[] EMPTY_TYPE_ARRAY = new Type[] {};
 
@@ -50,7 +46,7 @@ public final class $Gson$Types {
    * @return a {@link java.io.Serializable serializable} parameterized type.
    */
   public static ParameterizedType newParameterizedTypeWithOwner(
-      Type ownerType, Type rawType, Type... typeArguments) {
+      @Nullable Type ownerType, Type rawType, Type... typeArguments) {
     return new ParameterizedTypeImpl(ownerType, rawType, typeArguments);
   }
 
@@ -446,6 +442,7 @@ public final class $Gson$Types {
    * Returns the declaring class of {@code typeVariable}, or {@code null} if it was not declared by
    * a class.
    */
+  @Nullable
   private static Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
     GenericDeclaration genericDeclaration = typeVariable.getGenericDeclaration();
     return genericDeclaration instanceof Class
@@ -462,7 +459,7 @@ public final class $Gson$Types {
     private final Type rawType;
     private final Type[] typeArguments;
 
-    public ParameterizedTypeImpl(Type ownerType, Type rawType, Type... typeArguments) {
+    public ParameterizedTypeImpl(@Nullable Type ownerType, Type rawType, Type... typeArguments) {
       // require an owner type if the raw type needs it
       if (rawType instanceof Class<?>) {
         Class<?> rawTypeAsClass = (Class<?>) rawType;

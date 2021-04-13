@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
@@ -37,12 +39,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Adapter for Date. Although this class appears stateless, it is not.
- * DateFormat captures its time zone and locale when it is created, which gives
- * this class state. DateFormat isn't thread safe either, so this class has
- * to synchronize its read and write methods.
- */
 public final class DateTypeAdapter extends TypeAdapter<Date> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
     @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
@@ -67,7 +63,7 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
     }
   }
 
-  @Override public Date read(JsonReader in) throws IOException {
+  @Override@Nullable public Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();
       return null;

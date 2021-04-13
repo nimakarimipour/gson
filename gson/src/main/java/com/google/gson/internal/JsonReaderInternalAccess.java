@@ -16,13 +16,13 @@
 
 package com.google.gson.internal;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.stream.JsonReader;
 import java.io.IOException;
 
-/**
- * Internal-only APIs of JsonReader available only to other classes in Gson.
- */
 public abstract class JsonReaderInternalAccess {
+  @Nullable
   public static JsonReaderInternalAccess INSTANCE;
 
   /**

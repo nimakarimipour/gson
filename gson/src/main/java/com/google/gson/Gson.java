@@ -16,6 +16,10 @@
 
 package com.google.gson;
 
+import javax.annotation.Nullable;
+
+import com.google.gson.Initializer;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Reader;
@@ -57,50 +61,6 @@ import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
 
-/**
- * This is the main class for using Gson. Gson is typically used by first constructing a
- * Gson instance and then invoking {@link #toJson(Object)} or {@link #fromJson(String, Class)}
- * methods on it. Gson instances are Thread-safe so you can reuse them freely across multiple
- * threads.
- *
- * <p>You can create a Gson instance by invoking {@code new Gson()} if the default configuration
- * is all you need. You can also use {@link GsonBuilder} to build a Gson instance with various
- * configuration options such as versioning support, pretty printing, custom
- * {@link JsonSerializer}s, {@link JsonDeserializer}s, and {@link InstanceCreator}s.</p>
- *
- * <p>Here is an example of how Gson is used for a simple Class:
- *
- * <pre>
- * Gson gson = new Gson(); // Or use new GsonBuilder().create();
- * MyType target = new MyType();
- * String json = gson.toJson(target); // serializes target to Json
- * MyType target2 = gson.fromJson(json, MyType.class); // deserializes json into target2
- * </pre></p>
- *
- * <p>If the object that your are serializing/deserializing is a {@code ParameterizedType}
- * (i.e. contains at least one type parameter and may be an array) then you must use the
- * {@link #toJson(Object, Type)} or {@link #fromJson(String, Type)} method. Here is an
- * example for serializing and deserializing a {@code ParameterizedType}:
- *
- * <pre>
- * Type listType = new TypeToken&lt;List&lt;String&gt;&gt;() {}.getType();
- * List&lt;String&gt; target = new LinkedList&lt;String&gt;();
- * target.add("blah");
- *
- * Gson gson = new Gson();
- * String json = gson.toJson(target, listType);
- * List&lt;String&gt; target2 = gson.fromJson(json, listType);
- * </pre></p>
- *
- * <p>See the <a href="https://sites.google.com/site/gson/gson-user-guide">Gson User Guide</a>
- * for a more complete set of examples.</p>
- *
- * @see com.google.gson.reflect.TypeToken
- *
- * @author Inderjeet Singh
- * @author Joel Leitch
- * @author Jesse Wilson
- */
 public final class Gson {
   static final boolean DEFAULT_JSON_NON_EXECUTABLE = false;
   static final boolean DEFAULT_LENIENT = false;
@@ -195,7 +155,7 @@ public final class Gson {
        Map<Type, InstanceCreator<?>> instanceCreators, boolean serializeNulls,
        boolean complexMapKeySerialization, boolean generateNonExecutableGson, boolean htmlSafe,
        boolean prettyPrinting, boolean lenient, boolean serializeSpecialFloatingPointValues,
-       LongSerializationPolicy longSerializationPolicy, String datePattern, int dateStyle,
+       LongSerializationPolicy longSerializationPolicy, @Nullable String datePattern, int dateStyle,
        int timeStyle, List<TypeAdapterFactory> builderFactories,
        List<TypeAdapterFactory> builderHierarchyFactories,
        List<TypeAdapterFactory> factoriesToBeAdded) {
@@ -836,7 +796,7 @@ public final class Gson {
    * @throws JsonParseException if json is not a valid representation for an object of type typeOfT
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings("unchecked")@Nullable
   public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -994,7 +954,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
    */
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings("unchecked")@Nullable
   public <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -1005,6 +965,7 @@ public final class Gson {
   static class FutureTypeAdapter<T> extends TypeAdapter<T> {
     private TypeAdapter<T> delegate;
 
+    @Initializer
     public void setDelegate(TypeAdapter<T> typeAdapter) {
       if (delegate != null) {
         throw new AssertionError();
@@ -1012,7 +973,7 @@ public final class Gson {
       delegate = typeAdapter;
     }
 
-    @Override public T read(JsonReader in) throws IOException {
+    @Override@Nullable public T read(JsonReader in) throws IOException {
       if (delegate == null) {
         throw new IllegalStateException();
       }

@@ -16,6 +16,8 @@
 
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonSerializer;
@@ -25,12 +27,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.reflect.TypeToken;
 
-/**
- * Given a type T, looks for the annotation {@link JsonAdapter} and uses an instance of the
- * specified class as the default type adapter.
- *
- * @since 2.3
- */
 public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapterFactory {
   private final ConstructorConstructor constructorConstructor;
 
@@ -39,7 +35,7 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
   }
 
   @SuppressWarnings("unchecked")
-  @Override
+  @Override@Nullable
   public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> targetType) {
     Class<? super T> rawType = targetType.getRawType();
     JsonAdapter annotation = rawType.getAnnotation(JsonAdapter.class);
@@ -49,7 +45,7 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
     return (TypeAdapter<T>) getTypeAdapter(constructorConstructor, gson, targetType, annotation);
   }
 
-  @SuppressWarnings({ "unchecked", "rawtypes" }) // Casts guarded by conditionals.
+  @SuppressWarnings({ "unchecked", "rawtypes" })@Nullable // Casts guarded by conditionals.
   TypeAdapter<?> getTypeAdapter(ConstructorConstructor constructorConstructor, Gson gson,
       TypeToken<?> type, JsonAdapter annotation) {
     Object instance = constructorConstructor.get(TypeToken.get(annotation.value())).construct();
