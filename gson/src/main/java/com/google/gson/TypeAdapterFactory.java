@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.gson;
 
 import com.google.gson.reflect.TypeToken;
+import javax.annotation.Nullable;
 
 /**
  * Creates type adapters for set of related types. Type adapter factories are
@@ -162,9 +162,10 @@ import com.google.gson.reflect.TypeToken;
  */
 public interface TypeAdapterFactory {
 
-  /**
-   * Returns a type adapter for {@code type}, or null if this factory doesn't
-   * support {@code type}.
-   */
-  <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type);
+    /**
+     * Returns a type adapter for {@code type}, or null if this factory doesn't
+     * support {@code type}.
+     */
+    @Nullable()
+    <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type);
 }

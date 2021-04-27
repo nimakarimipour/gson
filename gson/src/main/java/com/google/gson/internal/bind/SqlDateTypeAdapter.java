@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.gson.internal.bind;
 
 import com.google.gson.Gson;
@@ -28,6 +27,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.annotation.Nullable;
 
 /**
  * Adapter for java.sql.Date. Although this class appears stateless, it is not.
@@ -36,32 +36,36 @@ import java.text.SimpleDateFormat;
  * to synchronize its read and write methods.
  */
 public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
-  public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
-    @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
-      return typeToken.getRawType() == java.sql.Date.class
-          ? (TypeAdapter<T>) new SqlDateTypeAdapter() : null;
-    }
-  };
 
-  private final DateFormat format = new SimpleDateFormat("MMM d, yyyy");
+    public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
 
-  @Override
-  public synchronized java.sql.Date read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
-      in.nextNull();
-      return null;
-    }
-    try {
-      final long utilDate = format.parse(in.nextString()).getTime();
-      return new java.sql.Date(utilDate);
-    } catch (ParseException e) {
-      throw new JsonSyntaxException(e);
-    }
-  }
+        // we use a runtime check to make sure the 'T's equal
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
+            return typeToken.getRawType() == java.sql.Date.class ? (TypeAdapter<T>) new SqlDateTypeAdapter() : null;
+        }
+    };
 
-  @Override
-  public synchronized void write(JsonWriter out, java.sql.Date value) throws IOException {
-    out.value(value == null ? null : format.format(value));
-  }
+    private final DateFormat format = new SimpleDateFormat("MMM d, yyyy");
+
+    @Override
+    @Nullable()
+    public synchronized java.sql.Date read(JsonReader in) throws IOException {
+        if (in.peek() == JsonToken.NULL) {
+            in.nextNull();
+            return null;
+        }
+        try {
+            final long utilDate = format.parse(in.nextString()).getTime();
+            return new java.sql.Date(utilDate);
+        } catch (ParseException e) {
+            throw new JsonSyntaxException(e);
+        }
+    }
+
+    @Override
+    public synchronized void write(JsonWriter out, java.sql.Date value) throws IOException {
+        out.value(value == null ? null : format.format(value));
+    }
 }
