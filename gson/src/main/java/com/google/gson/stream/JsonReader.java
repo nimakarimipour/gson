@@ -23,7 +23,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
-
+import javax.annotation.Nullable;
 /**
  * Reads a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
  * encoded value as a stream of tokens. This stream includes both literal
@@ -188,6 +188,7 @@ import java.util.Arrays;
  * @author Jesse Wilson
  * @since 1.6
  */
+
 public class JsonReader implements Closeable {
   private static final long MIN_INCOMPLETE_INTEGER = Long.MIN_VALUE / 10;
 
@@ -260,6 +261,7 @@ public class JsonReader implements Closeable {
    * This is populated before a numeric value is parsed and used if that parsing
    * fails.
    */
+  @Nullable
   private String peekedString;
 
   /*

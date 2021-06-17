@@ -40,7 +40,7 @@ import static com.google.gson.Gson.DEFAULT_LENIENT;
 import static com.google.gson.Gson.DEFAULT_PRETTY_PRINT;
 import static com.google.gson.Gson.DEFAULT_SERIALIZE_NULLS;
 import static com.google.gson.Gson.DEFAULT_SPECIALIZE_FLOAT_VALUES;
-
+import javax.annotation.Nullable;
 /**
  * <p>Use this builder to construct a {@link Gson} instance when you need to set configuration
  * options other than the default. For {@link Gson} with default configuration, it is simpler to
@@ -75,6 +75,7 @@ import static com.google.gson.Gson.DEFAULT_SPECIALIZE_FLOAT_VALUES;
  * @author Joel Leitch
  * @author Jesse Wilson
  */
+
 public final class GsonBuilder {
   private Excluder excluder = Excluder.DEFAULT;
   private LongSerializationPolicy longSerializationPolicy = LongSerializationPolicy.DEFAULT;
@@ -85,6 +86,7 @@ public final class GsonBuilder {
   /** tree-style hierarchy factories. These come after factories for backwards compatibility. */
   private final List<TypeAdapterFactory> hierarchyFactories = new ArrayList<TypeAdapterFactory>();
   private boolean serializeNulls = DEFAULT_SERIALIZE_NULLS;
+  @Nullable
   private String datePattern;
   private int dateStyle = DateFormat.DEFAULT;
   private int timeStyle = DateFormat.DEFAULT;

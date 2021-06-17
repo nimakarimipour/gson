@@ -28,10 +28,11 @@ import com.google.gson.stream.MalformedJsonException;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
-
+import com.google.gson.Initializer;
 /**
  * Reads and writes GSON parse trees over streams.
  */
+
 public final class Streams {
   private Streams() {
     throw new UnsupportedOperationException();
@@ -105,6 +106,7 @@ public final class Streams {
      */
     static class CurrentWrite implements CharSequence {
       char[] chars;
+      @Initializer
       public int length() {
         return chars.length;
       }

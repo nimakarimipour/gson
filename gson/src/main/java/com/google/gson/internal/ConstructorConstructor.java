@@ -42,10 +42,11 @@ import com.google.gson.InstanceCreator;
 import com.google.gson.JsonIOException;
 import com.google.gson.internal.reflect.ReflectionAccessor;
 import com.google.gson.reflect.TypeToken;
-
+import javax.annotation.Nullable;
 /**
  * Returns a function that can construct an instance of a requested type.
  */
+
 public final class ConstructorConstructor {
   private final Map<Type, InstanceCreator<?>> instanceCreators;
   private final ReflectionAccessor accessor = ReflectionAccessor.getInstance();
@@ -96,6 +97,7 @@ public final class ConstructorConstructor {
     return newUnsafeAllocator(type, rawType);
   }
 
+  @Nullable
   private <T> ObjectConstructor<T> newDefaultConstructor(Class<? super T> rawType) {
     try {
       final Constructor<? super T> constructor = rawType.getDeclaredConstructor();
@@ -131,6 +133,7 @@ public final class ConstructorConstructor {
    * subtypes.
    */
   @SuppressWarnings("unchecked") // use runtime checks to guarantee that 'T' is what it is
+  @Nullable
   private <T> ObjectConstructor<T> newDefaultImplementationConstructor(
       final Type type, Class<? super T> rawType) {
     if (Collection.class.isAssignableFrom(rawType)) {

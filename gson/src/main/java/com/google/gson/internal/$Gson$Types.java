@@ -29,13 +29,14 @@ import java.util.*;
 
 import static com.google.gson.internal.$Gson$Preconditions.checkArgument;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
-
+import javax.annotation.Nullable;
 /**
  * Static methods for working with types.
  *
  * @author Bob Lee
  * @author Jesse Wilson
  */
+
 public final class $Gson$Types {
   static final Type[] EMPTY_TYPE_ARRAY = new Type[] {};
 
@@ -446,6 +447,7 @@ public final class $Gson$Types {
    * Returns the declaring class of {@code typeVariable}, or {@code null} if it was not declared by
    * a class.
    */
+  @Nullable
   private static Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
     GenericDeclaration genericDeclaration = typeVariable.getGenericDeclaration();
     return genericDeclaration instanceof Class

@@ -24,13 +24,14 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.reflect.TypeToken;
-
+import javax.annotation.Nullable;
 /**
  * Given a type T, looks for the annotation {@link JsonAdapter} and uses an instance of the
  * specified class as the default type adapter.
  *
  * @since 2.3
  */
+
 public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapterFactory {
   private final ConstructorConstructor constructorConstructor;
 
@@ -40,6 +41,7 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
 
   @SuppressWarnings("unchecked")
   @Override
+  @Nullable
   public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> targetType) {
     Class<? super T> rawType = targetType.getRawType();
     JsonAdapter annotation = rawType.getAnnotation(JsonAdapter.class);

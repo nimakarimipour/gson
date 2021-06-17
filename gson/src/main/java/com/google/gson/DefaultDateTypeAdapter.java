@@ -33,7 +33,7 @@ import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-
+import javax.annotation.Nullable;
 /**
  * This type adapter supports three subclasses of date: Date, Timestamp, and
  * java.sql.Date.
@@ -41,6 +41,7 @@ import com.google.gson.stream.JsonWriter;
  * @author Inderjeet Singh
  * @author Joel Leitch
  */
+
 final class DefaultDateTypeAdapter extends TypeAdapter<Date> {
 
   private static final String SIMPLE_NAME = "DefaultDateTypeAdapter";
@@ -120,6 +121,7 @@ final class DefaultDateTypeAdapter extends TypeAdapter<Date> {
   }
 
   @Override
+  @Nullable
   public Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

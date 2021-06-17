@@ -29,7 +29,7 @@ import static com.google.gson.stream.JsonScope.EMPTY_OBJECT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_ARRAY;
 import static com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;
-
+import com.google.gson.Initializer;
 /**
  * Writes a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
  * encoded value to a stream, one token at a time. The stream includes both
@@ -128,6 +128,9 @@ import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;
  * @author Jesse Wilson
  * @since 1.6
  */
+import javax.annotation.Nullable;
+import javax.annotation.Nullable;
+
 public class JsonWriter implements Closeable, Flushable {
 
   /*
@@ -175,6 +178,7 @@ public class JsonWriter implements Closeable, Flushable {
    * A string containing a full set of spaces for a single level of
    * indentation, or null for no pretty printing.
    */
+  @Nullable
   private String indent;
 
   /**
@@ -186,6 +190,7 @@ public class JsonWriter implements Closeable, Flushable {
 
   private boolean htmlSafe;
 
+  @Nullable
   private String deferredName;
 
   private boolean serializeNulls = true;
@@ -381,6 +386,7 @@ public class JsonWriter implements Closeable, Flushable {
    * @param name the name of the forthcoming value. May not be null.
    * @return this writer.
    */
+  @Initializer
   public JsonWriter name(String name) throws IOException {
     if (name == null) {
       throw new NullPointerException("name == null");
@@ -409,7 +415,7 @@ public class JsonWriter implements Closeable, Flushable {
    * @param value the literal string value, or null to encode a null literal.
    * @return this writer.
    */
-  public JsonWriter value(String value) throws IOException {
+  public JsonWriter value(@Nullable String value) throws IOException {
     if (value == null) {
       return nullValue();
     }
@@ -592,6 +598,7 @@ public class JsonWriter implements Closeable, Flushable {
     out.write('\"');
   }
 
+  @Initializer
   private void newline() throws IOException {
     if (indent == null) {
       return;

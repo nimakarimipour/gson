@@ -30,13 +30,14 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import javax.annotation.Nullable;
 /**
  * Adapter for Time. Although this class appears stateless, it is not.
  * DateFormat captures its time zone and locale when it is created, which gives
  * this class state. DateFormat isn't thread safe either, so this class has
  * to synchronize its read and write methods.
  */
+
 public final class TimeTypeAdapter extends TypeAdapter<Time> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
     @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
@@ -47,7 +48,8 @@ public final class TimeTypeAdapter extends TypeAdapter<Time> {
 
   private final DateFormat format = new SimpleDateFormat("hh:mm:ss a");
 
-  @Override public synchronized Time read(JsonReader in) throws IOException {
+  @Override @Nullable
+  public synchronized Time read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();
       return null;

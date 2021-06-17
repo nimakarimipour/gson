@@ -32,12 +32,13 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-
+import javax.annotation.Nullable;
 /**
  * Adapts a Gson 1.x tree-style adapter as a streaming TypeAdapter. Since the
  * tree adapter may be serialization-only or deserialization-only, this class
  * has a facility to lookup a delegate type adapter on demand.
  */
+
 public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   private final JsonSerializer<T> serializer;
   private final JsonDeserializer<T> deserializer;
@@ -47,6 +48,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   private final GsonContextImpl context = new GsonContextImpl();
 
   /** The delegate is lazily created because it may not be needed, and creating it may fail. */
+  @Nullable
   private TypeAdapter<T> delegate;
 
   public TreeTypeAdapter(JsonSerializer<T> serializer, JsonDeserializer<T> deserializer,
@@ -58,7 +60,8 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     this.skipPast = skipPast;
   }
 
-  @Override public T read(JsonReader in) throws IOException {
+  @Override @Nullable
+  public T read(JsonReader in) throws IOException {
     if (deserializer == null) {
       return delegate().read(in);
     }
@@ -123,8 +126,8 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     private final JsonSerializer<?> serializer;
     private final JsonDeserializer<?> deserializer;
 
-    SingleTypeFactory(Object typeAdapter, TypeToken<?> exactType, boolean matchRawType,
-        Class<?> hierarchyType) {
+    SingleTypeFactory(Object typeAdapter, @Nullable TypeToken<?> exactType, boolean matchRawType,
+        @Nullable Class<?> hierarchyType) {
       serializer = typeAdapter instanceof JsonSerializer
           ? (JsonSerializer<?>) typeAdapter
           : null;
@@ -139,6 +142,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
 
     @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
+    @Nullable
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches = exactType != null
           ? exactType.equals(type) || matchRawType && exactType.getType() == type.getRawType()

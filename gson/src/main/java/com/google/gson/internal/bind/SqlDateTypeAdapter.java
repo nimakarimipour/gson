@@ -28,13 +28,14 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+import javax.annotation.Nullable;
 /**
  * Adapter for java.sql.Date. Although this class appears stateless, it is not.
  * DateFormat captures its time zone and locale when it is created, which gives
  * this class state. DateFormat isn't thread safe either, so this class has
  * to synchronize its read and write methods.
  */
+
 public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
     @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
@@ -47,6 +48,7 @@ public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
   private final DateFormat format = new SimpleDateFormat("MMM d, yyyy");
 
   @Override
+  @Nullable
   public synchronized java.sql.Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

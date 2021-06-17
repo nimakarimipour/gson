@@ -20,7 +20,7 @@ import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.Map;
 import java.util.Set;
-
+import javax.annotation.Nullable;
 /**
  * A class representing an object type in Json. An object consists of name-value pairs where names
  * are strings, and values are any other type of {@link JsonElement}. This allows for a creating a
@@ -29,6 +29,7 @@ import java.util.Set;
  * @author Inderjeet Singh
  * @author Joel Leitch
  */
+
 public final class JsonObject extends JsonElement {
   private final LinkedTreeMap<String, JsonElement> members =
       new LinkedTreeMap<String, JsonElement>();
@@ -65,6 +66,7 @@ public final class JsonObject extends JsonElement {
    * @return the {@link JsonElement} object that is being removed.
    * @since 1.3
    */
+  @Nullable
   public JsonElement remove(String property) {
     return members.remove(property);
   }

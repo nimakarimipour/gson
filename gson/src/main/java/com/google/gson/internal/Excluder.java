@@ -33,7 +33,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+import javax.annotation.Nullable;
 /**
  * This class selects which fields and types to omit. It is configurable,
  * supporting version attributes {@link Since} and {@link Until}, modifiers,
@@ -47,6 +47,7 @@ import java.util.List;
  * @author Joel Leitch
  * @author Jesse Wilson
  */
+
 public final class Excluder implements TypeAdapterFactory, Cloneable {
   private static final double IGNORE_VERSIONS = -1.0d;
   public static final Excluder DEFAULT = new Excluder();
@@ -108,6 +109,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     return result;
   }
 
+  @Nullable
   public <T> TypeAdapter<T> create(final Gson gson, final TypeToken<T> type) {
     Class<?> rawType = type.getRawType();
     boolean excludeClass = excludeClassChecks(rawType);

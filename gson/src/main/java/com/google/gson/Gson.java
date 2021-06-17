@@ -56,7 +56,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
-
+import javax.annotation.Nullable;
 /**
  * This is the main class for using Gson. Gson is typically used by first constructing a
  * Gson instance and then invoking {@link #toJson(Object)} or {@link #fromJson(String, Class)}
@@ -101,6 +101,7 @@ import com.google.gson.stream.MalformedJsonException;
  * @author Joel Leitch
  * @author Jesse Wilson
  */
+
 public final class Gson {
   static final boolean DEFAULT_JSON_NON_EXECUTABLE = false;
   static final boolean DEFAULT_LENIENT = false;
@@ -195,7 +196,7 @@ public final class Gson {
        Map<Type, InstanceCreator<?>> instanceCreators, boolean serializeNulls,
        boolean complexMapKeySerialization, boolean generateNonExecutableGson, boolean htmlSafe,
        boolean prettyPrinting, boolean lenient, boolean serializeSpecialFloatingPointValues,
-       LongSerializationPolicy longSerializationPolicy, String datePattern, int dateStyle,
+       LongSerializationPolicy longSerializationPolicy, @Nullable String datePattern, int dateStyle,
        int timeStyle, List<TypeAdapterFactory> builderFactories,
        List<TypeAdapterFactory> builderHierarchyFactories,
        List<TypeAdapterFactory> factoriesToBeAdded) {
@@ -837,6 +838,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
   @SuppressWarnings("unchecked")
+  @Nullable
   public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -995,6 +997,7 @@ public final class Gson {
    * @since 1.3
    */
   @SuppressWarnings("unchecked")
+  @Nullable
   public <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -1005,6 +1008,7 @@ public final class Gson {
   static class FutureTypeAdapter<T> extends TypeAdapter<T> {
     private TypeAdapter<T> delegate;
 
+    @Initializer
     public void setDelegate(TypeAdapter<T> typeAdapter) {
       if (delegate != null) {
         throw new AssertionError();

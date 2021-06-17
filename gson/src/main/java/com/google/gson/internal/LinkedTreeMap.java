@@ -27,7 +27,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.NoSuchElementException;
 import java.util.Set;
-
+import com.google.gson.Initializer;
 /**
  * A map of comparable keys to values. Unlike {@code TreeMap}, this class uses
  * insertion order for iteration order. Comparison order is only used as an
@@ -35,6 +35,9 @@ import java.util.Set;
  *
  * <p>This implementation was derived from Android 4.1's TreeMap class.
  */
+import javax.annotation.Nullable;
+import javax.annotation.Nullable;
+
 public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Serializable {
   @SuppressWarnings({ "unchecked", "rawtypes" }) // to avoid Comparable<Comparable<Comparable<...>>>
   private static final Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() {
@@ -44,6 +47,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   };
 
   Comparator<? super K> comparator;
+  @Nullable
   Node<K, V> root;
   int size = 0;
   int modCount = 0;
@@ -78,7 +82,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     return size;
   }
 
-  @Override public V get(Object key) {
+  @Override   public V get(Object key) {
     Node<K, V> node = findByObject(key);
     return node != null ? node.value : null;
   }
@@ -107,7 +111,8 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     header.next = header.prev = header;
   }
 
-  @Override public V remove(Object key) {
+  @Override @Nullable
+  public V remove(Object key) {
     Node<K, V> node = removeInternalByKey(key);
     return node != null ? node.value : null;
   }
@@ -118,6 +123,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * @throws ClassCastException if {@code key} and the tree's keys aren't
    *     mutually comparable.
    */
+  @Nullable
   Node<K, V> find(K key, boolean create) {
     Comparator<? super K> comparator = this.comparator;
     Node<K, V> nearest = root;
@@ -181,6 +187,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   }
 
   @SuppressWarnings("unchecked")
+  @Nullable
   Node<K, V> findByObject(Object key) {
     try {
       return key != null ? find((K) key, false) : null;
@@ -198,6 +205,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * {@code String.CASE_INSENSITIVE_ORDER}), then {@code remove()} and {@code
    * contains()} will violate the collections API.
    */
+  @Nullable
   Node<K, V> findByEntry(Entry<?, ?> entry) {
     Node<K, V> mine = findByObject(entry.getKey());
     boolean valuesEqual = mine != null && equal(mine.value, entry.getValue());
@@ -423,7 +431,9 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
         pivotLeft != null ? pivotLeft.height : 0) + 1;
   }
 
+  @Nullable
   private EntrySet entrySet;
+  @Nullable
   private KeySet keySet;
 
   @Override public Set<Entry<K, V>> entrySet() {
@@ -437,6 +447,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   }
 
   static final class Node<K, V> implements Entry<K, V> {
+    @Nullable
     Node<K, V> parent;
     Node<K, V> left;
     Node<K, V> right;
@@ -487,7 +498,8 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
       return false;
     }
 
-    @Override public int hashCode() {
+    @Override @Initializer
+    public int hashCode() {
       return (key == null ? 0 : key.hashCode())
           ^ (value == null ? 0 : value.hashCode());
     }
@@ -525,6 +537,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
   private abstract class LinkedTreeMapIterator<T> implements Iterator<T> {
     Node<K, V> next = header.next;
+    @Nullable
     Node<K, V> lastReturned = null;
     int expectedModCount = modCount;
 
