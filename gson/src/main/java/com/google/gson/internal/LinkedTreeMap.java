@@ -16,6 +16,7 @@
  */
 
 package com.google.gson.internal;
+import javax.annotation.Nullable;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -307,7 +308,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * @param insert true if the node was unbalanced by an insert; false if it
    *     was by a removal.
    */
-  private void rebalance(Node<K, V> unbalanced, boolean insert) {
+  private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
     for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
       Node<K, V> left = node.left;
       Node<K, V> right = node.right;
@@ -437,6 +438,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   }
 
   static final class Node<K, V> implements Entry<K, V> {
+    @Nullable
     Node<K, V> parent;
     Node<K, V> left;
     Node<K, V> right;
