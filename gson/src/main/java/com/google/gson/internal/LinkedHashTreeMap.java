@@ -16,6 +16,7 @@
  */
 
 package com.google.gson.internal;
+import javax.annotation.Nullable;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -117,7 +118,8 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     header.next = header.prev = header;
   }
 
-  @Override public V remove(Object key) {
+  @Override @Nullable
+  public V remove(Object key) {
     Node<K, V> node = removeInternalByKey(key);
     return node != null ? node.value : null;
   }
