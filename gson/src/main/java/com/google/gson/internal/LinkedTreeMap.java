@@ -16,6 +16,7 @@
  */
 
 package com.google.gson.internal;
+import javax.annotation.Nullable;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -198,6 +199,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * {@code String.CASE_INSENSITIVE_ORDER}), then {@code remove()} and {@code
    * contains()} will violate the collections API.
    */
+  @Nullable
   Node<K, V> findByEntry(Entry<?, ?> entry) {
     Node<K, V> mine = findByObject(entry.getKey());
     boolean valuesEqual = mine != null && equal(mine.value, entry.getValue());
