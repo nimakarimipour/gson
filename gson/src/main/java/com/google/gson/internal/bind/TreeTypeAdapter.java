@@ -15,6 +15,7 @@
  */
 
 package com.google.gson.internal.bind;
+import javax.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializationContext;
@@ -119,12 +120,13 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   private static final class SingleTypeFactory implements TypeAdapterFactory {
     private final TypeToken<?> exactType;
     private final boolean matchRawType;
+    @Nullable
     private final Class<?> hierarchyType;
     private final JsonSerializer<?> serializer;
     private final JsonDeserializer<?> deserializer;
 
     SingleTypeFactory(Object typeAdapter, TypeToken<?> exactType, boolean matchRawType,
-        Class<?> hierarchyType) {
+        @Nullable Class<?> hierarchyType) {
       serializer = typeAdapter instanceof JsonSerializer
           ? (JsonSerializer<?>) typeAdapter
           : null;
