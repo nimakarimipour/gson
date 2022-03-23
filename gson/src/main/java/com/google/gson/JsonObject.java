@@ -18,6 +18,7 @@ package com.google.gson;
 
 import com.google.gson.internal.LinkedTreeMap;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Set;
 
@@ -65,6 +66,7 @@ public final class JsonObject extends JsonElement {
    * @return the {@link JsonElement} object that is being removed.
    * @since 1.3
    */
+  @Nullable
   public JsonElement remove(String property) {
     return members.remove(property);
   }
