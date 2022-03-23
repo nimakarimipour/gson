@@ -15,6 +15,7 @@
  */
 
 package com.google.gson.internal.bind;
+import javax.annotation.Nullable;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -49,6 +50,7 @@ public final class JsonTreeWriter extends JsonWriter {
   private final List<JsonElement> stack = new ArrayList<JsonElement>();
 
   /** The name for the next JSON object value. If non-null, the top of the stack is a JsonObject. */
+  @Nullable
   private String pendingName;
 
   /** the JSON element constructed by this writer. */
