@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.gson.internal;
+
+import javax.annotation.Nullable;
 
 /**
  * A simple utility class used to check method Preconditions.
@@ -30,20 +31,21 @@ package com.google.gson.internal;
  * @author Joel Leitch
  */
 public final class $Gson$Preconditions {
-  private $Gson$Preconditions() {
-    throw new UnsupportedOperationException();
-  }
 
-  public static <T> T checkNotNull(T obj) {
-    if (obj == null) {
-      throw new NullPointerException();
+    private $Gson$Preconditions() {
+        throw new UnsupportedOperationException();
     }
-    return obj;
-  }
 
-  public static void checkArgument(boolean condition) {
-    if (!condition) {
-      throw new IllegalArgumentException();
+    public static <T> T checkNotNull(T obj) {
+        if (obj == null) {
+            throw new NullPointerException();
+        }
+        return obj;
     }
-  }
+
+    public static void checkArgument(boolean condition) {
+        if (!condition) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
