@@ -15,6 +15,7 @@
  */
 package com.google.gson.stream;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import com.google.gson.internal.JsonReaderInternalAccess;
 import com.google.gson.internal.bind.JsonTreeReader;
@@ -827,6 +828,7 @@ public class JsonReader implements Closeable {
      * @throws IllegalStateException if the next token is not a string or if
      *     this reader is closed.
      */
+    @NullUnmarked
     public String nextString() throws IOException {
         int p = peeked;
         if (p == PEEKED_NONE) {

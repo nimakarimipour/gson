@@ -15,6 +15,7 @@
  */
 package com.google.gson.internal;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
@@ -41,6 +42,7 @@ public final class Streams {
     /**
      * Takes a reader in any state and returns the next value as a JsonElement.
      */
+    @NullUnmarked
     public static JsonElement parse(JsonReader reader) throws JsonParseException {
         boolean isEmpty = true;
         try {
@@ -115,6 +117,7 @@ public final class Streams {
          */
         static class CurrentWrite implements CharSequence {
 
+            @SuppressWarnings("NullAway.Init")
             char[] chars;
 
             public int length() {

@@ -15,6 +15,7 @@
  */
 package com.google.gson.internal.reflect;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
@@ -56,6 +57,7 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     }
 
     // Visible for testing only
+    @NullUnmarked
     boolean makeAccessibleWithUnsafe(AccessibleObject ao) {
         if (theUnsafe != null && overrideField != null) {
             try {

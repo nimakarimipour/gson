@@ -16,6 +16,7 @@
  */
 package com.google.gson.internal;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -100,6 +101,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
     @Override
     @Nullable
+    @NullUnmarked
     public V put(K key, V value) {
         if (key == null) {
             throw new NullPointerException("key == null");
@@ -310,6 +312,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
      * @param insert true if the node was unbalanced by an insert; false if it
      *     was by a removal.
      */
+    @NullUnmarked
     private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
         for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
             Node<K, V> left = node.left;
@@ -376,6 +379,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     /**
      * Rotates the subtree so that its root's right child is the new root.
      */
+    @NullUnmarked
     private void rotateLeft(Node<K, V> root) {
         Node<K, V> left = root.left;
         Node<K, V> pivot = root.right;
@@ -398,6 +402,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     /**
      * Rotates the subtree so that its root's left child is the new root.
      */
+    @NullUnmarked
     private void rotateRight(Node<K, V> root) {
         Node<K, V> pivot = root.left;
         Node<K, V> right = root.right;

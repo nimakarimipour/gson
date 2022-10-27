@@ -15,6 +15,7 @@
  */
 package com.google.gson.internal.bind;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -155,6 +156,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
 
         @Override
         @Nullable
+        @NullUnmarked
         public Map<K, V> read(JsonReader in) throws IOException {
             JsonToken peek = in.peek();
             if (peek == JsonToken.NULL) {

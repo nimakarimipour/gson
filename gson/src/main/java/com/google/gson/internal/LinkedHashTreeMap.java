@@ -16,6 +16,7 @@
  */
 package com.google.gson.internal;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -107,6 +108,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
 
     @Override
     @Nullable
+    @NullUnmarked
     public V put(K key, V value) {
         if (key == null) {
             throw new NullPointerException("key == null");
@@ -118,6 +120,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     }
 
     @Override
+    @NullUnmarked
     public void clear() {
         Arrays.fill(table, null);
         size = 0;
@@ -252,6 +255,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
      *
      * @param unlink true to also unlink this node from the iteration linked list.
      */
+    @NullUnmarked
     void removeInternal(Node<K, V> node, boolean unlink) {
         if (unlink) {
             node.prev.next = node.next;
@@ -342,6 +346,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
      * @param insert true if the node was unbalanced by an insert; false if it
      *     was by a removal.
      */
+    @NullUnmarked
     private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
         for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
             Node<K, V> left = node.left;
@@ -408,6 +413,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     /**
      * Rotates the subtree so that its root's right child is the new root.
      */
+    @NullUnmarked
     private void rotateLeft(Node<K, V> root) {
         Node<K, V> left = root.left;
         Node<K, V> pivot = root.right;
@@ -430,6 +436,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     /**
      * Rotates the subtree so that its root's left child is the new root.
      */
+    @NullUnmarked
     private void rotateRight(Node<K, V> root) {
         Node<K, V> pivot = root.left;
         Node<K, V> right = root.right;
@@ -505,6 +512,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         /**
          * Create a regular entry
          */
+        @NullUnmarked
         Node(Node<K, V> parent, K key, int hash, Node<K, V> next, @Nullable Node<K, V> prev) {
             this.parent = parent;
             this.key = key;
@@ -721,6 +729,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
             stack = null;
         }
 
+        @NullUnmarked
         void add(Node<K, V> node) {
             node.left = node.parent = node.right = null;
             node.height = 1;
@@ -783,6 +792,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
             }
         }
 
+        @NullUnmarked
         Node<K, V> root() {
             Node<K, V> stackTop = this.stack;
             if (stackTop.parent != null) {

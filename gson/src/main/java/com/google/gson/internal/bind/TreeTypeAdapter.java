@@ -15,6 +15,7 @@
  */
 package com.google.gson.internal.bind;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializationContext;
@@ -155,6 +156,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
         @SuppressWarnings("unchecked")
         @Override
         @Nullable
+        @NullUnmarked
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
             boolean matches = exactType != null ? exactType.equals(type) || matchRawType && exactType.getType() == type.getRawType() : hierarchyType.isAssignableFrom(type.getRawType());
             return matches ? new TreeTypeAdapter<T>((JsonSerializer<T>) serializer, (JsonDeserializer<T>) deserializer, gson, type, this) : null;

@@ -15,6 +15,7 @@
  */
 package com.google.gson;
 
+import com.google.gson.NullUnmarked;
 import javax.annotation.Nullable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -405,6 +406,7 @@ public final class Gson {
             }
 
             @Override
+            @NullUnmarked
             public AtomicLong read(JsonReader in) throws IOException {
                 Number value = longAdapter.read(in);
                 return new AtomicLong(value.longValue());
@@ -425,6 +427,7 @@ public final class Gson {
             }
 
             @Override
+            @NullUnmarked
             public AtomicLongArray read(JsonReader in) throws IOException {
                 List<Long> list = new ArrayList<Long>();
                 in.beginArray();
