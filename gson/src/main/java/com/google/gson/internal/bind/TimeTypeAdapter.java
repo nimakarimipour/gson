@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.gson.internal.bind;
 
+import javax.annotation.Nullable;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
@@ -38,29 +38,37 @@ import java.util.Date;
  * to synchronize its read and write methods.
  */
 public final class TimeTypeAdapter extends TypeAdapter<Time> {
-  public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
-    @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
-      return typeToken.getRawType() == Time.class ? (TypeAdapter<T>) new TimeTypeAdapter() : null;
-    }
-  };
 
-  private final DateFormat format = new SimpleDateFormat("hh:mm:ss a");
+    public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
 
-  @Override public synchronized Time read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
-      in.nextNull();
-      return null;
-    }
-    try {
-      Date date = format.parse(in.nextString());
-      return new Time(date.getTime());
-    } catch (ParseException e) {
-      throw new JsonSyntaxException(e);
-    }
-  }
+        // we use a runtime check to make sure the 'T's equal
+        @SuppressWarnings("unchecked")
+        @Override
+        @Nullable
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
+            return typeToken.getRawType() == Time.class ? (TypeAdapter<T>) new TimeTypeAdapter() : null;
+        }
+    };
 
-  @Override public synchronized void write(JsonWriter out, Time value) throws IOException {
-    out.value(value == null ? null : format.format(value));
-  }
+    private final DateFormat format = new SimpleDateFormat("hh:mm:ss a");
+
+    @Override
+    @Nullable
+    public synchronized Time read(JsonReader in) throws IOException {
+        if (in.peek() == JsonToken.NULL) {
+            in.nextNull();
+            return null;
+        }
+        try {
+            Date date = format.parse(in.nextString());
+            return new Time(date.getTime());
+        } catch (ParseException e) {
+            throw new JsonSyntaxException(e);
+        }
+    }
+
+    @Override
+    public synchronized void write(JsonWriter out, Time value) throws IOException {
+        out.value(value == null ? null : format.format(value));
+    }
 }
