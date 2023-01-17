@@ -32,6 +32,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import javax.annotation.Nullable;
 
 /**
  * Adapts a Gson 1.x tree-style adapter as a streaming TypeAdapter. Since the
@@ -47,10 +48,10 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   private final GsonContextImpl context = new GsonContextImpl();
 
   /** The delegate is lazily created because it may not be needed, and creating it may fail. */
-  private TypeAdapter<T> delegate;
+  @Nullable private TypeAdapter<T> delegate;
 
-  public TreeTypeAdapter(JsonSerializer<T> serializer, JsonDeserializer<T> deserializer,
-      Gson gson, TypeToken<T> typeToken, TypeAdapterFactory skipPast) {
+  public TreeTypeAdapter(@Nullable JsonSerializer<T> serializer, @Nullable JsonDeserializer<T> deserializer,
+      Gson gson, TypeToken<T> typeToken, @Nullable TypeAdapterFactory skipPast) {
     this.serializer = serializer;
     this.deserializer = deserializer;
     this.gson = gson;
@@ -58,7 +59,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     this.skipPast = skipPast;
   }
 
-  @Override public T read(JsonReader in) throws IOException {
+  @Nullable @Override public T read(JsonReader in) throws IOException {
     if (deserializer == null) {
       return delegate().read(in);
     }
@@ -120,11 +121,11 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     private final TypeToken<?> exactType;
     private final boolean matchRawType;
     private final Class<?> hierarchyType;
-    private final JsonSerializer<?> serializer;
-    private final JsonDeserializer<?> deserializer;
+    @Nullable private final JsonSerializer<?> serializer;
+    @Nullable private final JsonDeserializer<?> deserializer;
 
-    SingleTypeFactory(Object typeAdapter, TypeToken<?> exactType, boolean matchRawType,
-        Class<?> hierarchyType) {
+    SingleTypeFactory(Object typeAdapter, @Nullable TypeToken<?> exactType, boolean matchRawType,
+        @Nullable Class<?> hierarchyType) {
       serializer = typeAdapter instanceof JsonSerializer
           ? (JsonSerializer<?>) typeAdapter
           : null;
@@ -137,7 +138,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       this.hierarchyType = hierarchyType;
     }
 
-    @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
+    @Nullable @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches = exactType != null

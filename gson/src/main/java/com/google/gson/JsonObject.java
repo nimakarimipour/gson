@@ -20,6 +20,7 @@ import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.Map;
 import java.util.Set;
+import javax.annotation.Nullable;
 
 /**
  * A class representing an object type in Json. An object consists of name-value pairs where names
@@ -158,7 +159,7 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member that is being requested.
    * @return the member matching the name. Null if no such member exists.
    */
-  public JsonElement get(String memberName) {
+  @Nullable public JsonElement get(String memberName) {
     return members.get(memberName);
   }
 
@@ -168,7 +169,7 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member being requested.
    * @return the JsonPrimitive corresponding to the specified member.
    */
-  public JsonPrimitive getAsJsonPrimitive(String memberName) {
+  @Nullable public JsonPrimitive getAsJsonPrimitive(String memberName) {
     return (JsonPrimitive) members.get(memberName);
   }
 
@@ -178,7 +179,7 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member being requested.
    * @return the JsonArray corresponding to the specified member.
    */
-  public JsonArray getAsJsonArray(String memberName) {
+  @Nullable public JsonArray getAsJsonArray(String memberName) {
     return (JsonArray) members.get(memberName);
   }
 
@@ -188,7 +189,7 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member being requested.
    * @return the JsonObject corresponding to the specified member.
    */
-  public JsonObject getAsJsonObject(String memberName) {
+  @Nullable public JsonObject getAsJsonObject(String memberName) {
     return (JsonObject) members.get(memberName);
   }
 
