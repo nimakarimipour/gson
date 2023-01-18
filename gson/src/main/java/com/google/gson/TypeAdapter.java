@@ -26,6 +26,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
+import javax.annotation.Nullable;
 
 /**
  * Converts Java objects to and from JSON.
@@ -191,7 +192,7 @@ public abstract class TypeAdapter<T> {
           TypeAdapter.this.write(out, value);
         }
       }
-      @Override public T read(JsonReader reader) throws IOException {
+      @Nullable @Override public T read(JsonReader reader) throws IOException {
         if (reader.peek() == JsonToken.NULL) {
           reader.nextNull();
           return null;
@@ -244,7 +245,7 @@ public abstract class TypeAdapter<T> {
    *
    * @return the converted Java object. May be null.
    */
-  public abstract T read(JsonReader in) throws IOException;
+  @Nullable public abstract T read(JsonReader in) throws IOException;
 
   /**
    * Converts the JSON document in {@code in} to a Java object. Unlike Gson's
