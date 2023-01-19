@@ -138,7 +138,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       this.hierarchyType = hierarchyType;
     }
 
-    @Nullable @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
+    @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches = exactType != null

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  */
 public final class DateTypeAdapter extends TypeAdapter<Date> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+    @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       return typeToken.getRawType() == Date.class ? (TypeAdapter<T>) new DateTypeAdapter() : null;
     }
@@ -97,6 +97,6 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
     String dateFormatAsString = dateFormats.get(0).format(value);
     out.value(dateFormatAsString);
   }
-  
-  
+
+
 }

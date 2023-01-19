@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
  */
 public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+    @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       return typeToken.getRawType() == java.sql.Date.class
           ? (TypeAdapter<T>) new SqlDateTypeAdapter() : null;

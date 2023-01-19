@@ -407,7 +407,7 @@ public final class TypeAdapters {
       out.value(value);
     }
   };
-  
+
   public static final TypeAdapter<BigDecimal> BIG_DECIMAL = new TypeAdapter<BigDecimal>() {
     @Nullable @Override public BigDecimal read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
@@ -425,7 +425,7 @@ public final class TypeAdapters {
       out.value(value);
     }
   };
-  
+
   public static final TypeAdapter<BigInteger> BIG_INTEGER = new TypeAdapter<BigInteger>() {
     @Nullable @Override public BigInteger read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
@@ -571,7 +571,7 @@ public final class TypeAdapters {
   public static final TypeAdapterFactory CURRENCY_FACTORY = newFactory(Currency.class, CURRENCY);
 
   public static final TypeAdapterFactory TIMESTAMP_FACTORY = new TypeAdapterFactory() {
-    @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+    @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       if (typeToken.getRawType() != Timestamp.class) {
         return null;
@@ -823,7 +823,7 @@ public final class TypeAdapters {
   public static <TT> TypeAdapterFactory newFactory(
       final TypeToken<TT> type, final TypeAdapter<TT> typeAdapter) {
     return new TypeAdapterFactory() {
-      @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+      @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
       @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
         return typeToken.equals(type) ? (TypeAdapter<T>) typeAdapter : null;
       }
@@ -833,7 +833,7 @@ public final class TypeAdapters {
   public static <TT> TypeAdapterFactory newFactory(
       final Class<TT> type, final TypeAdapter<TT> typeAdapter) {
     return new TypeAdapterFactory() {
-      @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+      @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
       @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
         return typeToken.getRawType() == type ? (TypeAdapter<T>) typeAdapter : null;
       }
@@ -846,7 +846,7 @@ public final class TypeAdapters {
   public static <TT> TypeAdapterFactory newFactory(
       final Class<TT> unboxed, final Class<TT> boxed, final TypeAdapter<? super TT> typeAdapter) {
     return new TypeAdapterFactory() {
-      @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+      @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
       @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
         Class<? super T> rawType = typeToken.getRawType();
         return (rawType == unboxed || rawType == boxed) ? (TypeAdapter<T>) typeAdapter : null;
@@ -861,7 +861,7 @@ public final class TypeAdapters {
   public static <TT> TypeAdapterFactory newFactoryForMultipleTypes(final Class<TT> base,
       final Class<? extends TT> sub, final TypeAdapter<? super TT> typeAdapter) {
     return new TypeAdapterFactory() {
-      @Nullable @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+      @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
       @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
         Class<? super T> rawType = typeToken.getRawType();
         return (rawType == base || rawType == sub) ? (TypeAdapter<T>) typeAdapter : null;
