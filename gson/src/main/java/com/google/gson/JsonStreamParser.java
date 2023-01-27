@@ -26,6 +26,7 @@ import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.MalformedJsonException;
+import javax.annotation.Nullable;
 
 /**
  * A streaming parser that allows reading of multiple {@link JsonElement}s from the specified reader
@@ -78,7 +79,7 @@ public final class JsonStreamParser implements Iterator<JsonElement> {
    * @throws JsonParseException if the incoming stream is malformed JSON.
    * @since 1.4
    */
-  public JsonElement next() throws JsonParseException {
+  @Nullable public JsonElement next() throws JsonParseException {
     if (!hasNext()) {
       throw new NoSuchElementException();
     }

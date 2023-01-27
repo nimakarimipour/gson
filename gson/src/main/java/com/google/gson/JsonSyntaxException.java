@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.gson;
+import javax.annotation.Nullable;
 
 /**
  * This exception is raised when Gson attempts to read (or write) a malformed

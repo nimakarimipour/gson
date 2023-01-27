@@ -23,6 +23,7 @@ import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.MalformedJsonException;
+import javax.annotation.Nullable;
 
 /**
  * A parser to parse Json into a parse tree of {@link JsonElement}s
@@ -77,7 +78,7 @@ public final class JsonParser {
    * @throws JsonParseException if there is an IOException or if the specified
    *     text is not valid JSON
    */
-  public static JsonElement parseReader(JsonReader reader)
+  @Nullable public static JsonElement parseReader(JsonReader reader)
       throws JsonIOException, JsonSyntaxException {
     boolean lenient = reader.isLenient();
     reader.setLenient(true);
@@ -105,7 +106,7 @@ public final class JsonParser {
   }
 
   /** @deprecated Use {@link JsonParser#parseReader(JsonReader)} */
-  @Deprecated
+  @Nullable @Deprecated
   public JsonElement parse(JsonReader json) throws JsonIOException, JsonSyntaxException {
     return parseReader(json);
   }

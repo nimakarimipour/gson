@@ -3,6 +3,7 @@ package com.google.gson.internal.bind.util;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.util.*;
+import javax.annotation.Nullable;
 
 /**
  * Utilities methods for manipulating dates in iso8601 format. This is much much faster and GC friendly than using SimpleDateFormat so

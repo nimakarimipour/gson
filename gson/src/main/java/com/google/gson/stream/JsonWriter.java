@@ -29,6 +29,7 @@ import static com.google.gson.stream.JsonScope.EMPTY_OBJECT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_ARRAY;
 import static com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;
+import javax.annotation.Nullable;
 
 /**
  * Writes a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
@@ -175,7 +176,7 @@ public class JsonWriter implements Closeable, Flushable {
    * A string containing a full set of spaces for a single level of
    * indentation, or null for no pretty printing.
    */
-  private String indent;
+  @Nullable private String indent;
 
   /**
    * The name/value separator; either ":" or ": ".
@@ -186,7 +187,7 @@ public class JsonWriter implements Closeable, Flushable {
 
   private boolean htmlSafe;
 
-  private String deferredName;
+  @Nullable private String deferredName;
 
   private boolean serializeNulls = true;
 
@@ -409,7 +410,7 @@ public class JsonWriter implements Closeable, Flushable {
    * @param value the literal string value, or null to encode a null literal.
    * @return this writer.
    */
-  public JsonWriter value(String value) throws IOException {
+  public JsonWriter value(@Nullable String value) throws IOException {
     if (value == null) {
       return nullValue();
     }

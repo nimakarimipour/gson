@@ -33,6 +33,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * This class selects which fields and types to omit. It is configurable,
@@ -108,7 +109,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     return result;
   }
 
-  public <T> TypeAdapter<T> create(final Gson gson, final TypeToken<T> type) {
+  @Nullable public <T> TypeAdapter<T> create(final Gson gson, final TypeToken<T> type) {
     Class<?> rawType = type.getRawType();
     boolean excludeClass = excludeClassChecks(rawType);
 
@@ -121,9 +122,9 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
 
     return new TypeAdapter<T>() {
       /** The delegate is lazily created because it may not be needed, and creating it may fail. */
-      private TypeAdapter<T> delegate;
+      @Nullable private TypeAdapter<T> delegate;
 
-      @Override public T read(JsonReader in) throws IOException {
+      @Nullable @Override public T read(JsonReader in) throws IOException {
         if (skipDeserialize) {
           in.skipValue();
           return null;
