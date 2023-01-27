@@ -1,0 +1,6 @@
+kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
+METHOD	com.google.gson.stream.JsonReader	nextString()	null	null	/tmp/projects/gson/gson/src/main/java/com/google/gson/stream/JsonReader.java	RETURN_NULLABLE	nullable	com.google.gson.stream.JsonReader	nextString()
+METHOD	com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)	null	null	/tmp/projects/gson/gson/src/main/java/com/google/gson/internal/Streams.java	RETURN_NULLABLE	nullable	com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)
+FIELD	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	null	chars	null	/tmp/projects/gson/gson/src/main/java/com/google/gson/internal/Streams.java	FIELD_NO_INIT	nullable	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	null
+FIELD	com.google.gson.internal.LinkedHashTreeMap$Node	null	next	null	/tmp/projects/gson/gson/src/main/java/com/google/gson/internal/LinkedHashTreeMap.java	ASSIGN_FIELD_NULLABLE	nullable	com.google.gson.internal.LinkedHashTreeMap	clear()
+FIELD	com.google.gson.internal.LinkedHashTreeMap$Node	null	next	null	/tmp/projects/gson/gson/src/main/java/com/google/gson/internal/LinkedHashTreeMap.java	ASSIGN_FIELD_NULLABLE	nullable	com.google.gson.internal.LinkedHashTreeMap	removeInternal(com.google.gson.internal.LinkedHashTreeMap.Node<K,V>,boolean)
