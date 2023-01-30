@@ -21,6 +21,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import com.google.gson.internal.LazilyParsedNumber;
+import javax.annotation.Nullable;
 
 /**
  * A class representing a Json primitive value. A primitive value
@@ -57,7 +58,7 @@ public final class JsonPrimitive extends JsonElement {
    *
    * @param string the value to create the primitive with.
    */
-  public JsonPrimitive(String string) {
+  public JsonPrimitive(@Nullable String string) {
     value = $Gson$Preconditions.checkNotNull(string);
   }
 

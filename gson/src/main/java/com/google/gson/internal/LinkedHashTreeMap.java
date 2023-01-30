@@ -28,6 +28,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import javax.annotation.Nullable;
 
 /**
  * A map of comparable keys to values. Unlike {@code TreeMap}, this class uses
@@ -82,7 +83,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return size;
   }
 
-  @Override public V get(Object key) {
+  @Nullable @Override public V get(Object key) {
     Node<K, V> node = findByObject(key);
     return node != null ? node.value : null;
   }
@@ -91,7 +92,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return findByObject(key) != null;
   }
 
-  @Override public V put(K key, V value) {
+  @Nullable @Override public V put(K key, V value) {
     if (key == null) {
       throw new NullPointerException("key == null");
     }
@@ -117,7 +118,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     header.next = header.prev = header;
   }
 
-  @Override public V remove(Object key) {
+  @Nullable @Override public V remove(Object key) {
     Node<K, V> node = removeInternalByKey(key);
     return node != null ? node.value : null;
   }
@@ -128,7 +129,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    * @throws ClassCastException if {@code key} and the tree's keys aren't
    *     mutually comparable.
    */
-  Node<K, V> find(K key, boolean create) {
+  @Nullable Node<K, V> find(K key, boolean create) {
     Comparator<? super K> comparator = this.comparator;
     Node<K, V>[] table = this.table;
     int hash = secondaryHash(key.hashCode());
@@ -196,7 +197,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return created;
   }
 
-  @SuppressWarnings("unchecked")
+  @Nullable @SuppressWarnings("unchecked")
   Node<K, V> findByObject(Object key) {
     try {
       return key != null ? find((K) key, false) : null;
@@ -214,13 +215,13 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    * {@code String.CASE_INSENSITIVE_ORDER}), then {@code remove()} and {@code
    * contains()} will violate the collections API.
    */
-  Node<K, V> findByEntry(Entry<?, ?> entry) {
+  @Nullable Node<K, V> findByEntry(Entry<?, ?> entry) {
     Node<K, V> mine = findByObject(entry.getKey());
     boolean valuesEqual = mine != null && equal(mine.value, entry.getValue());
     return valuesEqual ? mine : null;
   }
 
-  private boolean equal(Object a, Object b) {
+  private boolean equal(@Nullable Object a, Object b) {
     return a == b || (a != null && a.equals(b));
   }
 
@@ -300,7 +301,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     modCount++;
   }
 
-  Node<K, V> removeInternalByKey(Object key) {
+  @Nullable Node<K, V> removeInternalByKey(Object key) {
     Node<K, V> node = findByObject(key);
     if (node != null) {
       removeInternal(node, true);
@@ -308,7 +309,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return node;
   }
 
-  private void replaceInParent(Node<K, V> node, Node<K, V> replacement) {
+  private void replaceInParent(Node<K, V> node, @Nullable Node<K, V> replacement) {
     Node<K, V> parent = node.parent;
     node.parent = null;
     if (replacement != null) {
@@ -335,7 +336,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    * @param insert true if the node was unbalanced by an insert; false if it
    *     was by a removal.
    */
-  private void rebalance(Node<K, V> unbalanced, boolean insert) {
+  private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
     for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
       Node<K, V> left = node.left;
       Node<K, V> right = node.right;
@@ -451,8 +452,8 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         pivotLeft != null ? pivotLeft.height : 0) + 1;
   }
 
-  private EntrySet entrySet;
-  private KeySet keySet;
+  @Nullable private EntrySet entrySet;
+  @Nullable private KeySet keySet;
 
   @Override public Set<Entry<K, V>> entrySet() {
     EntrySet result = entrySet;
@@ -465,14 +466,14 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
   }
 
   static final class Node<K, V> implements Entry<K, V> {
-    Node<K, V> parent;
-    Node<K, V> left;
-    Node<K, V> right;
-    Node<K, V> next;
-    Node<K, V> prev;
-    final K key;
+    @Nullable Node<K, V> parent;
+    @Nullable Node<K, V> left;
+    @Nullable Node<K, V> right;
+    @Nullable Node<K, V> next;
+    @Nullable Node<K, V> prev;
+    @Nullable final K key;
     final int hash;
-    V value;
+    @Nullable V value;
     int height;
 
     /** Create the header entry */
@@ -483,7 +484,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     }
 
     /** Create a regular entry */
-    Node(Node<K, V> parent, K key, int hash, Node<K, V> next, Node<K, V> prev) {
+    Node(Node<K, V> parent, K key, int hash, Node<K, V> next, @Nullable Node<K, V> prev) {
       this.parent = parent;
       this.key = key;
       this.hash = hash;
@@ -494,15 +495,15 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
       next.prev = this;
     }
 
-    public K getKey() {
+    @Nullable public K getKey() {
       return key;
     }
 
-    public V getValue() {
+    @Nullable public V getValue() {
       return value;
     }
 
-    public V setValue(V value) {
+    @Nullable public V setValue(V value) {
       V oldValue = this.value;
       this.value = value;
       return oldValue;
@@ -621,7 +622,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    */
   static class AvlIterator<K, V> {
     /** This stack is a singly linked list, linked by the 'parent' field. */
-    private Node<K, V> stackTop;
+    @Nullable private Node<K, V> stackTop;
 
     void reset(Node<K, V> root) {
       Node<K, V> stackTop = null;
@@ -632,7 +633,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
       this.stackTop = stackTop;
     }
 
-    public Node<K, V> next() {
+    @Nullable public Node<K, V> next() {
       Node<K, V> stackTop = this.stackTop;
       if (stackTop == null) {
         return null;
@@ -669,7 +670,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    */
   final static class AvlBuilder<K, V> {
     /** This stack is a singly linked list, linked by the 'parent' field. */
-    private Node<K, V> stack;
+    @Nullable private Node<K, V> stack;
     private int leavesToSkip;
     private int leavesSkipped;
     private int size;
@@ -758,8 +759,8 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
   }
 
   private abstract class LinkedTreeMapIterator<T> implements Iterator<T> {
-    Node<K, V> next = header.next;
-    Node<K, V> lastReturned = null;
+    @Nullable Node<K, V> next = header.next;
+    @Nullable Node<K, V> lastReturned = null;
     int expectedModCount = modCount;
 
     LinkedTreeMapIterator() {
@@ -833,7 +834,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
 
     @Override public Iterator<K> iterator() {
       return new LinkedTreeMapIterator<K>() {
-        public K next() {
+        @Nullable public K next() {
           return nextNode().key;
         }
       };

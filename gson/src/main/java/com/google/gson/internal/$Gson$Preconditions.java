@@ -15,6 +15,7 @@
  */
 
 package com.google.gson.internal;
+import javax.annotation.Nullable;
 
 /**
  * A simple utility class used to check method Preconditions.
@@ -34,7 +35,7 @@ public final class $Gson$Preconditions {
     throw new UnsupportedOperationException();
   }
 
-  public static <T> T checkNotNull(T obj) {
+  public static <T> T checkNotNull(@Nullable T obj) {
     if (obj == null) {
       throw new NullPointerException();
     }
