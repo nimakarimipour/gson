@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * Adapts maps to either JSON objects or JSON arrays.
@@ -158,7 +159,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       this.constructor = constructor;
     }
 
-    @Nullable @Override public Map<K, V> read(JsonReader in) throws IOException {
+    @NullUnmarked @Nullable @Override public Map<K, V> read(JsonReader in) throws IOException {
       JsonToken peek = in.peek();
       if (peek == JsonToken.NULL) {
         in.nextNull();

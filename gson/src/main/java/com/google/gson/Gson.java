@@ -57,6 +57,7 @@ import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * This is the main class for using Gson. Gson is typically used by first constructing a
@@ -389,7 +390,7 @@ public final class Gson {
       @Override public void write(JsonWriter out, AtomicLong value) throws IOException {
         longAdapter.write(out, value.get());
       }
-      @Override public AtomicLong read(JsonReader in) throws IOException {
+      @NullUnmarked @Override public AtomicLong read(JsonReader in) throws IOException {
         Number value = longAdapter.read(in);
         return new AtomicLong(value.longValue());
       }
@@ -405,7 +406,7 @@ public final class Gson {
         }
         out.endArray();
       }
-      @Override public AtomicLongArray read(JsonReader in) throws IOException {
+      @NullUnmarked @Override public AtomicLongArray read(JsonReader in) throws IOException {
         List<Long> list = new ArrayList<Long>();
         in.beginArray();
         while (in.hasNext()) {

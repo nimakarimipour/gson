@@ -18,6 +18,7 @@ package com.google.gson.internal;
 import java.io.ObjectStreamException;
 import java.math.BigDecimal;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * This class holds a number value that is lazily converted to a specific number type
@@ -78,12 +79,12 @@ public final class LazilyParsedNumber extends Number {
     return new BigDecimal(value);
   }
 
-  @Override
+  @NullUnmarked @Override
   public int hashCode() {
     return value.hashCode();
   }
 
-  @Override
+  @NullUnmarked @Override
   public boolean equals(Object obj) {
     if (this == obj) {
       return true;

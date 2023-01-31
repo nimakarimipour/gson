@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.MalformedJsonException;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * A parser to parse Json into a parse tree of {@link JsonElement}s
@@ -55,7 +56,7 @@ public final class JsonParser {
    * @return a parse tree of {@link JsonElement}s corresponding to the specified JSON
    * @throws JsonParseException if the specified text is not valid JSON
    */
-  public static JsonElement parseReader(Reader reader) throws JsonIOException, JsonSyntaxException {
+  @NullUnmarked public static JsonElement parseReader(Reader reader) throws JsonIOException, JsonSyntaxException {
     try {
       JsonReader jsonReader = new JsonReader(reader);
       JsonElement element = parseReader(jsonReader);

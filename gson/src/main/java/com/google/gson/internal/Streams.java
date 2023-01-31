@@ -29,6 +29,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * Reads and writes GSON parse trees over streams.
@@ -106,10 +107,10 @@ public final class Streams {
      */
     static class CurrentWrite implements CharSequence {
       @Nullable char[] chars;
-      public int length() {
+      @NullUnmarked public int length() {
         return chars.length;
       }
-      public char charAt(int i) {
+      @NullUnmarked public char charAt(int i) {
         return chars[i];
       }
       public CharSequence subSequence(int start, int end) {

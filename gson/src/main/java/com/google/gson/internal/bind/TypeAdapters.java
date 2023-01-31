@@ -57,6 +57,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * Type adapters for basic types.
@@ -367,7 +368,7 @@ public final class TypeAdapters {
   public static final TypeAdapterFactory NUMBER_FACTORY = newFactory(Number.class, NUMBER);
 
   public static final TypeAdapter<Character> CHARACTER = new TypeAdapter<Character>() {
-    @Nullable @Override
+    @NullUnmarked @Nullable @Override
     public Character read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
         in.nextNull();
