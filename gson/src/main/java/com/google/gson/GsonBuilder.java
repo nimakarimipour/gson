@@ -40,6 +40,7 @@ import static com.google.gson.Gson.DEFAULT_LENIENT;
 import static com.google.gson.Gson.DEFAULT_PRETTY_PRINT;
 import static com.google.gson.Gson.DEFAULT_SERIALIZE_NULLS;
 import static com.google.gson.Gson.DEFAULT_SPECIALIZE_FLOAT_VALUES;
+import com.google.gson.NullUnmarked;
 
 /**
  * <p>Use this builder to construct a {@link Gson} instance when you need to set configuration
@@ -85,7 +86,7 @@ public final class GsonBuilder {
   /** tree-style hierarchy factories. These come after factories for backwards compatibility. */
   private final List<TypeAdapterFactory> hierarchyFactories = new ArrayList<TypeAdapterFactory>();
   private boolean serializeNulls = DEFAULT_SERIALIZE_NULLS;
-  private String datePattern;
+  @SuppressWarnings("NullAway.Init") private String datePattern;
   private int dateStyle = DateFormat.DEFAULT;
   private int timeStyle = DateFormat.DEFAULT;
   private boolean complexMapKeySerialization = DEFAULT_COMPLEX_MAP_KEYS;
@@ -448,7 +449,7 @@ public final class GsonBuilder {
    * @return a reference to this {@code GsonBuilder} object to fulfill the "Builder" pattern
    * @since 1.2
    */
-  public GsonBuilder setDateFormat(int style) {
+  @NullUnmarked public GsonBuilder setDateFormat(int style) {
     this.dateStyle = style;
     this.datePattern = null;
     return this;
@@ -469,7 +470,7 @@ public final class GsonBuilder {
    * @return a reference to this {@code GsonBuilder} object to fulfill the "Builder" pattern
    * @since 1.2
    */
-  public GsonBuilder setDateFormat(int dateStyle, int timeStyle) {
+  @NullUnmarked public GsonBuilder setDateFormat(int dateStyle, int timeStyle) {
     this.dateStyle = dateStyle;
     this.timeStyle = timeStyle;
     this.datePattern = null;

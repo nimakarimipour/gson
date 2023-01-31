@@ -28,6 +28,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import com.google.gson.NullUnmarked;
 
 /**
  * A map of comparable keys to values. Unlike {@code TreeMap}, this class uses
@@ -82,7 +83,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return size;
   }
 
-  @Override public V get(Object key) {
+  @NullUnmarked @Override public V get(Object key) {
     Node<K, V> node = findByObject(key);
     return node != null ? node.value : null;
   }
@@ -101,7 +102,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return result;
   }
 
-  @Override public void clear() {
+  @NullUnmarked @Override public void clear() {
     Arrays.fill(table, null);
     size = 0;
     modCount++;
@@ -117,7 +118,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     header.next = header.prev = header;
   }
 
-  @Override public V remove(Object key) {
+  @NullUnmarked @Override public V remove(Object key) {
     Node<K, V> node = removeInternalByKey(key);
     return node != null ? node.value : null;
   }
@@ -128,7 +129,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    * @throws ClassCastException if {@code key} and the tree's keys aren't
    *     mutually comparable.
    */
-  Node<K, V> find(K key, boolean create) {
+  @NullUnmarked Node<K, V> find(K key, boolean create) {
     Comparator<? super K> comparator = this.comparator;
     Node<K, V>[] table = this.table;
     int hash = secondaryHash(key.hashCode());
@@ -196,7 +197,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return created;
   }
 
-  @SuppressWarnings("unchecked")
+  @NullUnmarked @SuppressWarnings("unchecked")
   Node<K, V> findByObject(Object key) {
     try {
       return key != null ? find((K) key, false) : null;
@@ -214,7 +215,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    * {@code String.CASE_INSENSITIVE_ORDER}), then {@code remove()} and {@code
    * contains()} will violate the collections API.
    */
-  Node<K, V> findByEntry(Entry<?, ?> entry) {
+  @NullUnmarked Node<K, V> findByEntry(Entry<?, ?> entry) {
     Node<K, V> mine = findByObject(entry.getKey());
     boolean valuesEqual = mine != null && equal(mine.value, entry.getValue());
     return valuesEqual ? mine : null;
@@ -242,7 +243,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    *
    * @param unlink true to also unlink this node from the iteration linked list.
    */
-  void removeInternal(Node<K, V> node, boolean unlink) {
+  @NullUnmarked void removeInternal(Node<K, V> node, boolean unlink) {
     if (unlink) {
       node.prev.next = node.next;
       node.next.prev = node.prev;
@@ -308,7 +309,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return node;
   }
 
-  private void replaceInParent(Node<K, V> node, Node<K, V> replacement) {
+  @NullUnmarked private void replaceInParent(Node<K, V> node, Node<K, V> replacement) {
     Node<K, V> parent = node.parent;
     node.parent = null;
     if (replacement != null) {
@@ -451,8 +452,8 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         pivotLeft != null ? pivotLeft.height : 0) + 1;
   }
 
-  private EntrySet entrySet;
-  private KeySet keySet;
+  @SuppressWarnings("NullAway.Init") private EntrySet entrySet;
+  @SuppressWarnings("NullAway.Init") private KeySet keySet;
 
   @Override public Set<Entry<K, V>> entrySet() {
     EntrySet result = entrySet;
@@ -465,25 +466,25 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
   }
 
   static final class Node<K, V> implements Entry<K, V> {
-    Node<K, V> parent;
-    Node<K, V> left;
-    Node<K, V> right;
+    @SuppressWarnings("NullAway.Init") Node<K, V> parent;
+    @SuppressWarnings("NullAway.Init") Node<K, V> left;
+    @SuppressWarnings("NullAway.Init") Node<K, V> right;
     Node<K, V> next;
     Node<K, V> prev;
     final K key;
     final int hash;
-    V value;
+    @SuppressWarnings("NullAway.Init") V value;
     int height;
 
     /** Create the header entry */
-    Node() {
+    @NullUnmarked Node() {
       key = null;
       hash = -1;
       next = prev = this;
     }
 
     /** Create a regular entry */
-    Node(Node<K, V> parent, K key, int hash, Node<K, V> next, Node<K, V> prev) {
+    @NullUnmarked Node(Node<K, V> parent, K key, int hash, Node<K, V> next, Node<K, V> prev) {
       this.parent = parent;
       this.key = key;
       this.hash = hash;
@@ -621,9 +622,9 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    */
   static class AvlIterator<K, V> {
     /** This stack is a singly linked list, linked by the 'parent' field. */
-    private Node<K, V> stackTop;
+    @SuppressWarnings("NullAway.Init") private Node<K, V> stackTop;
 
-    void reset(Node<K, V> root) {
+    @NullUnmarked void reset(Node<K, V> root) {
       Node<K, V> stackTop = null;
       for (Node<K, V> n = root; n != null; n = n.left) {
         n.parent = stackTop;
@@ -632,7 +633,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
       this.stackTop = stackTop;
     }
 
-    public Node<K, V> next() {
+    @NullUnmarked public Node<K, V> next() {
       Node<K, V> stackTop = this.stackTop;
       if (stackTop == null) {
         return null;
@@ -669,12 +670,12 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    */
   final static class AvlBuilder<K, V> {
     /** This stack is a singly linked list, linked by the 'parent' field. */
-    private Node<K, V> stack;
+    @SuppressWarnings("NullAway.Init") private Node<K, V> stack;
     private int leavesToSkip;
     private int leavesSkipped;
     private int size;
 
-    void reset(int targetSize) {
+    @NullUnmarked void reset(int targetSize) {
       // compute the target tree size. This is a power of 2 minus one, like 15 or 31.
       int treeCapacity = Integer.highestOneBit(targetSize) * 2 - 1;
       leavesToSkip = treeCapacity - targetSize;
@@ -683,7 +684,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
       stack = null;
     }
 
-    void add(Node<K, V> node) {
+    @NullUnmarked void add(Node<K, V> node) {
       node.left = node.parent = node.right = null;
       node.height = 1;
 
@@ -759,7 +760,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
 
   private abstract class LinkedTreeMapIterator<T> implements Iterator<T> {
     Node<K, V> next = header.next;
-    Node<K, V> lastReturned = null;
+    @SuppressWarnings("NullAway") Node<K, V> lastReturned = null;
     int expectedModCount = modCount;
 
     LinkedTreeMapIterator() {
@@ -781,7 +782,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
       return lastReturned = e;
     }
 
-    public final void remove() {
+    @NullUnmarked public final void remove() {
       if (lastReturned == null) {
         throw new IllegalStateException();
       }

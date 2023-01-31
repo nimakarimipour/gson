@@ -29,6 +29,7 @@ import java.util.*;
 
 import static com.google.gson.internal.$Gson$Preconditions.checkArgument;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
+import com.google.gson.NullUnmarked;
 
 /**
  * Static methods for working with types.
@@ -446,7 +447,7 @@ public final class $Gson$Types {
    * Returns the declaring class of {@code typeVariable}, or {@code null} if it was not declared by
    * a class.
    */
-  private static Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
+  @NullUnmarked private static Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
     GenericDeclaration genericDeclaration = typeVariable.getGenericDeclaration();
     return genericDeclaration instanceof Class
         ? (Class<?>) genericDeclaration
@@ -462,7 +463,7 @@ public final class $Gson$Types {
     private final Type rawType;
     private final Type[] typeArguments;
 
-    public ParameterizedTypeImpl(Type ownerType, Type rawType, Type... typeArguments) {
+    @NullUnmarked public ParameterizedTypeImpl(Type ownerType, Type rawType, Type... typeArguments) {
       // require an owner type if the raw type needs it
       if (rawType instanceof Class<?>) {
         Class<?> rawTypeAsClass = (Class<?>) rawType;
@@ -557,7 +558,7 @@ public final class $Gson$Types {
     private final Type upperBound;
     private final Type lowerBound;
 
-    public WildcardTypeImpl(Type[] upperBounds, Type[] lowerBounds) {
+    @NullUnmarked public WildcardTypeImpl(Type[] upperBounds, Type[] lowerBounds) {
       checkArgument(lowerBounds.length <= 1);
       checkArgument(upperBounds.length == 1);
 

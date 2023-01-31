@@ -24,6 +24,7 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.HashMap;
 import java.util.Map;
+import com.google.gson.NullUnmarked;
 
 /**
  * Represents a generic type {@code T}. Java doesn't yet provide a way to
@@ -307,7 +308,7 @@ public class TypeToken<T> {
    * Gets type literal for the parameterized type represented by applying {@code typeArguments} to
    * {@code rawType}.
    */
-  public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
+  @NullUnmarked public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
     return new TypeToken<Object>($Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
   }
 

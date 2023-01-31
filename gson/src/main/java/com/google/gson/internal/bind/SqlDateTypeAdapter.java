@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import com.google.gson.NullUnmarked;
 
 /**
  * Adapter for java.sql.Date. Although this class appears stateless, it is not.
@@ -37,7 +38,7 @@ import java.text.SimpleDateFormat;
  */
 public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+    @NullUnmarked @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       return typeToken.getRawType() == java.sql.Date.class
           ? (TypeAdapter<T>) new SqlDateTypeAdapter() : null;
@@ -46,7 +47,7 @@ public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
 
   private final DateFormat format = new SimpleDateFormat("MMM d, yyyy");
 
-  @Override
+  @NullUnmarked @Override
   public synchronized java.sql.Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();
@@ -60,7 +61,7 @@ public final class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
     }
   }
 
-  @Override
+  @NullUnmarked @Override
   public synchronized void write(JsonWriter out, java.sql.Date value) throws IOException {
     out.value(value == null ? null : format.format(value));
   }

@@ -20,6 +20,7 @@ import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.Map;
 import java.util.Set;
+import com.google.gson.NullUnmarked;
 
 /**
  * A class representing an object type in Json. An object consists of name-value pairs where names
@@ -29,7 +30,7 @@ import java.util.Set;
  * @author Inderjeet Singh
  * @author Joel Leitch
  */
-public final class JsonObject extends JsonElement {
+@NullUnmarked public final class JsonObject extends JsonElement {
   private final LinkedTreeMap<String, JsonElement> members =
       new LinkedTreeMap<String, JsonElement>();
 

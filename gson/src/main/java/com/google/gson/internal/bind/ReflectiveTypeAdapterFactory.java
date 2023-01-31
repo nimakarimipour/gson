@@ -41,6 +41,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import com.google.gson.NullUnmarked;
 
 /**
  * Type adapter that reflects over the fields and methods of a class.
@@ -91,7 +92,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     return fieldNames;
   }
 
-  @Override public <T> TypeAdapter<T> create(Gson gson, final TypeToken<T> type) {
+  @NullUnmarked @Override public <T> TypeAdapter<T> create(Gson gson, final TypeToken<T> type) {
     Class<? super T> raw = type.getRawType();
 
     if (!Object.class.isAssignableFrom(raw)) {
@@ -203,7 +204,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
       this.boundFields = boundFields;
     }
 
-    @Override public T read(JsonReader in) throws IOException {
+    @NullUnmarked @Override public T read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
         in.nextNull();
         return null;

@@ -56,6 +56,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
+import com.google.gson.NullUnmarked;
 
 /**
  * This is the main class for using Gson. Gson is typically used by first constructing a
@@ -181,7 +182,7 @@ public final class Gson {
    *   {@link GsonBuilder#excludeFieldsWithModifiers(int...)}.</li>
    * </ul>
    */
-  public Gson() {
+  @NullUnmarked public Gson() {
     this(Excluder.DEFAULT, FieldNamingPolicy.IDENTITY,
             Collections.<Type, InstanceCreator<?>>emptyMap(), DEFAULT_SERIALIZE_NULLS,
             DEFAULT_COMPLEX_MAP_KEYS, DEFAULT_JSON_NON_EXECUTABLE, DEFAULT_ESCAPE_HTML,
@@ -310,7 +311,7 @@ public final class Gson {
       return TypeAdapters.DOUBLE;
     }
     return new TypeAdapter<Number>() {
-      @Override public Double read(JsonReader in) throws IOException {
+      @NullUnmarked @Override public Double read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
           return null;
@@ -334,7 +335,7 @@ public final class Gson {
       return TypeAdapters.FLOAT;
     }
     return new TypeAdapter<Number>() {
-      @Override public Float read(JsonReader in) throws IOException {
+      @NullUnmarked @Override public Float read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
           return null;
@@ -366,7 +367,7 @@ public final class Gson {
       return TypeAdapters.LONG;
     }
     return new TypeAdapter<Number>() {
-      @Override public Number read(JsonReader in) throws IOException {
+      @NullUnmarked @Override public Number read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
           return null;
@@ -836,7 +837,7 @@ public final class Gson {
    * @throws JsonParseException if json is not a valid representation for an object of type typeOfT
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @SuppressWarnings("unchecked")
+  @NullUnmarked @SuppressWarnings("unchecked")
   public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -918,7 +919,7 @@ public final class Gson {
    * @throws JsonIOException if there was a problem writing to the Reader
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @SuppressWarnings("unchecked")
+  @NullUnmarked @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonReader reader, Type typeOfT) throws JsonIOException, JsonSyntaxException {
     boolean isEmpty = true;
     boolean oldLenient = reader.isLenient();
@@ -994,7 +995,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
    */
-  @SuppressWarnings("unchecked")
+  @NullUnmarked @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -1003,7 +1004,7 @@ public final class Gson {
   }
 
   static class FutureTypeAdapter<T> extends TypeAdapter<T> {
-    private TypeAdapter<T> delegate;
+    @SuppressWarnings("NullAway.Init") private TypeAdapter<T> delegate;
 
     public void setDelegate(TypeAdapter<T> typeAdapter) {
       if (delegate != null) {
