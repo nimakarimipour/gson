@@ -21,6 +21,7 @@ import java.lang.reflect.Method;
 
 import com.google.gson.JsonIOException;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * An implementation of {@link ReflectionAccessor} based on {@link Unsafe}.
@@ -52,7 +53,7 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
   }
 
   // Visible for testing only
-  boolean makeAccessibleWithUnsafe(AccessibleObject ao) {
+  @NullUnmarked boolean makeAccessibleWithUnsafe(AccessibleObject ao) {
     if (theUnsafe != null && overrideField != null) {
       try {
         Method method = unsafeClass.getMethod("objectFieldOffset", Field.class);

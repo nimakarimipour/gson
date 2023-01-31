@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * Reads a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
@@ -801,7 +802,7 @@ public class JsonReader implements Closeable {
    * @throws IllegalStateException if the next token is not a string or if
    *     this reader is closed.
    */
-  public String nextString() throws IOException {
+  @NullUnmarked public String nextString() throws IOException {
     int p = peeked;
     if (p == PEEKED_NONE) {
       p = doPeek();

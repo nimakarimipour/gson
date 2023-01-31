@@ -33,6 +33,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import javax.annotation.Nullable;
+import com.google.gson.NullUnmarked;
 
 /**
  * Adapts a Gson 1.x tree-style adapter as a streaming TypeAdapter. Since the
@@ -138,7 +139,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       this.hierarchyType = hierarchyType;
     }
 
-    @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
+    @NullUnmarked @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches = exactType != null
