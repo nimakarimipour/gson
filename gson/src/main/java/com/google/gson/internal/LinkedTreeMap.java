@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import javax.annotation.Nullable;
 
 /**
  * A map of comparable keys to values. Unlike {@code TreeMap}, this class uses
@@ -44,7 +45,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   };
 
   Comparator<? super K> comparator;
-  Node<K, V> root;
+  @Nullable Node<K, V> root;
   int size = 0;
   int modCount = 0;
 
@@ -107,7 +108,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     header.next = header.prev = header;
   }
 
-  @Override public V remove(Object key) {
+  @Nullable @Override public V remove(Object key) {
     Node<K, V> node = removeInternalByKey(key);
     return node != null ? node.value : null;
   }
@@ -118,7 +119,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * @throws ClassCastException if {@code key} and the tree's keys aren't
    *     mutually comparable.
    */
-  Node<K, V> find(K key, boolean create) {
+  @Nullable Node<K, V> find(K key, boolean create) {
     Comparator<? super K> comparator = this.comparator;
     Node<K, V> nearest = root;
     int comparison = 0;
@@ -180,7 +181,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     return created;
   }
 
-  @SuppressWarnings("unchecked")
+  @Nullable @SuppressWarnings("unchecked")
   Node<K, V> findByObject(Object key) {
     try {
       return key != null ? find((K) key, false) : null;
@@ -198,7 +199,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * {@code String.CASE_INSENSITIVE_ORDER}), then {@code remove()} and {@code
    * contains()} will violate the collections API.
    */
-  Node<K, V> findByEntry(Entry<?, ?> entry) {
+  @Nullable Node<K, V> findByEntry(Entry<?, ?> entry) {
     Node<K, V> mine = findByObject(entry.getKey());
     boolean valuesEqual = mine != null && equal(mine.value, entry.getValue());
     return valuesEqual ? mine : null;
@@ -273,7 +274,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     modCount++;
   }
 
-  Node<K, V> removeInternalByKey(Object key) {
+  @Nullable Node<K, V> removeInternalByKey(Object key) {
     Node<K, V> node = findByObject(key);
     if (node != null) {
       removeInternal(node, true);
@@ -307,7 +308,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
    * @param insert true if the node was unbalanced by an insert; false if it
    *     was by a removal.
    */
-  private void rebalance(Node<K, V> unbalanced, boolean insert) {
+  private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
     for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
       Node<K, V> left = node.left;
       Node<K, V> right = node.right;
@@ -423,8 +424,8 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
         pivotLeft != null ? pivotLeft.height : 0) + 1;
   }
 
-  private EntrySet entrySet;
-  private KeySet keySet;
+  @Nullable private EntrySet entrySet;
+  @Nullable private KeySet keySet;
 
   @Override public Set<Entry<K, V>> entrySet() {
     EntrySet result = entrySet;
@@ -437,7 +438,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   }
 
   static final class Node<K, V> implements Entry<K, V> {
-    Node<K, V> parent;
+    @Nullable Node<K, V> parent;
     Node<K, V> left;
     Node<K, V> right;
     Node<K, V> next;
@@ -453,7 +454,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     }
 
     /** Create a regular entry */
-    Node(Node<K, V> parent, K key, Node<K, V> next, Node<K, V> prev) {
+    Node(@Nullable Node<K, V> parent, K key, Node<K, V> next, Node<K, V> prev) {
       this.parent = parent;
       this.key = key;
       this.height = 1;
@@ -525,7 +526,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
   private abstract class LinkedTreeMapIterator<T> implements Iterator<T> {
     Node<K, V> next = header.next;
-    Node<K, V> lastReturned = null;
+    @Nullable Node<K, V> lastReturned = null;
     int expectedModCount = modCount;
 
     LinkedTreeMapIterator() {
