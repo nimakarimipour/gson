@@ -1,5 +1,5 @@
 {
-  "BUILD_COMMAND": "cd /Users/nima/Developer/NullAwayFixer/Projects/gson && ./gradlew gson:compileJava",
+  "BUILD_COMMAND": "cd /Users/anonymous/Developer/NullAwayFixer/Projects/gson && ./gradlew gson:compileJava",
   "ANNOTATION": {
     "INITIALIZER": "com.google.gson.Initializer",
     "NULLABLE": "javax.annotation.Nullable",
