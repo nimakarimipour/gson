@@ -20,7 +20,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import com.google.gson.JsonIOException;
-import com.google.gson.NullUnmarked;
 
 /**
  * An implementation of {@link ReflectionAccessor} based on {@link Unsafe}.
@@ -31,7 +30,7 @@ import com.google.gson.NullUnmarked;
 @SuppressWarnings({"unchecked", "rawtypes"})
 final class UnsafeReflectionAccessor extends ReflectionAccessor {
 
-  @SuppressWarnings("NullAway.Init") private static Class unsafeClass;
+   private static Class unsafeClass;
   private final Object theUnsafe = getUnsafeInstance();
   private final Field overrideField = getOverrideField();
 
@@ -66,7 +65,7 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     return false;
   }
 
-  @NullUnmarked private static Object getUnsafeInstance() {
+  private static Object getUnsafeInstance() {
     try {
       unsafeClass = Class.forName("sun.misc.Unsafe");
       Field unsafeField = unsafeClass.getDeclaredField("theUnsafe");
@@ -77,7 +76,7 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     }
   }
 
-  @NullUnmarked private static Field getOverrideField() {
+  private static Field getOverrideField() {
     try {
       return AccessibleObject.class.getDeclaredField("override");
     } catch (NoSuchFieldException e) {

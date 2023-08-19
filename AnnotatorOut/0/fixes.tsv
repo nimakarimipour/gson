@@ -1,5 +1,0 @@
-kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
-METHOD	com.google.gson.JsonObject	get(java.lang.String)	null	null	/Users/nima/Developer/NullAwayFixer/Projects/gson/gson/src/main/java/com/google/gson/JsonObject.java	RETURN_NULLABLE	nullable	com.google.gson.JsonObject	get(java.lang.String)
-METHOD	com.google.gson.JsonObject	getAsJsonPrimitive(java.lang.String)	null	null	/Users/nima/Developer/NullAwayFixer/Projects/gson/gson/src/main/java/com/google/gson/JsonObject.java	RETURN_NULLABLE	nullable	com.google.gson.JsonObject	getAsJsonPrimitive(java.lang.String)
-METHOD	com.google.gson.JsonObject	getAsJsonArray(java.lang.String)	null	null	/Users/nima/Developer/NullAwayFixer/Projects/gson/gson/src/main/java/com/google/gson/JsonObject.java	RETURN_NULLABLE	nullable	com.google.gson.JsonObject	getAsJsonArray(java.lang.String)
-METHOD	com.google.gson.JsonObject	getAsJsonObject(java.lang.String)	null	null	/Users/nima/Developer/NullAwayFixer/Projects/gson/gson/src/main/java/com/google/gson/JsonObject.java	RETURN_NULLABLE	nullable	com.google.gson.JsonObject	getAsJsonObject(java.lang.String)

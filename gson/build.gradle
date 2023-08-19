@@ -3,7 +3,6 @@ plugins {
 }
 
 apply plugin: 'java'
-apply plugin: 'maven'
 
 repositories {
     mavenLocal()
@@ -13,34 +12,43 @@ repositories {
 group = 'com.google.code.gson'
 version = '2.8.6-SNAPSHOT'
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 sourceSets.main.java.exclude("**/module-info.java")
 dependencies {
-    testCompile "junit:junit:4.12"
 
     compileOnly "com.google.code.findbugs:jsr305:3.0.2"
     errorprone "com.google.errorprone:error_prone_core:2.3.2"
     errorproneJavac "com.google.errorprone:javac:9+181-r4173-1"
 
     annotationProcessor "com.uber.nullaway:nullaway:0.10.8"
-    annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.6-alpha-4-SNAPSHOT"
+    annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.6-alpha-5"
+
+    compileOnly "com.uber.nullaway:nullaway-annotations:0.10.10"
+    compileOnly "org.jspecify:jspecify:0.3.0"
 }
 
 
 import net.ltgt.gradle.errorprone.CheckSeverity
+
+def scanner_path =  "${rootDir.getAbsolutePath()}" +"/out/scanner.xml"
+def nullaway_path =  "${rootDir.absolutePath}/out/checker.xml"
+def annotator_mode = (System.getenv("ANNOTATOR_MODE") != null)
+def nullaway_off = (System.getenv("NULLAWAY_OFF") != null)
+
+
 tasks.withType(JavaCompile) {
     // remove the if condition if you want to run NullAway on test code
     if (!name.toLowerCase().contains("test")) {
         options.errorprone.disableAllChecks = true
         options.errorprone {
-            check("NullAway", CheckSeverity.ERROR)
-            check("AnnotatorScanner", CheckSeverity.ERROR)
+            check("NullAway", nullaway_off ? CheckSeverity.OFF : CheckSeverity.ERROR)
+            check("AnnotatorScanner", annotator_mode ? CheckSeverity.ERROR : CheckSeverity.OFF)
             option("NullAway:AnnotatedPackages", "com.google.gson")
-            option("NullAway:SerializeFixMetadata", "true")
-            option("NullAway:FixSerializationConfigPath", "/tmp/NullAwayFix/nullaway.xml")
-            option("AnnotatorScanner:ConfigPath", "/tmp/NullAwayFix/scanner.xml")
+            option("NullAway:SerializeFixMetadata", annotator_mode ? "true" : "false")
+            option("NullAway:FixSerializationConfigPath", nullaway_path)
+            option("AnnotatorScanner:ConfigPath", scanner_path)
         }
         options.compilerArgs << "-Xmaxerrs" << "100000"
     }

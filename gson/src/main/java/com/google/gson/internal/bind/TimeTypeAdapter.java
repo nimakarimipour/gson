@@ -30,7 +30,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import com.google.gson.NullUnmarked;
 
 /**
  * Adapter for Time. Although this class appears stateless, it is not.
@@ -40,7 +39,7 @@ import com.google.gson.NullUnmarked;
  */
 public final class TimeTypeAdapter extends TypeAdapter<Time> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @NullUnmarked @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+    @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       return typeToken.getRawType() == Time.class ? (TypeAdapter<T>) new TimeTypeAdapter() : null;
     }
@@ -48,7 +47,7 @@ public final class TimeTypeAdapter extends TypeAdapter<Time> {
 
   private final DateFormat format = new SimpleDateFormat("hh:mm:ss a");
 
-  @NullUnmarked @Override public synchronized Time read(JsonReader in) throws IOException {
+  @Override public synchronized Time read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();
       return null;
@@ -61,7 +60,7 @@ public final class TimeTypeAdapter extends TypeAdapter<Time> {
     }
   }
 
-  @NullUnmarked @Override public synchronized void write(JsonWriter out, Time value) throws IOException {
+  @Override public synchronized void write(JsonWriter out, Time value) throws IOException {
     out.value(value == null ? null : format.format(value));
   }
 }

@@ -32,7 +32,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import com.google.gson.NullUnmarked;
 
 /**
  * Adapts a Gson 1.x tree-style adapter as a streaming TypeAdapter. Since the
@@ -48,7 +47,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   private final GsonContextImpl context = new GsonContextImpl();
 
   /** The delegate is lazily created because it may not be needed, and creating it may fail. */
-  @SuppressWarnings("NullAway.Init") private TypeAdapter<T> delegate;
+   private TypeAdapter<T> delegate;
 
   public TreeTypeAdapter(JsonSerializer<T> serializer, JsonDeserializer<T> deserializer,
       Gson gson, TypeToken<T> typeToken, TypeAdapterFactory skipPast) {
@@ -59,7 +58,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     this.skipPast = skipPast;
   }
 
-  @NullUnmarked @Override public T read(JsonReader in) throws IOException {
+  @Override public T read(JsonReader in) throws IOException {
     if (deserializer == null) {
       return delegate().read(in);
     }
@@ -93,7 +92,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   /**
    * Returns a new factory that will match each type against {@code exactType}.
    */
-  @NullUnmarked public static TypeAdapterFactory newFactory(TypeToken<?> exactType, Object typeAdapter) {
+  public static TypeAdapterFactory newFactory(TypeToken<?> exactType, Object typeAdapter) {
     return new SingleTypeFactory(typeAdapter, exactType, false, null);
   }
 
@@ -101,7 +100,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
    * Returns a new factory that will match each type and its raw type against
    * {@code exactType}.
    */
-  @NullUnmarked public static TypeAdapterFactory newFactoryWithMatchRawType(
+  public static TypeAdapterFactory newFactoryWithMatchRawType(
       TypeToken<?> exactType, Object typeAdapter) {
     // only bother matching raw types if exact type is a raw type
     boolean matchRawType = exactType.getType() == exactType.getRawType();
@@ -112,7 +111,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
    * Returns a new factory that will match each type's raw type for assignability
    * to {@code hierarchyType}.
    */
-  @NullUnmarked public static TypeAdapterFactory newTypeHierarchyFactory(
+  public static TypeAdapterFactory newTypeHierarchyFactory(
       Class<?> hierarchyType, Object typeAdapter) {
     return new SingleTypeFactory(typeAdapter, null, false, hierarchyType);
   }
@@ -124,7 +123,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     private final JsonSerializer<?> serializer;
     private final JsonDeserializer<?> deserializer;
 
-    @NullUnmarked SingleTypeFactory(Object typeAdapter, TypeToken<?> exactType, boolean matchRawType,
+    SingleTypeFactory(Object typeAdapter, TypeToken<?> exactType, boolean matchRawType,
         Class<?> hierarchyType) {
       serializer = typeAdapter instanceof JsonSerializer
           ? (JsonSerializer<?>) typeAdapter
@@ -138,7 +137,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       this.hierarchyType = hierarchyType;
     }
 
-    @NullUnmarked @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
+    @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches = exactType != null

@@ -104,7 +104,7 @@ public final class Streams {
      * A mutable char sequence pointing at a single char[].
      */
     static class CurrentWrite implements CharSequence {
-      @SuppressWarnings("NullAway.Init") char[] chars;
+       char[] chars;
       public int length() {
         return chars.length;
       }

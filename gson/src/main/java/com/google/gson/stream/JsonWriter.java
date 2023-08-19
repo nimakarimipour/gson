@@ -29,7 +29,6 @@ import static com.google.gson.stream.JsonScope.EMPTY_OBJECT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_ARRAY;
 import static com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT;
 import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;
-import com.google.gson.NullUnmarked;
 
 /**
  * Writes a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
@@ -176,7 +175,7 @@ public class JsonWriter implements Closeable, Flushable {
    * A string containing a full set of spaces for a single level of
    * indentation, or null for no pretty printing.
    */
-  @SuppressWarnings("NullAway.Init") private String indent;
+   private String indent;
 
   /**
    * The name/value separator; either ":" or ": ".
@@ -187,7 +186,7 @@ public class JsonWriter implements Closeable, Flushable {
 
   private boolean htmlSafe;
 
-  @SuppressWarnings("NullAway.Init") private String deferredName;
+   private String deferredName;
 
   private boolean serializeNulls = true;
 
@@ -211,7 +210,7 @@ public class JsonWriter implements Closeable, Flushable {
    *
    * @param indent a string containing only whitespace.
    */
-  @NullUnmarked public final void setIndent(String indent) {
+  public final void setIndent(String indent) {
     if (indent.length() == 0) {
       this.indent = null;
       this.separator = ":";
@@ -396,7 +395,7 @@ public class JsonWriter implements Closeable, Flushable {
     return this;
   }
 
-  @NullUnmarked private void writeDeferredName() throws IOException {
+  private void writeDeferredName() throws IOException {
     if (deferredName != null) {
       beforeName();
       string(deferredName);
@@ -442,7 +441,7 @@ public class JsonWriter implements Closeable, Flushable {
    *
    * @return this writer.
    */
-  @NullUnmarked public JsonWriter nullValue() throws IOException {
+  public JsonWriter nullValue() throws IOException {
     if (deferredName != null) {
       if (serializeNulls) {
         writeDeferredName();

@@ -29,7 +29,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import com.google.gson.NullUnmarked;
 
 /**
  * Adapts types whose static type is only 'Object'. Uses getClass() on
@@ -37,7 +36,7 @@ import com.google.gson.NullUnmarked;
  */
 public final class ObjectTypeAdapter extends TypeAdapter<Object> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @NullUnmarked @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       if (type.getRawType() == Object.class) {
         return (TypeAdapter<T>) new ObjectTypeAdapter(gson);
@@ -52,7 +51,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     this.gson = gson;
   }
 
-  @NullUnmarked @Override public Object read(JsonReader in) throws IOException {
+  @Override public Object read(JsonReader in) throws IOException {
     JsonToken token = in.peek();
     switch (token) {
     case BEGIN_ARRAY:

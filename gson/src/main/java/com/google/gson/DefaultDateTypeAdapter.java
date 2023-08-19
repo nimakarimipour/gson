@@ -33,7 +33,6 @@ import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import com.google.gson.NullUnmarked;
 
 /**
  * This type adapter supports three subclasses of date: Date, Timestamp, and
@@ -120,7 +119,7 @@ final class DefaultDateTypeAdapter extends TypeAdapter<Date> {
     }
   }
 
-  @NullUnmarked @Override
+  @Override
   public Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

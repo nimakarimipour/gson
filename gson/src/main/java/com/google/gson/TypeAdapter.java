@@ -26,7 +26,6 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
-import com.google.gson.NullUnmarked;
 
 /**
  * Converts Java objects to and from JSON.
@@ -192,7 +191,7 @@ public abstract class TypeAdapter<T> {
           TypeAdapter.this.write(out, value);
         }
       }
-      @NullUnmarked @Override public T read(JsonReader reader) throws IOException {
+      @Override public T read(JsonReader reader) throws IOException {
         if (reader.peek() == JsonToken.NULL) {
           reader.nextNull();
           return null;

@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import com.google.gson.NullUnmarked;
 
 /**
  * Adapter for Date. Although this class appears stateless, it is not.
@@ -46,7 +45,7 @@ import com.google.gson.NullUnmarked;
  */
 public final class DateTypeAdapter extends TypeAdapter<Date> {
   public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-    @NullUnmarked @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+    @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       return typeToken.getRawType() == Date.class ? (TypeAdapter<T>) new DateTypeAdapter() : null;
     }
@@ -68,7 +67,7 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
     }
   }
 
-  @NullUnmarked @Override public Date read(JsonReader in) throws IOException {
+  @Override public Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();
       return null;
@@ -97,6 +96,6 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
     String dateFormatAsString = dateFormats.get(0).format(value);
     out.value(dateFormatAsString);
   }
-  
-  
+
+
 }

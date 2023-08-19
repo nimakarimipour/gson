@@ -42,7 +42,6 @@ import com.google.gson.InstanceCreator;
 import com.google.gson.JsonIOException;
 import com.google.gson.internal.reflect.ReflectionAccessor;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.NullUnmarked;
 
 /**
  * Returns a function that can construct an instance of a requested type.
@@ -97,7 +96,7 @@ public final class ConstructorConstructor {
     return newUnsafeAllocator(type, rawType);
   }
 
-  @NullUnmarked private <T> ObjectConstructor<T> newDefaultConstructor(Class<? super T> rawType) {
+  private <T> ObjectConstructor<T> newDefaultConstructor(Class<? super T> rawType) {
     try {
       final Constructor<? super T> constructor = rawType.getDeclaredConstructor();
       if (!constructor.isAccessible()) {
@@ -131,7 +130,7 @@ public final class ConstructorConstructor {
    * Constructors for common interface types like Map and List and their
    * subtypes.
    */
-  @NullUnmarked @SuppressWarnings("unchecked") // use runtime checks to guarantee that 'T' is what it is
+  @SuppressWarnings("unchecked") // use runtime checks to guarantee that 'T' is what it is
   private <T> ObjectConstructor<T> newDefaultImplementationConstructor(
       final Type type, Class<? super T> rawType) {
     if (Collection.class.isAssignableFrom(rawType)) {
