@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * This writer creates a JsonElement.
@@ -49,7 +50,7 @@ public final class JsonTreeWriter extends JsonWriter {
   private final List<JsonElement> stack = new ArrayList<JsonElement>();
 
   /** The name for the next JSON object value. If non-null, the top of the stack is a JsonObject. */
-   private String pendingName;
+   @Nullable private String pendingName;
 
   /** the JSON element constructed by this writer. */
   private JsonElement product = JsonNull.INSTANCE; // TODO: is this really what we want?;
@@ -144,7 +145,7 @@ public final class JsonTreeWriter extends JsonWriter {
     throw new IllegalStateException();
   }
 
-  @Override public JsonWriter value(String value) throws IOException {
+  @Override public JsonWriter value(@Nullable String value) throws IOException {
     if (value == null) {
       return nullValue();
     }
