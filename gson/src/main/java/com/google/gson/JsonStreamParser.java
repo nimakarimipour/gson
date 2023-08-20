@@ -26,6 +26,7 @@ import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.MalformedJsonException;
+import javax.annotation.Nullable;
 
 /**
  * A streaming parser that allows reading of multiple {@link JsonElement}s from the specified reader

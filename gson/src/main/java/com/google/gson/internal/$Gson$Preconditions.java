@@ -15,6 +15,7 @@
  */
 
 package com.google.gson.internal;
+import javax.annotation.Nullable;
 
 /**
  * A simple utility class used to check method Preconditions.

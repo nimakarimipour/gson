@@ -29,6 +29,7 @@ import java.util.*;
 
 import static com.google.gson.internal.$Gson$Preconditions.checkArgument;
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
+import javax.annotation.Nullable;
 
 /**
  * Static methods for working with types.
@@ -50,7 +51,7 @@ public final class $Gson$Types {
    * @return a {@link java.io.Serializable serializable} parameterized type.
    */
   public static ParameterizedType newParameterizedTypeWithOwner(
-      Type ownerType, Type rawType, Type... typeArguments) {
+      @Nullable Type ownerType, Type rawType, Type... typeArguments) {
     return new ParameterizedTypeImpl(ownerType, rawType, typeArguments);
   }
 
@@ -220,7 +221,7 @@ public final class $Gson$Types {
     }
   }
 
-  static int hashCodeOrZero(Object o) {
+  static int hashCodeOrZero(@Nullable Object o) {
     return o != null ? o.hashCode() : 0;
   }
 
@@ -446,7 +447,7 @@ public final class $Gson$Types {
    * Returns the declaring class of {@code typeVariable}, or {@code null} if it was not declared by
    * a class.
    */
-  private static Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
+  @Nullable private static Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
     GenericDeclaration genericDeclaration = typeVariable.getGenericDeclaration();
     return genericDeclaration instanceof Class
         ? (Class<?>) genericDeclaration
@@ -458,11 +459,11 @@ public final class $Gson$Types {
   }
 
   private static final class ParameterizedTypeImpl implements ParameterizedType, Serializable {
-    private final Type ownerType;
+    @Nullable private final Type ownerType;
     private final Type rawType;
     private final Type[] typeArguments;
 
-    public ParameterizedTypeImpl(Type ownerType, Type rawType, Type... typeArguments) {
+    public ParameterizedTypeImpl(@Nullable Type ownerType, Type rawType, Type... typeArguments) {
       // require an owner type if the raw type needs it
       if (rawType instanceof Class<?>) {
         Class<?> rawTypeAsClass = (Class<?>) rawType;
@@ -489,7 +490,7 @@ public final class $Gson$Types {
       return rawType;
     }
 
-    public Type getOwnerType() {
+    @Nullable public Type getOwnerType() {
       return ownerType;
     }
 
@@ -555,7 +556,7 @@ public final class $Gson$Types {
    */
   private static final class WildcardTypeImpl implements WildcardType, Serializable {
     private final Type upperBound;
-    private final Type lowerBound;
+    @Nullable private final Type lowerBound;
 
     public WildcardTypeImpl(Type[] upperBounds, Type[] lowerBounds) {
       checkArgument(lowerBounds.length <= 1);

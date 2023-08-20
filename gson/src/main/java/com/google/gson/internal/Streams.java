@@ -28,6 +28,7 @@ import com.google.gson.stream.MalformedJsonException;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
+import javax.annotation.Nullable;
 
 /**
  * Reads and writes GSON parse trees over streams.

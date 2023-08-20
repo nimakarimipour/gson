@@ -15,6 +15,7 @@
  */
 
 package com.google.gson;
+import javax.annotation.Nullable;
 
 /**
  * This exception is raised if there is a serious issue that occurs during parsing of a Json
