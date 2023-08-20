@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.gson;
+import javax.annotation.Nullable;
 
 /**
  * This exception is raised when Gson attempts to read (or write) a malformed
@@ -30,7 +31,7 @@ public final class JsonSyntaxException extends JsonParseException {
     super(msg);
   }
 
-  public JsonSyntaxException(String msg, Throwable cause) {
+  public JsonSyntaxException(@Nullable String msg, Throwable cause) {
     super(msg, cause);
   }
 

@@ -24,6 +24,7 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import javax.annotation.Nullable;
 
 final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
   private final Gson context;
@@ -36,7 +37,7 @@ final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
     this.type = type;
   }
 
-  @Override
+  @Nullable @Override
   public T read(JsonReader in) throws IOException {
     return delegate.read(in);
   }

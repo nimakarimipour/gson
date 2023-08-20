@@ -15,6 +15,7 @@
  */
 
 package com.google.gson;
+import javax.annotation.Nullable;
 
 /**
  * This exception is raised if there is a serious issue that occurs during parsing of a Json
@@ -48,7 +49,7 @@ public class JsonParseException extends RuntimeException {
    * @param msg error message describing what happened.
    * @param cause root exception that caused this exception to be thrown.
    */
-  public JsonParseException(String msg, Throwable cause) {
+  public JsonParseException(@Nullable String msg, Throwable cause) {
     super(msg, cause);
   }
 

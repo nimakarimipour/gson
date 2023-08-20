@@ -3,6 +3,7 @@ package com.google.gson.internal.bind.util;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.util.*;
+import javax.annotation.Nullable;
 
 /**
  * Utilities methods for manipulating dates in iso8601 format. This is much much faster and GC friendly than using SimpleDateFormat so
@@ -120,7 +121,7 @@ public class ISO8601Utils
      * @return the parsed date
      * @throws ParseException if the date is not in the appropriate format
      */
-    public static Date parse(String date, ParsePosition pos) throws ParseException {
+    public static Date parse(@Nullable String date, ParsePosition pos) throws ParseException {
         Exception fail = null;
         try {
             int offset = pos.getIndex();
@@ -284,7 +285,7 @@ public class ISO8601Utils
      * @param expected the expected character
      * @return true if the expected character exist at the given offset
      */
-    private static boolean checkOffset(String value, int offset, char expected) {
+    private static boolean checkOffset(@Nullable String value, int offset, char expected) {
         return (offset < value.length()) && (value.charAt(offset) == expected);
     }
 
@@ -297,7 +298,7 @@ public class ISO8601Utils
      * @return the int
      * @throws NumberFormatException if the value is not a number
      */
-    private static int parseInt(String value, int beginIndex, int endIndex) throws NumberFormatException {
+    private static int parseInt(@Nullable String value, int beginIndex, int endIndex) throws NumberFormatException {
         if (beginIndex < 0 || endIndex > value.length() || beginIndex > endIndex) {
             throw new NumberFormatException(value);
         }
