@@ -28,6 +28,8 @@ import com.google.gson.stream.MalformedJsonException;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
+import javax.annotation.Nullable;
+import org.jspecify.annotations.NullUnmarked;
 
 /**
  * Reads and writes GSON parse trees over streams.
@@ -40,7 +42,7 @@ public final class Streams {
   /**
    * Takes a reader in any state and returns the next value as a JsonElement.
    */
-  public static JsonElement parse(JsonReader reader) throws JsonParseException {
+  @NullUnmarked public static JsonElement parse(JsonReader reader) throws JsonParseException {
     boolean isEmpty = true;
     try {
       reader.peek();
@@ -104,7 +106,7 @@ public final class Streams {
      * A mutable char sequence pointing at a single char[].
      */
     static class CurrentWrite implements CharSequence {
-       char[] chars;
+       @SuppressWarnings("NullAway.Init") char[] chars;
       public int length() {
         return chars.length;
       }

@@ -23,6 +23,8 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
+import javax.annotation.Nullable;
+import org.jspecify.annotations.NullUnmarked;
 
 /**
  * Reads a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>)
@@ -260,7 +262,7 @@ public class JsonReader implements Closeable {
    * This is populated before a numeric value is parsed and used if that parsing
    * fails.
    */
-   private String peekedString;
+   @Nullable private String peekedString;
 
   /*
    * The nesting stack. Using a manual array rather than an ArrayList saves 20%.
@@ -800,7 +802,7 @@ public class JsonReader implements Closeable {
    * @throws IllegalStateException if the next token is not a string or if
    *     this reader is closed.
    */
-  public String nextString() throws IOException {
+  @NullUnmarked public String nextString() throws IOException {
     int p = peeked;
     if (p == PEEKED_NONE) {
       p = doPeek();
