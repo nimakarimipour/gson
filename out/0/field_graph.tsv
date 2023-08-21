@@ -1,4 +1,412 @@
 REGION_CLASS	REGION_MEMBER	USED_MEMBER	USED_CLASS	SOURCE_TYPE
+<<<<<<< HEAD
+=======
+com.google.gson.Gson	NULL_KEY_SURROGATE	class	java.lang.Object	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_SERIALIZE_NULLS	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_COMPLEX_MAP_KEYS	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_JSON_NON_EXECUTABLE	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_ESCAPE_HTML	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_PRETTY_PRINT	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_LENIENT	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT_SPECIALIZE_FLOAT_VALUES	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.Gson	Gson()	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	excluder	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	fieldNamingStrategy	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	instanceCreators	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	constructorConstructor	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	complexMapKeySerialization	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	generateNonExecutableJson	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	htmlSafe	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	prettyPrinting	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	lenient	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	serializeSpecialFloatingPointValues	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	longSerializationPolicy	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	datePattern	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	dateStyle	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	timeStyle	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	builderFactories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	builderHierarchyFactories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	JSON_ELEMENT_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	FACTORY	com.google.gson.internal.bind.ObjectTypeAdapter	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	STRING_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	INTEGER_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	BOOLEAN_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	BYTE_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	SHORT_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	null	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.lang.Long	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	null	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.lang.Double	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	null	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.lang.Float	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	NUMBER_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	ATOMIC_INTEGER_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	ATOMIC_BOOLEAN_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.util.concurrent.atomic.AtomicLong	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.util.concurrent.atomic.AtomicLongArray	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	ATOMIC_INTEGER_ARRAY_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	CHARACTER_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	STRING_BUILDER_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	STRING_BUFFER_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.math.BigDecimal	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	BIG_DECIMAL	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.math.BigInteger	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	BIG_INTEGER	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	URL_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	URI_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	UUID_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	CURRENCY_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	LOCALE_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	INET_ADDRESS_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	BIT_SET_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	FACTORY	com.google.gson.internal.bind.DateTypeAdapter	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	CALENDAR_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	FACTORY	com.google.gson.internal.bind.TimeTypeAdapter	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	FACTORY	com.google.gson.internal.bind.SqlDateTypeAdapter	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	TIMESTAMP_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	FACTORY	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	CLASS_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	constructorConstructor	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	constructorConstructor	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	jsonAdapterFactory	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	constructorConstructor	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	jsonAdapterFactory	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	ENUM_FACTORY	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	constructorConstructor	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	jsonAdapterFactory	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	factories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	Gson(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>,java.util.List<com.google.gson.TypeAdapterFactory>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	newBuilder()	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	excluder()	excluder	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	fieldNamingStrategy()	fieldNamingStrategy	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	serializeNulls()	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	htmlSafe()	htmlSafe	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	doubleAdapter(boolean)	DOUBLE	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	floatAdapter(boolean)	FLOAT	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	longAdapter(com.google.gson.LongSerializationPolicy)	LONG	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	typeTokenCache	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	NULL_KEY_SURROGATE	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	calls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	calls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	factories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	typeTokenCache	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getAdapter(com.google.gson.reflect.TypeToken<T>)	calls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getDelegateAdapter(com.google.gson.TypeAdapterFactory,com.google.gson.reflect.TypeToken<T>)	factories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getDelegateAdapter(com.google.gson.TypeAdapterFactory,com.google.gson.reflect.TypeToken<T>)	jsonAdapterFactory	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getDelegateAdapter(com.google.gson.TypeAdapterFactory,com.google.gson.reflect.TypeToken<T>)	factories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	<T>getDelegateAdapter(com.google.gson.TypeAdapterFactory,com.google.gson.reflect.TypeToken<T>)	this	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	toJsonTree(java.lang.Object)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.Gson	toJson(java.lang.Object)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.Gson	toJson(java.lang.Object,java.lang.Appendable)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.Gson	toJson(java.lang.Object,java.lang.reflect.Type,com.google.gson.stream.JsonWriter)	htmlSafe	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	toJson(java.lang.Object,java.lang.reflect.Type,com.google.gson.stream.JsonWriter)	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	newJsonWriter(java.io.Writer)	generateNonExecutableJson	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	newJsonWriter(java.io.Writer)	JSON_NON_EXECUTABLE_PREFIX	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	newJsonWriter(java.io.Writer)	prettyPrinting	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	newJsonWriter(java.io.Writer)	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	newJsonReader(java.io.Reader)	lenient	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	toJson(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)	htmlSafe	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	toJson(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson$FutureTypeAdapter	setDelegate(com.google.gson.TypeAdapter<T>)	delegate	com.google.gson.Gson$FutureTypeAdapter	SOURCE
+com.google.gson.Gson$FutureTypeAdapter	setDelegate(com.google.gson.TypeAdapter<T>)	delegate	com.google.gson.Gson$FutureTypeAdapter	SOURCE
+com.google.gson.Gson$FutureTypeAdapter	read(com.google.gson.stream.JsonReader)	delegate	com.google.gson.Gson$FutureTypeAdapter	SOURCE
+com.google.gson.Gson$FutureTypeAdapter	read(com.google.gson.stream.JsonReader)	delegate	com.google.gson.Gson$FutureTypeAdapter	SOURCE
+com.google.gson.Gson$FutureTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.Gson$FutureTypeAdapter	SOURCE
+com.google.gson.Gson$FutureTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.Gson$FutureTypeAdapter	SOURCE
+com.google.gson.Gson	toString()	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	toString()	factories	com.google.gson.Gson	SOURCE
+com.google.gson.Gson	toString()	constructorConstructor	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	excluder	DEFAULT	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.GsonBuilder	excluder	DEFAULT	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.GsonBuilder	serializeNulls	DEFAULT_SERIALIZE_NULLS	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	serializeNulls	DEFAULT_SERIALIZE_NULLS	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	dateStyle	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.GsonBuilder	dateStyle	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.GsonBuilder	timeStyle	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.GsonBuilder	timeStyle	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.GsonBuilder	complexMapKeySerialization	DEFAULT_COMPLEX_MAP_KEYS	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	complexMapKeySerialization	DEFAULT_COMPLEX_MAP_KEYS	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	serializeSpecialFloatingPointValues	DEFAULT_SPECIALIZE_FLOAT_VALUES	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	serializeSpecialFloatingPointValues	DEFAULT_SPECIALIZE_FLOAT_VALUES	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	escapeHtmlChars	DEFAULT_ESCAPE_HTML	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	escapeHtmlChars	DEFAULT_ESCAPE_HTML	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	prettyPrinting	DEFAULT_PRETTY_PRINT	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	prettyPrinting	DEFAULT_PRETTY_PRINT	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	generateNonExecutableJson	DEFAULT_JSON_NON_EXECUTABLE	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	generateNonExecutableJson	DEFAULT_JSON_NON_EXECUTABLE	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	lenient	DEFAULT_LENIENT	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	lenient	DEFAULT_LENIENT	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	excluder	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	fieldNamingPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	fieldNamingStrategy	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	instanceCreators	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	instanceCreators	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	serializeNulls	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	serializeNulls	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	complexMapKeySerialization	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	complexMapKeySerialization	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	generateNonExecutableJson	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	generateNonExecutableJson	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	escapeHtmlChars	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	htmlSafe	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	prettyPrinting	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	prettyPrinting	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	lenient	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	lenient	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	serializeSpecialFloatingPointValues	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	serializeSpecialFloatingPointValues	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	longSerializationPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	longSerializationPolicy	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	datePattern	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	datePattern	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	dateStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	dateStyle	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	timeStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	timeStyle	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	builderFactories	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	hierarchyFactories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	GsonBuilder(com.google.gson.Gson)	builderHierarchyFactories	com.google.gson.Gson	SOURCE
+com.google.gson.GsonBuilder	setVersion(double)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setVersion(double)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setVersion(double)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	excludeFieldsWithModifiers(int...)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	excludeFieldsWithModifiers(int...)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	excludeFieldsWithModifiers(int...)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	generateNonExecutableJson()	generateNonExecutableJson	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	generateNonExecutableJson()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	generateNonExecutableJson()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	excludeFieldsWithoutExposeAnnotation()	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	excludeFieldsWithoutExposeAnnotation()	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	excludeFieldsWithoutExposeAnnotation()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	serializeNulls()	serializeNulls	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	serializeNulls()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	serializeNulls()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	enableComplexMapKeySerialization()	complexMapKeySerialization	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	enableComplexMapKeySerialization()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	disableInnerClassSerialization()	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	disableInnerClassSerialization()	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	disableInnerClassSerialization()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setLongSerializationPolicy(com.google.gson.LongSerializationPolicy)	longSerializationPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setLongSerializationPolicy(com.google.gson.LongSerializationPolicy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setLongSerializationPolicy(com.google.gson.LongSerializationPolicy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setFieldNamingPolicy(com.google.gson.FieldNamingPolicy)	fieldNamingPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setFieldNamingPolicy(com.google.gson.FieldNamingPolicy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setFieldNamingPolicy(com.google.gson.FieldNamingPolicy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setFieldNamingStrategy(com.google.gson.FieldNamingStrategy)	fieldNamingPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setFieldNamingStrategy(com.google.gson.FieldNamingStrategy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setFieldNamingStrategy(com.google.gson.FieldNamingStrategy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setExclusionStrategies(com.google.gson.ExclusionStrategy...)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setExclusionStrategies(com.google.gson.ExclusionStrategy...)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setExclusionStrategies(com.google.gson.ExclusionStrategy...)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addSerializationExclusionStrategy(com.google.gson.ExclusionStrategy)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addSerializationExclusionStrategy(com.google.gson.ExclusionStrategy)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addSerializationExclusionStrategy(com.google.gson.ExclusionStrategy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addDeserializationExclusionStrategy(com.google.gson.ExclusionStrategy)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addDeserializationExclusionStrategy(com.google.gson.ExclusionStrategy)	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addDeserializationExclusionStrategy(com.google.gson.ExclusionStrategy)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setPrettyPrinting()	prettyPrinting	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setPrettyPrinting()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setLenient()	lenient	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setLenient()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	disableHtmlEscaping()	escapeHtmlChars	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	disableHtmlEscaping()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	disableHtmlEscaping()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(java.lang.String)	datePattern	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(java.lang.String)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(java.lang.String)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int)	dateStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int)	datePattern	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	dateStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	timeStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	datePattern	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	setDateFormat(int,int)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeAdapter(java.lang.reflect.Type,java.lang.Object)	instanceCreators	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeAdapter(java.lang.reflect.Type,java.lang.Object)	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeAdapter(java.lang.reflect.Type,java.lang.Object)	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeAdapter(java.lang.reflect.Type,java.lang.Object)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeAdapterFactory(com.google.gson.TypeAdapterFactory)	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeAdapterFactory(com.google.gson.TypeAdapterFactory)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeHierarchyAdapter(java.lang.Class<?>,java.lang.Object)	hierarchyFactories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeHierarchyAdapter(java.lang.Class<?>,java.lang.Object)	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	registerTypeHierarchyAdapter(java.lang.Class<?>,java.lang.Object)	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	serializeSpecialFloatingPointValues()	serializeSpecialFloatingPointValues	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	serializeSpecialFloatingPointValues()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	serializeSpecialFloatingPointValues()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	hierarchyFactories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	hierarchyFactories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	datePattern	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	dateStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	timeStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	excluder	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	fieldNamingPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	instanceCreators	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	serializeNulls	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	complexMapKeySerialization	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	generateNonExecutableJson	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	escapeHtmlChars	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	prettyPrinting	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	lenient	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	serializeSpecialFloatingPointValues	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	longSerializationPolicy	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	datePattern	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	dateStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	timeStyle	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	factories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	hierarchyFactories	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	create()	this	com.google.gson.GsonBuilder	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.util.Date	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.sql.Timestamp	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.sql.Date	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.util.Date	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.sql.Timestamp	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.sql.Date	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.util.Date	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.sql.Timestamp	SOURCE
+com.google.gson.GsonBuilder	addTypeAdaptersForDate(java.lang.String,int,int,java.util.List<com.google.gson.TypeAdapterFactory>)	class	java.sql.Date	SOURCE
+com.google.gson.internal.Excluder	version	IGNORE_VERSIONS	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	IGNORE_VERSIONS	IGNORE_VERSIONS	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	modifiers	TRANSIENT	java.lang.reflect.Modifier	SOURCE
+com.google.gson.internal.Excluder	modifiers	STATIC	java.lang.reflect.Modifier	SOURCE
+com.google.gson.internal.Excluder	clone()	super	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withVersion(double)	version	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withModifiers(int...)	modifiers	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withModifiers(int...)	modifiers	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	disableInnerClassSerialization()	serializeInnerClasses	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeFieldsWithoutExposeAnnotation()	requireExpose	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withExclusionStrategy(com.google.gson.ExclusionStrategy,boolean,boolean)	serializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withExclusionStrategy(com.google.gson.ExclusionStrategy,boolean,boolean)	serializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withExclusionStrategy(com.google.gson.ExclusionStrategy,boolean,boolean)	serializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withExclusionStrategy(com.google.gson.ExclusionStrategy,boolean,boolean)	deserializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withExclusionStrategy(com.google.gson.ExclusionStrategy,boolean,boolean)	deserializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	withExclusionStrategy(com.google.gson.ExclusionStrategy,boolean,boolean)	deserializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder$1	delegate()	delegate	com.google.gson.internal.Excluder$1	SOURCE
+com.google.gson.internal.Excluder$1	delegate()	delegate	com.google.gson.internal.Excluder$1	SOURCE
+com.google.gson.internal.Excluder$1	delegate()	delegate	com.google.gson.internal.Excluder$1	SOURCE
+com.google.gson.internal.Excluder$1	delegate()	this	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	modifiers	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	version	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	IGNORE_VERSIONS	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	class	com.google.gson.annotations.Since	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	class	com.google.gson.annotations.Until	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	requireExpose	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	class	com.google.gson.annotations.Expose	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	serializeInnerClasses	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	serializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeField(java.lang.reflect.Field,boolean)	deserializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeClassChecks(java.lang.Class<?>)	version	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeClassChecks(java.lang.Class<?>)	IGNORE_VERSIONS	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeClassChecks(java.lang.Class<?>)	class	com.google.gson.annotations.Since	SOURCE
+com.google.gson.internal.Excluder	excludeClassChecks(java.lang.Class<?>)	class	com.google.gson.annotations.Until	SOURCE
+com.google.gson.internal.Excluder	excludeClassChecks(java.lang.Class<?>)	serializeInnerClasses	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeClassInStrategy(java.lang.Class<?>,boolean)	serializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	excludeClassInStrategy(java.lang.Class<?>,boolean)	deserializationStrategies	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	isAnonymousOrLocal(java.lang.Class<?>)	class	java.lang.Enum	SOURCE
+com.google.gson.internal.Excluder	isStatic(java.lang.Class<?>)	STATIC	java.lang.reflect.Modifier	SOURCE
+com.google.gson.internal.Excluder	isValidSince(com.google.gson.annotations.Since)	version	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.internal.Excluder	isValidUntil(com.google.gson.annotations.Until)	version	com.google.gson.internal.Excluder	SOURCE
+com.google.gson.FieldNamingPolicy$4	translateName(java.lang.reflect.Field)	ENGLISH	java.util.Locale	SOURCE
+com.google.gson.FieldNamingPolicy$5	translateName(java.lang.reflect.Field)	ENGLISH	java.util.Locale	SOURCE
+com.google.gson.FieldNamingPolicy$6	translateName(java.lang.reflect.Field)	ENGLISH	java.util.Locale	SOURCE
+com.google.gson.FieldAttributes	FieldAttributes(java.lang.reflect.Field)	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	FieldAttributes(java.lang.reflect.Field)	this	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	getDeclaringClass()	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	getName()	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	getDeclaredType()	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	getDeclaredClass()	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	<T>getAnnotation(java.lang.Class<T>)	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	getAnnotations()	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	hasModifier(int)	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	get(java.lang.Object)	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.FieldAttributes	isSynthetic()	field	com.google.gson.FieldAttributes	SOURCE
+com.google.gson.JsonElement	isJsonArray()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	isJsonObject()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	isJsonPrimitive()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	isJsonNull()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonObject()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonObject()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonArray()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonArray()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonPrimitive()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonPrimitive()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonNull()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	getAsJsonNull()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonElement	toString()	this	com.google.gson.JsonElement	SOURCE
+com.google.gson.JsonObject	deepCopy()	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	add(java.lang.String,com.google.gson.JsonElement)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	add(java.lang.String,com.google.gson.JsonElement)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.JsonObject	remove(java.lang.String)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	addProperty(java.lang.String,java.lang.String)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.JsonObject	addProperty(java.lang.String,java.lang.Number)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.JsonObject	addProperty(java.lang.String,java.lang.Boolean)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.JsonObject	addProperty(java.lang.String,java.lang.Character)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.JsonObject	entrySet()	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	keySet()	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	size()	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	has(java.lang.String)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	get(java.lang.String)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	getAsJsonPrimitive(java.lang.String)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	getAsJsonArray(java.lang.String)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	getAsJsonObject(java.lang.String)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	equals(java.lang.Object)	this	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	equals(java.lang.Object)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	equals(java.lang.Object)	members	com.google.gson.JsonObject	SOURCE
+com.google.gson.JsonObject	hashCode()	members	com.google.gson.JsonObject	SOURCE
+>>>>>>> base
 com.google.gson.JsonArray	JsonArray()	elements	com.google.gson.JsonArray	SOURCE
 com.google.gson.JsonArray	JsonArray(int)	elements	com.google.gson.JsonArray	SOURCE
 com.google.gson.JsonArray	deepCopy()	elements	com.google.gson.JsonArray	SOURCE
@@ -52,6 +460,7 @@ com.google.gson.JsonArray	equals(java.lang.Object)	this	com.google.gson.JsonArra
 com.google.gson.JsonArray	equals(java.lang.Object)	elements	com.google.gson.JsonArray	SOURCE
 com.google.gson.JsonArray	equals(java.lang.Object)	elements	com.google.gson.JsonArray	SOURCE
 com.google.gson.JsonArray	hashCode()	elements	com.google.gson.JsonArray	SOURCE
+<<<<<<< HEAD
 com.google.gson.JsonElement	isJsonArray()	this	com.google.gson.JsonElement	SOURCE
 com.google.gson.JsonElement	isJsonObject()	this	com.google.gson.JsonElement	SOURCE
 com.google.gson.JsonElement	isJsonPrimitive()	this	com.google.gson.JsonElement	SOURCE
@@ -85,6 +494,8 @@ com.google.gson.JsonObject	equals(java.lang.Object)	this	com.google.gson.JsonObj
 com.google.gson.JsonObject	equals(java.lang.Object)	members	com.google.gson.JsonObject	SOURCE
 com.google.gson.JsonObject	equals(java.lang.Object)	members	com.google.gson.JsonObject	SOURCE
 com.google.gson.JsonObject	hashCode()	members	com.google.gson.JsonObject	SOURCE
+=======
+>>>>>>> base
 com.google.gson.JsonPrimitive	JsonPrimitive(java.lang.Boolean)	value	com.google.gson.JsonPrimitive	SOURCE
 com.google.gson.JsonPrimitive	JsonPrimitive(java.lang.Number)	value	com.google.gson.JsonPrimitive	SOURCE
 com.google.gson.JsonPrimitive	JsonPrimitive(java.lang.String)	value	com.google.gson.JsonPrimitive	SOURCE
@@ -334,6 +745,7 @@ com.google.gson.internal.LinkedTreeMap$KeySet	size()	size	com.google.gson.intern
 com.google.gson.internal.LinkedTreeMap$KeySet$1	next()	key	com.google.gson.internal.LinkedTreeMap$Node	SOURCE
 com.google.gson.internal.LinkedTreeMap$KeySet	clear()	this	com.google.gson.internal.LinkedTreeMap	SOURCE
 com.google.gson.internal.LinkedTreeMap	writeReplace()	this	com.google.gson.internal.LinkedTreeMap	SOURCE
+<<<<<<< HEAD
 com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
 com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	this	com.google.gson.DefaultDateTypeAdapter	SOURCE
 com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
@@ -387,6 +799,47 @@ com.google.gson.DefaultDateTypeAdapter	deserializeToDate(java.lang.String)	dateF
 com.google.gson.DefaultDateTypeAdapter	toString()	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
 com.google.gson.DefaultDateTypeAdapter	toString()	SIMPLE_NAME	com.google.gson.DefaultDateTypeAdapter	SOURCE
 com.google.gson.DefaultDateTypeAdapter	toString()	SIMPLE_NAME	com.google.gson.DefaultDateTypeAdapter	SOURCE
+=======
+com.google.gson.reflect.TypeToken	TypeToken()	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	rawType	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	hashCode	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken()	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	rawType	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	hashCode	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	TypeToken(java.lang.reflect.Type)	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	getRawType()	rawType	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	getType()	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	rawType	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	rawType	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	class	java.lang.Class	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	class	java.lang.reflect.ParameterizedType	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type)	class	java.lang.reflect.GenericArrayType	SOURCE
+com.google.gson.reflect.TypeToken	isAssignableFrom(java.lang.reflect.Type,java.lang.reflect.ParameterizedType,java.util.Map<java.lang.String,java.lang.reflect.Type>)	length	Array	SOURCE
+com.google.gson.reflect.TypeToken	typeEquals(java.lang.reflect.ParameterizedType,java.lang.reflect.ParameterizedType,java.util.Map<java.lang.String,java.lang.reflect.Type>)	length	Array	SOURCE
+com.google.gson.reflect.TypeToken	hashCode()	hashCode	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	hashCode()	this	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	equals(java.lang.Object)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	equals(java.lang.Object)	type	com.google.gson.reflect.TypeToken	SOURCE
+com.google.gson.reflect.TypeToken	toString()	type	com.google.gson.reflect.TypeToken	SOURCE
+>>>>>>> base
 com.google.gson.TypeAdapter$1	write(com.google.gson.stream.JsonWriter,T)	this	com.google.gson.TypeAdapter	SOURCE
 com.google.gson.TypeAdapter$1	read(com.google.gson.stream.JsonReader)	this	com.google.gson.TypeAdapter	SOURCE
 com.google.gson.stream.JsonWriter	REPLACEMENT_CHARS	REPLACEMENT_CHARS	com.google.gson.stream.JsonWriter	SOURCE
@@ -1103,6 +1556,7 @@ com.google.gson.stream.JsonReader$1	promoteNameToValue(com.google.gson.stream.Js
 com.google.gson.stream.JsonReader$1	promoteNameToValue(com.google.gson.stream.JsonReader)	PEEKED_UNQUOTED_NAME	com.google.gson.stream.JsonReader	SOURCE
 com.google.gson.stream.JsonReader$1	promoteNameToValue(com.google.gson.stream.JsonReader)	peeked	com.google.gson.stream.JsonReader	SOURCE
 com.google.gson.stream.JsonReader$1	promoteNameToValue(com.google.gson.stream.JsonReader)	PEEKED_UNQUOTED	com.google.gson.stream.JsonReader	SOURCE
+<<<<<<< HEAD
 com.google.gson.reflect.TypeToken	TypeToken()	type	com.google.gson.reflect.TypeToken	SOURCE
 com.google.gson.reflect.TypeToken	TypeToken()	this	com.google.gson.reflect.TypeToken	SOURCE
 com.google.gson.reflect.TypeToken	TypeToken()	rawType	com.google.gson.reflect.TypeToken	SOURCE
@@ -1199,6 +1653,89 @@ com.google.gson.internal.reflect.UnsafeReflectionAccessor	getUnsafeInstance()	un
 com.google.gson.internal.reflect.UnsafeReflectionAccessor	getUnsafeInstance()	unsafeClass	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
 com.google.gson.internal.reflect.UnsafeReflectionAccessor	getOverrideField()	class	java.lang.reflect.AccessibleObject	SOURCE
 com.google.gson.internal.reflect.ReflectionAccessor	getInstance()	instance	com.google.gson.internal.reflect.ReflectionAccessor	SOURCE
+=======
+com.google.gson.internal.ConstructorConstructor	ConstructorConstructor(java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>)	instanceCreators	com.google.gson.internal.ConstructorConstructor	SOURCE
+com.google.gson.internal.ConstructorConstructor	ConstructorConstructor(java.util.Map<java.lang.reflect.Type,com.google.gson.InstanceCreator<?>>)	this	com.google.gson.internal.ConstructorConstructor	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>get(com.google.gson.reflect.TypeToken<T>)	instanceCreators	com.google.gson.internal.ConstructorConstructor	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>get(com.google.gson.reflect.TypeToken<T>)	instanceCreators	com.google.gson.internal.ConstructorConstructor	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultConstructor(java.lang.Class<? super T>)	accessor	com.google.gson.internal.ConstructorConstructor	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.Collection	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.SortedSet	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.EnumSet	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.Set	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.Queue	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.Map	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.concurrent.ConcurrentNavigableMap	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.concurrent.ConcurrentMap	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.util.SortedMap	SOURCE
+com.google.gson.internal.ConstructorConstructor	<T>newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class<? super T>)	class	java.lang.String	SOURCE
+com.google.gson.internal.ConstructorConstructor$14	construct()	unsafeAllocator	com.google.gson.internal.ConstructorConstructor$14	SOURCE
+com.google.gson.internal.ConstructorConstructor	toString()	instanceCreators	com.google.gson.internal.ConstructorConstructor	SOURCE
+com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	JsonAdapterAnnotationTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor)	constructorConstructor	com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	JsonAdapterAnnotationTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor)	this	com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	com.google.gson.annotations.JsonAdapter	SOURCE
+com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	constructorConstructor	com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory	SOURCE
+com.google.gson.internal.reflect.ReflectionAccessor	getInstance()	instance	com.google.gson.internal.reflect.ReflectionAccessor	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	this	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>)	DEFAULT	java.text.DateFormat	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,java.lang.String)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,java.lang.String)	this	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,java.lang.String)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,java.lang.String)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,java.lang.String)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,java.lang.String)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	this	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(int,int)	class	java.util.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	this	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	US	java.util.Locale	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	DefaultDateTypeAdapter(java.lang.Class<? extends java.util.Date>,int,int)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	verifyDateType(java.lang.Class<? extends java.util.Date>)	class	java.util.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	verifyDateType(java.lang.Class<? extends java.util.Date>)	class	java.sql.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	verifyDateType(java.lang.Class<? extends java.util.Date>)	class	java.sql.Timestamp	SOURCE
+com.google.gson.DefaultDateTypeAdapter	verifyDateType(java.lang.Class<? extends java.util.Date>)	class	java.util.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	verifyDateType(java.lang.Class<? extends java.util.Date>)	class	java.sql.Timestamp	SOURCE
+com.google.gson.DefaultDateTypeAdapter	verifyDateType(java.lang.Class<? extends java.util.Date>)	class	java.sql.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	write(com.google.gson.stream.JsonWriter,java.util.Date)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	write(com.google.gson.stream.JsonWriter,java.util.Date)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	read(com.google.gson.stream.JsonReader)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	read(com.google.gson.stream.JsonReader)	class	java.util.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	read(com.google.gson.stream.JsonReader)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	read(com.google.gson.stream.JsonReader)	class	java.sql.Timestamp	SOURCE
+com.google.gson.DefaultDateTypeAdapter	read(com.google.gson.stream.JsonReader)	dateType	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	read(com.google.gson.stream.JsonReader)	class	java.sql.Date	SOURCE
+com.google.gson.DefaultDateTypeAdapter	deserializeToDate(java.lang.String)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	deserializeToDate(java.lang.String)	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	toString()	dateFormats	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	toString()	SIMPLE_NAME	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.DefaultDateTypeAdapter	toString()	SIMPLE_NAME	com.google.gson.DefaultDateTypeAdapter	SOURCE
+com.google.gson.JsonStreamParser	JsonStreamParser(java.io.Reader)	parser	com.google.gson.JsonStreamParser	SOURCE
+com.google.gson.JsonStreamParser	JsonStreamParser(java.io.Reader)	parser	com.google.gson.JsonStreamParser	SOURCE
+com.google.gson.JsonStreamParser	JsonStreamParser(java.io.Reader)	lock	com.google.gson.JsonStreamParser	SOURCE
+com.google.gson.JsonStreamParser	next()	parser	com.google.gson.JsonStreamParser	SOURCE
+com.google.gson.JsonStreamParser	hasNext()	lock	com.google.gson.JsonStreamParser	SOURCE
+com.google.gson.JsonStreamParser	hasNext()	parser	com.google.gson.JsonStreamParser	SOURCE
+>>>>>>> base
 com.google.gson.internal.LinkedHashTreeMap	LinkedHashTreeMap()	NATURAL_ORDER	com.google.gson.internal.LinkedHashTreeMap	SOURCE
 com.google.gson.internal.LinkedHashTreeMap	LinkedHashTreeMap(java.util.Comparator<? super K>)	comparator	com.google.gson.internal.LinkedHashTreeMap	SOURCE
 com.google.gson.internal.LinkedHashTreeMap	LinkedHashTreeMap(java.util.Comparator<? super K>)	this	com.google.gson.internal.LinkedHashTreeMap	SOURCE
@@ -1519,6 +2056,7 @@ com.google.gson.internal.LinkedHashTreeMap$KeySet	size()	size	com.google.gson.in
 com.google.gson.internal.LinkedHashTreeMap$KeySet$1	next()	key	com.google.gson.internal.LinkedHashTreeMap$Node	SOURCE
 com.google.gson.internal.LinkedHashTreeMap$KeySet	clear()	this	com.google.gson.internal.LinkedHashTreeMap	SOURCE
 com.google.gson.internal.LinkedHashTreeMap	writeReplace()	this	com.google.gson.internal.LinkedHashTreeMap	SOURCE
+<<<<<<< HEAD
 com.google.gson.internal.Excluder	version	IGNORE_VERSIONS	com.google.gson.internal.Excluder	SOURCE
 com.google.gson.internal.Excluder	IGNORE_VERSIONS	IGNORE_VERSIONS	com.google.gson.internal.Excluder	SOURCE
 com.google.gson.internal.Excluder	modifiers	TRANSIENT	java.lang.reflect.Modifier	SOURCE
@@ -1915,6 +2453,112 @@ com.google.gson.FieldAttributes	isSynthetic()	field	com.google.gson.FieldAttribu
 com.google.gson.internal.JavaVersion	parseDotted(java.lang.String)	length	Array	SOURCE
 com.google.gson.internal.JavaVersion	getMajorJavaVersion()	majorJavaVersion	com.google.gson.internal.JavaVersion	SOURCE
 com.google.gson.internal.JavaVersion	isJava9OrLater()	majorJavaVersion	com.google.gson.internal.JavaVersion	SOURCE
+=======
+com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)	JSON_ELEMENT	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.internal.Streams	write(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)	JSON_ELEMENT	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	AppendableWriter(java.lang.Appendable)	appendable	com.google.gson.internal.Streams$AppendableWriter	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	AppendableWriter(java.lang.Appendable)	this	com.google.gson.internal.Streams$AppendableWriter	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	write(char[],int,int)	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	write(char[],int,int)	currentWrite	com.google.gson.internal.Streams$AppendableWriter	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	write(char[],int,int)	appendable	com.google.gson.internal.Streams$AppendableWriter	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	write(char[],int,int)	currentWrite	com.google.gson.internal.Streams$AppendableWriter	SOURCE
+com.google.gson.internal.Streams$AppendableWriter	write(int)	appendable	com.google.gson.internal.Streams$AppendableWriter	SOURCE
+com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	length()	length	Array	SOURCE
+com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	length()	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
+com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	charAt(int)	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
+com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	subSequence(int,int)	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
+com.google.gson.internal.LazilyParsedNumber	LazilyParsedNumber(java.lang.String)	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	LazilyParsedNumber(java.lang.String)	this	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	intValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	intValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	intValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	longValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	longValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	floatValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	doubleValue()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	toString()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	writeReplace()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	hashCode()	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	equals(java.lang.Object)	this	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	equals(java.lang.Object)	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	equals(java.lang.Object)	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	equals(java.lang.Object)	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.LazilyParsedNumber	equals(java.lang.Object)	value	com.google.gson.internal.LazilyParsedNumber	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Integer	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Float	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Byte	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Double	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Long	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Character	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Boolean	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Short	SOURCE
+com.google.gson.internal.Primitives	isWrapperType(java.lang.reflect.Type)	class	java.lang.Void	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Integer	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Float	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Byte	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Double	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Long	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Character	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Boolean	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Short	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>wrap(java.lang.Class<T>)	class	java.lang.Void	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Integer	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Float	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Byte	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Double	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Long	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Character	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Boolean	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Short	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	java.lang.Void	SOURCE
+com.google.gson.internal.Primitives	<T>unwrap(java.lang.Class<T>)	class	null	SOURCE
+com.google.gson.internal.JavaVersion	parseDotted(java.lang.String)	length	Array	SOURCE
+com.google.gson.internal.JavaVersion	getMajorJavaVersion()	majorJavaVersion	com.google.gson.internal.JavaVersion	SOURCE
+com.google.gson.internal.JavaVersion	isJava9OrLater()	majorJavaVersion	com.google.gson.internal.JavaVersion	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	theUnsafe	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	overrideField	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	unsafeClass	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	class	java.lang.reflect.Field	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	theUnsafe	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	overrideField	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	unsafeClass	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	class	java.lang.Object	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	class	null	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	class	null	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject)	theUnsafe	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	getUnsafeInstance()	unsafeClass	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	getUnsafeInstance()	unsafeClass	com.google.gson.internal.reflect.UnsafeReflectionAccessor	SOURCE
+com.google.gson.internal.reflect.UnsafeReflectionAccessor	getOverrideField()	class	java.lang.reflect.AccessibleObject	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.lang.Class	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.io.ObjectStreamClass	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.lang.Class	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.lang.Object	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.io.ObjectStreamClass	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.lang.Class	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	null	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.io.ObjectInputStream	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.lang.Class	SOURCE
+com.google.gson.internal.UnsafeAllocator	create()	class	java.lang.Class	SOURCE
+com.google.gson.internal.UnsafeAllocator$3	<T>newInstance(java.lang.Class<T>)	class	java.lang.Object	SOURCE
+>>>>>>> base
 com.google.gson.internal.$Gson$Types	subtypeOf(java.lang.reflect.Type)	EMPTY_TYPE_ARRAY	com.google.gson.internal.$Gson$Types	SOURCE
 com.google.gson.internal.$Gson$Types	supertypeOf(java.lang.reflect.Type)	class	java.lang.Object	SOURCE
 com.google.gson.internal.$Gson$Types	getRawType(java.lang.reflect.Type)	class	java.lang.Object	SOURCE
@@ -1999,6 +2643,7 @@ com.google.gson.internal.$Gson$Types$WildcardTypeImpl	toString()	lowerBound	com.
 com.google.gson.internal.$Gson$Types$WildcardTypeImpl	toString()	upperBound	com.google.gson.internal.$Gson$Types$WildcardTypeImpl	SOURCE
 com.google.gson.internal.$Gson$Types$WildcardTypeImpl	toString()	class	java.lang.Object	SOURCE
 com.google.gson.internal.$Gson$Types$WildcardTypeImpl	toString()	upperBound	com.google.gson.internal.$Gson$Types$WildcardTypeImpl	SOURCE
+<<<<<<< HEAD
 com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)	JSON_ELEMENT	com.google.gson.internal.bind.TypeAdapters	SOURCE
 com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)	INSTANCE	com.google.gson.JsonNull	SOURCE
 com.google.gson.internal.Streams	write(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter)	JSON_ELEMENT	com.google.gson.internal.bind.TypeAdapters	SOURCE
@@ -2013,6 +2658,50 @@ com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	length()	length	A
 com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	length()	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
 com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	charAt(int)	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
 com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	subSequence(int,int)	chars	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	SOURCE
+=======
+com.google.gson.internal.bind.JsonTreeWriter	product	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	product	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	JsonTreeWriter()	UNWRITABLE_WRITER	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	get()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	get()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	get()	product	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	peek()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	peek()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	put(com.google.gson.JsonElement)	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	put(com.google.gson.JsonElement)	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	put(com.google.gson.JsonElement)	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	put(com.google.gson.JsonElement)	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	put(com.google.gson.JsonElement)	product	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	beginArray()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	beginArray()	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endArray()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endArray()	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endArray()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endArray()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endArray()	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	beginObject()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	beginObject()	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endObject()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endObject()	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endObject()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endObject()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	endObject()	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	name(java.lang.String)	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	name(java.lang.String)	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	name(java.lang.String)	pendingName	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	name(java.lang.String)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	value(java.lang.String)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	nullValue()	INSTANCE	com.google.gson.JsonNull	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	nullValue()	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	value(boolean)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	value(java.lang.Boolean)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	value(double)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	value(long)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	value(java.lang.Number)	this	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	close()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	close()	stack	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+com.google.gson.internal.bind.JsonTreeWriter	close()	SENTINEL_CLOSED	com.google.gson.internal.bind.JsonTreeWriter	SOURCE
+>>>>>>> base
 com.google.gson.internal.bind.DateTypeAdapter$1	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.util.Date	SOURCE
 com.google.gson.internal.bind.DateTypeAdapter	DateTypeAdapter()	dateFormats	com.google.gson.internal.bind.DateTypeAdapter	SOURCE
 com.google.gson.internal.bind.DateTypeAdapter	DateTypeAdapter()	DEFAULT	java.text.DateFormat	SOURCE
@@ -2027,6 +2716,7 @@ com.google.gson.internal.bind.DateTypeAdapter	DateTypeAdapter()	DEFAULT	java.tex
 com.google.gson.internal.bind.DateTypeAdapter	DateTypeAdapter()	DEFAULT	java.text.DateFormat	SOURCE
 com.google.gson.internal.bind.DateTypeAdapter	deserializeToDate(java.lang.String)	dateFormats	com.google.gson.internal.bind.DateTypeAdapter	SOURCE
 com.google.gson.internal.bind.DateTypeAdapter	write(com.google.gson.stream.JsonWriter,java.util.Date)	dateFormats	com.google.gson.internal.bind.DateTypeAdapter	SOURCE
+<<<<<<< HEAD
 com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	context	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
 com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	this	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
 com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
@@ -2042,6 +2732,11 @@ com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gso
 com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
 com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
 com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	getRuntimeTypeIfMoreSpecific(java.lang.reflect.Type,java.lang.Object)	class	java.lang.Object	SOURCE
+=======
+com.google.gson.internal.bind.TimeTypeAdapter$1	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.sql.Time	SOURCE
+com.google.gson.internal.bind.TimeTypeAdapter	read(com.google.gson.stream.JsonReader)	format	com.google.gson.internal.bind.TimeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TimeTypeAdapter	write(com.google.gson.stream.JsonWriter,java.sql.Time)	format	com.google.gson.internal.bind.TimeTypeAdapter	SOURCE
+>>>>>>> base
 com.google.gson.internal.bind.util.ISO8601Utils	UTC_ID	UTC_ID	com.google.gson.internal.bind.util.ISO8601Utils	SOURCE
 com.google.gson.internal.bind.util.ISO8601Utils	format(java.util.Date)	TIMEZONE_UTC	com.google.gson.internal.bind.util.ISO8601Utils	SOURCE
 com.google.gson.internal.bind.util.ISO8601Utils	format(java.util.Date,boolean)	TIMEZONE_UTC	com.google.gson.internal.bind.util.ISO8601Utils	SOURCE
@@ -2062,6 +2757,7 @@ com.google.gson.internal.bind.util.ISO8601Utils	parse(java.lang.String,java.text
 com.google.gson.internal.bind.util.ISO8601Utils	parse(java.lang.String,java.text.ParsePosition)	MINUTE	java.util.Calendar	SOURCE
 com.google.gson.internal.bind.util.ISO8601Utils	parse(java.lang.String,java.text.ParsePosition)	SECOND	java.util.Calendar	SOURCE
 com.google.gson.internal.bind.util.ISO8601Utils	parse(java.lang.String,java.text.ParsePosition)	MILLISECOND	java.util.Calendar	SOURCE
+<<<<<<< HEAD
 com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	constructorConstructor	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
 com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	this	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
 com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	complexMapKeySerialization	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
@@ -2133,6 +2829,8 @@ com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.go
 com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl	serialize(java.lang.Object)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
 com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl	serialize(java.lang.Object,java.lang.reflect.Type)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
 com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl	<R>deserialize(com.google.gson.JsonElement,java.lang.reflect.Type)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+=======
+>>>>>>> base
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory	ReflectiveTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,com.google.gson.FieldNamingStrategy,com.google.gson.internal.Excluder,com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory)	constructorConstructor	com.google.gson.internal.bind.ReflectiveTypeAdapterFactory	SOURCE
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory	ReflectiveTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,com.google.gson.FieldNamingStrategy,com.google.gson.internal.Excluder,com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory)	this	com.google.gson.internal.bind.ReflectiveTypeAdapterFactory	SOURCE
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory	ReflectiveTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,com.google.gson.FieldNamingStrategy,com.google.gson.internal.Excluder,com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory)	fieldNamingPolicy	com.google.gson.internal.bind.ReflectiveTypeAdapterFactory	SOURCE
@@ -2170,6 +2868,13 @@ com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter	read(com.goog
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	deserialized	com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField	SOURCE
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,T)	boundFields	com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter	SOURCE
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,T)	name	com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField	SOURCE
+<<<<<<< HEAD
+=======
+com.google.gson.internal.bind.ObjectTypeAdapter$1	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.lang.Object	SOURCE
+com.google.gson.internal.bind.ObjectTypeAdapter	ObjectTypeAdapter(com.google.gson.Gson)	gson	com.google.gson.internal.bind.ObjectTypeAdapter	SOURCE
+com.google.gson.internal.bind.ObjectTypeAdapter	ObjectTypeAdapter(com.google.gson.Gson)	this	com.google.gson.internal.bind.ObjectTypeAdapter	SOURCE
+com.google.gson.internal.bind.ObjectTypeAdapter	write(com.google.gson.stream.JsonWriter,java.lang.Object)	gson	com.google.gson.internal.bind.ObjectTypeAdapter	SOURCE
+>>>>>>> base
 com.google.gson.internal.bind.CollectionTypeAdapterFactory	CollectionTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor)	constructorConstructor	com.google.gson.internal.bind.CollectionTypeAdapterFactory	SOURCE
 com.google.gson.internal.bind.CollectionTypeAdapterFactory	CollectionTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor)	this	com.google.gson.internal.bind.CollectionTypeAdapterFactory	SOURCE
 com.google.gson.internal.bind.CollectionTypeAdapterFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.util.Collection	SOURCE
@@ -2181,6 +2886,120 @@ com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	Adapter(com.g
 com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	constructor	com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	SOURCE
 com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	elementTypeAdapter	com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	SOURCE
 com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,java.util.Collection<E>)	elementTypeAdapter	com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter	SOURCE
+<<<<<<< HEAD
+=======
+com.google.gson.internal.bind.JsonTreeReader	JsonTreeReader(com.google.gson.JsonElement)	UNREADABLE_READER	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	beginArray()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	beginArray()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	endArray()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	endArray()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	endArray()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	endObject()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	endObject()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	endObject()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	peek()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	peek()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	peek()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	peek()	SENTINEL_CLOSED	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	peekStack()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	peekStack()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	popStack()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	popStack()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	popStack()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	popStack()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextName()	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextName()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextString()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextString()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextString()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextBoolean()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextBoolean()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextBoolean()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextNull()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextNull()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextNull()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextDouble()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextDouble()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextDouble()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextLong()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextLong()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextLong()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextInt()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextInt()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	nextInt()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	close()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	close()	SENTINEL_CLOSED	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	close()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	skipValue()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	length	Array	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	push(java.lang.Object)	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	stackSize	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	pathIndices	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	stack	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.JsonTreeReader	getPath()	pathNames	com.google.gson.internal.bind.JsonTreeReader	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	context	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	this	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	this	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	type	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	TypeAdapterRuntimeTypeWrapper(com.google.gson.Gson,com.google.gson.TypeAdapter<T>,java.lang.reflect.Type)	this	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	read(com.google.gson.stream.JsonReader)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	type	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	type	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	context	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	write(com.google.gson.stream.JsonWriter,T)	delegate	com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	SOURCE
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper	getRuntimeTypeIfMoreSpecific(java.lang.reflect.Type,java.lang.Object)	class	java.lang.Object	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	constructorConstructor	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	this	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	complexMapKeySerialization	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	MapTypeAdapterFactory(com.google.gson.internal.ConstructorConstructor,boolean)	this	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.util.Map	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	constructorConstructor	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	getKeyAdapter(com.google.gson.Gson,java.lang.reflect.Type)	class	null	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	getKeyAdapter(com.google.gson.Gson,java.lang.reflect.Type)	class	java.lang.Boolean	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory	getKeyAdapter(com.google.gson.Gson,java.lang.reflect.Type)	BOOLEAN_AS_STRING	com.google.gson.internal.bind.TypeAdapters	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	Adapter(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter<K>,java.lang.reflect.Type,com.google.gson.TypeAdapter<V>,com.google.gson.internal.ObjectConstructor<? extends java.util.Map<K,V>>)	keyTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	Adapter(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter<K>,java.lang.reflect.Type,com.google.gson.TypeAdapter<V>,com.google.gson.internal.ObjectConstructor<? extends java.util.Map<K,V>>)	this	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	Adapter(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter<K>,java.lang.reflect.Type,com.google.gson.TypeAdapter<V>,com.google.gson.internal.ObjectConstructor<? extends java.util.Map<K,V>>)	valueTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	Adapter(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter<K>,java.lang.reflect.Type,com.google.gson.TypeAdapter<V>,com.google.gson.internal.ObjectConstructor<? extends java.util.Map<K,V>>)	this	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	Adapter(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter<K>,java.lang.reflect.Type,com.google.gson.TypeAdapter<V>,com.google.gson.internal.ObjectConstructor<? extends java.util.Map<K,V>>)	constructor	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	Adapter(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter<K>,java.lang.reflect.Type,com.google.gson.TypeAdapter<V>,com.google.gson.internal.ObjectConstructor<? extends java.util.Map<K,V>>)	this	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	constructor	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	keyTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	valueTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	INSTANCE	com.google.gson.internal.JsonReaderInternalAccess	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	keyTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	read(com.google.gson.stream.JsonReader)	valueTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,java.util.Map<K,V>)	complexMapKeySerialization	com.google.gson.internal.bind.MapTypeAdapterFactory	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,java.util.Map<K,V>)	valueTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,java.util.Map<K,V>)	keyTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,java.util.Map<K,V>)	valueTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	write(com.google.gson.stream.JsonWriter,java.util.Map<K,V>)	valueTypeAdapter	com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter	SOURCE
+>>>>>>> base
 com.google.gson.internal.bind.SqlDateTypeAdapter$1	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.sql.Date	SOURCE
 com.google.gson.internal.bind.SqlDateTypeAdapter	read(com.google.gson.stream.JsonReader)	format	com.google.gson.internal.bind.SqlDateTypeAdapter	SOURCE
 com.google.gson.internal.bind.SqlDateTypeAdapter	write(com.google.gson.stream.JsonWriter,java.sql.Date)	format	com.google.gson.internal.bind.SqlDateTypeAdapter	SOURCE
@@ -2263,6 +3082,54 @@ com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter	read(com.google.gson.
 com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	constantToName	com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter	SOURCE
 com.google.gson.internal.bind.TypeAdapters$30	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.lang.Enum	SOURCE
 com.google.gson.internal.bind.TypeAdapters$30	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.lang.Enum	SOURCE
+<<<<<<< HEAD
+=======
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	serializer	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	this	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	deserializer	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	this	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	this	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	typeToken	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	this	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	skipPast	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	TreeTypeAdapter(com.google.gson.JsonSerializer<T>,com.google.gson.JsonDeserializer<T>,com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>,com.google.gson.TypeAdapterFactory)	this	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	read(com.google.gson.stream.JsonReader)	deserializer	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	read(com.google.gson.stream.JsonReader)	deserializer	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	read(com.google.gson.stream.JsonReader)	typeToken	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	read(com.google.gson.stream.JsonReader)	context	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	serializer	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	serializer	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	typeToken	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	write(com.google.gson.stream.JsonWriter,T)	context	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	delegate()	delegate	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	delegate()	delegate	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	delegate()	delegate	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	delegate()	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	delegate()	skipPast	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter	delegate()	typeToken	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	serializer	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	deserializer	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	serializer	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	deserializer	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	exactType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	this	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	matchRawType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	this	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	hierarchyType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SingleTypeFactory(java.lang.Object,com.google.gson.reflect.TypeToken<?>,boolean,java.lang.Class<?>)	this	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	exactType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	exactType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	matchRawType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	exactType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	hierarchyType	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	serializer	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	deserializer	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	this	com.google.gson.internal.bind.TreeTypeAdapter$SingleTypeFactory	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl	serialize(java.lang.Object)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl	serialize(java.lang.Object,java.lang.reflect.Type)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl	<R>deserialize(com.google.gson.JsonElement,java.lang.reflect.Type)	gson	com.google.gson.internal.bind.TreeTypeAdapter	SOURCE
+>>>>>>> base
 com.google.gson.internal.bind.ArrayTypeAdapter	ArrayTypeAdapter(com.google.gson.Gson,com.google.gson.TypeAdapter<E>,java.lang.Class<E>)	componentTypeAdapter	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
 com.google.gson.internal.bind.ArrayTypeAdapter	ArrayTypeAdapter(com.google.gson.Gson,com.google.gson.TypeAdapter<E>,java.lang.Class<E>)	this	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
 com.google.gson.internal.bind.ArrayTypeAdapter	ArrayTypeAdapter(com.google.gson.Gson,com.google.gson.TypeAdapter<E>,java.lang.Class<E>)	componentType	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
@@ -2270,6 +3137,7 @@ com.google.gson.internal.bind.ArrayTypeAdapter	ArrayTypeAdapter(com.google.gson.
 com.google.gson.internal.bind.ArrayTypeAdapter	read(com.google.gson.stream.JsonReader)	componentTypeAdapter	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
 com.google.gson.internal.bind.ArrayTypeAdapter	read(com.google.gson.stream.JsonReader)	componentType	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
 com.google.gson.internal.bind.ArrayTypeAdapter	write(com.google.gson.stream.JsonWriter,java.lang.Object)	componentTypeAdapter	com.google.gson.internal.bind.ArrayTypeAdapter	SOURCE
+<<<<<<< HEAD
 com.google.gson.internal.bind.ObjectTypeAdapter$1	<T>create(com.google.gson.Gson,com.google.gson.reflect.TypeToken<T>)	class	java.lang.Object	SOURCE
 com.google.gson.internal.bind.ObjectTypeAdapter	ObjectTypeAdapter(com.google.gson.Gson)	gson	com.google.gson.internal.bind.ObjectTypeAdapter	SOURCE
 com.google.gson.internal.bind.ObjectTypeAdapter	ObjectTypeAdapter(com.google.gson.Gson)	this	com.google.gson.internal.bind.ObjectTypeAdapter	SOURCE
@@ -2440,3 +3308,19 @@ com.google.gson.JsonStreamParser	JsonStreamParser(java.io.Reader)	lock	com.googl
 com.google.gson.JsonStreamParser	next()	parser	com.google.gson.JsonStreamParser	SOURCE
 com.google.gson.JsonStreamParser	hasNext()	lock	com.google.gson.JsonStreamParser	SOURCE
 com.google.gson.JsonStreamParser	hasNext()	parser	com.google.gson.JsonStreamParser	SOURCE
+=======
+com.google.gson.internal.PreJava9DateFormatProvider	getUSDateFormat(int)	US	java.util.Locale	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getUSDateTimeFormat(int,int)	US	java.util.Locale	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDateFormatPattern(int)	SHORT	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDateFormatPattern(int)	MEDIUM	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDateFormatPattern(int)	LONG	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDateFormatPattern(int)	FULL	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDatePartOfDateTimePattern(int)	SHORT	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDatePartOfDateTimePattern(int)	MEDIUM	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDatePartOfDateTimePattern(int)	LONG	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getDatePartOfDateTimePattern(int)	FULL	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getTimePartOfDateTimePattern(int)	SHORT	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getTimePartOfDateTimePattern(int)	MEDIUM	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getTimePartOfDateTimePattern(int)	FULL	java.text.DateFormat	SOURCE
+com.google.gson.internal.PreJava9DateFormatProvider	getTimePartOfDateTimePattern(int)	LONG	java.text.DateFormat	SOURCE
+>>>>>>> base
