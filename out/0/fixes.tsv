@@ -1,8 +1,1 @@
 kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
-<<<<<<< HEAD
-=======
-FIELD	com.google.gson.internal.LinkedHashTreeMap$Node	null	next	null	/home/nima/Desktop/docker/benchmarks/gson/gson/src/main/java/com/google/gson/internal/LinkedHashTreeMap.java	ASSIGN_FIELD_NULLABLE	nullable	com.google.gson.internal.LinkedHashTreeMap	clear()
-FIELD	com.google.gson.internal.LinkedHashTreeMap$Node	null	next	null	/home/nima/Desktop/docker/benchmarks/gson/gson/src/main/java/com/google/gson/internal/LinkedHashTreeMap.java	ASSIGN_FIELD_NULLABLE	nullable	com.google.gson.internal.LinkedHashTreeMap	removeInternal(com.google.gson.internal.LinkedHashTreeMap.Node<K,V>,boolean)
-METHOD	com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)	null	null	/home/nima/Desktop/docker/benchmarks/gson/gson/src/main/java/com/google/gson/internal/Streams.java	RETURN_NULLABLE	nullable	com.google.gson.internal.Streams	parse(com.google.gson.stream.JsonReader)
-FIELD	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	null	chars	null	/home/nima/Desktop/docker/benchmarks/gson/gson/src/main/java/com/google/gson/internal/Streams.java	FIELD_NO_INIT	nullable	com.google.gson.internal.Streams$AppendableWriter$CurrentWrite	null
->>>>>>> base
