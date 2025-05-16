@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import javax.annotation.Nullable;
 
 /**
  * This type adapter supports three subclasses of date: Date, Timestamp, and java.sql.Date.
@@ -127,7 +128,7 @@ final class DefaultDateTypeAdapter extends TypeAdapter<Date> {
     }
   }
 
-  @Override
+  @Nullable @Override
   public Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

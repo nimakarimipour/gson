@@ -39,6 +39,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Nullable;
 
 /**
  * Use this builder to construct a {@link Gson} instance when you need to set configuration options
@@ -86,7 +87,7 @@ public final class GsonBuilder {
   private final List<TypeAdapterFactory> hierarchyFactories = new ArrayList<TypeAdapterFactory>();
 
   private boolean serializeNulls = DEFAULT_SERIALIZE_NULLS;
-  private String datePattern;
+  @Nullable private String datePattern;
   private int dateStyle = DateFormat.DEFAULT;
   private int timeStyle = DateFormat.DEFAULT;
   private boolean complexMapKeySerialization = DEFAULT_COMPLEX_MAP_KEYS;
@@ -615,7 +616,7 @@ public final class GsonBuilder {
 
   @SuppressWarnings("unchecked")
   private void addTypeAdaptersForDate(
-      String datePattern, int dateStyle, int timeStyle, List<TypeAdapterFactory> factories) {
+      @Nullable String datePattern, int dateStyle, int timeStyle, List<TypeAdapterFactory> factories) {
     DefaultDateTypeAdapter dateTypeAdapter;
     TypeAdapter<Timestamp> timestampTypeAdapter;
     TypeAdapter<java.sql.Date> javaSqlDateTypeAdapter;

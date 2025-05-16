@@ -32,6 +32,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import javax.annotation.Nullable;
 
 /**
  * Adapts a Gson 1.x tree-style adapter as a streaming TypeAdapter. Since the tree adapter may be
@@ -39,22 +40,22 @@ import java.lang.reflect.Type;
  * adapter on demand.
  */
 public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
-  private final JsonSerializer<T> serializer;
-  private final JsonDeserializer<T> deserializer;
+  @Nullable private final JsonSerializer<T> serializer;
+  @Nullable private final JsonDeserializer<T> deserializer;
   final Gson gson;
   private final TypeToken<T> typeToken;
-  private final TypeAdapterFactory skipPast;
+  @Nullable private final TypeAdapterFactory skipPast;
   private final GsonContextImpl context = new GsonContextImpl();
 
   /** The delegate is lazily created because it may not be needed, and creating it may fail. */
-  private TypeAdapter<T> delegate;
+  @Nullable private TypeAdapter<T> delegate;
 
   public TreeTypeAdapter(
-      JsonSerializer<T> serializer,
-      JsonDeserializer<T> deserializer,
+      @Nullable JsonSerializer<T> serializer,
+      @Nullable JsonDeserializer<T> deserializer,
       Gson gson,
       TypeToken<T> typeToken,
-      TypeAdapterFactory skipPast) {
+      @Nullable TypeAdapterFactory skipPast) {
     this.serializer = serializer;
     this.deserializer = deserializer;
     this.gson = gson;
@@ -62,7 +63,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     this.skipPast = skipPast;
   }
 
-  @Override
+  @Nullable @Override
   public T read(JsonReader in) throws IOException {
     if (deserializer == null) {
       return delegate().read(in);
@@ -116,14 +117,14 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
   }
 
   private static final class SingleTypeFactory implements TypeAdapterFactory {
-    private final TypeToken<?> exactType;
+    @Nullable private final TypeToken<?> exactType;
     private final boolean matchRawType;
-    private final Class<?> hierarchyType;
-    private final JsonSerializer<?> serializer;
-    private final JsonDeserializer<?> deserializer;
+    @Nullable private final Class<?> hierarchyType;
+    @Nullable private final JsonSerializer<?> serializer;
+    @Nullable private final JsonDeserializer<?> deserializer;
 
     SingleTypeFactory(
-        Object typeAdapter, TypeToken<?> exactType, boolean matchRawType, Class<?> hierarchyType) {
+        Object typeAdapter, @Nullable TypeToken<?> exactType, boolean matchRawType, @Nullable Class<?> hierarchyType) {
       serializer = typeAdapter instanceof JsonSerializer ? (JsonSerializer<?>) typeAdapter : null;
       deserializer =
           typeAdapter instanceof JsonDeserializer ? (JsonDeserializer<?>) typeAdapter : null;
@@ -133,7 +134,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       this.hierarchyType = hierarchyType;
     }
 
-    @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
+    @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches =
@@ -159,7 +160,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       return gson.toJsonTree(src, typeOfSrc);
     }
 
-    @SuppressWarnings("unchecked")
+    @Nullable @SuppressWarnings("unchecked")
     @Override
     public <R> R deserialize(JsonElement json, Type typeOfT) throws JsonParseException {
       return (R) gson.fromJson(json, typeOfT);

@@ -55,6 +55,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
+import javax.annotation.Nullable;
 
 /**
  * This is the main class for using Gson. Gson is typically used by first constructing a Gson
@@ -137,7 +138,7 @@ public final class Gson {
   final boolean prettyPrinting;
   final boolean lenient;
   final boolean serializeSpecialFloatingPointValues;
-  final String datePattern;
+  @Nullable final String datePattern;
   final int dateStyle;
   final int timeStyle;
   final LongSerializationPolicy longSerializationPolicy;
@@ -213,7 +214,7 @@ public final class Gson {
       boolean lenient,
       boolean serializeSpecialFloatingPointValues,
       LongSerializationPolicy longSerializationPolicy,
-      String datePattern,
+      @Nullable String datePattern,
       int dateStyle,
       int timeStyle,
       List<TypeAdapterFactory> builderFactories,
@@ -334,7 +335,7 @@ public final class Gson {
       return TypeAdapters.DOUBLE;
     }
     return new TypeAdapter<Number>() {
-      @Override
+      @Nullable @Override
       public Double read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
@@ -361,7 +362,7 @@ public final class Gson {
       return TypeAdapters.FLOAT;
     }
     return new TypeAdapter<Number>() {
-      @Override
+      @Nullable @Override
       public Float read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
@@ -397,7 +398,7 @@ public final class Gson {
       return TypeAdapters.LONG;
     }
     return new TypeAdapter<Number>() {
-      @Override
+      @Nullable @Override
       public Number read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
@@ -566,7 +567,7 @@ public final class Gson {
    * @param type Type for which the delegate adapter is being searched for.
    * @since 2.2
    */
-  public <T> TypeAdapter<T> getDelegateAdapter(TypeAdapterFactory skipPast, TypeToken<T> type) {
+  public <T> TypeAdapter<T> getDelegateAdapter(@Nullable TypeAdapterFactory skipPast, TypeToken<T> type) {
     // Hack. If the skipPast factory isn't registered, assume the factory is being requested via
     // our @JsonAdapter annotation.
     if (!factories.contains(skipPast)) {
@@ -856,7 +857,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    *     classOfT
    */
-  public <T> T fromJson(String json, Class<T> classOfT) throws JsonSyntaxException {
+  @Nullable public <T> T fromJson(String json, Class<T> classOfT) throws JsonSyntaxException {
     Object object = fromJson(json, (Type) classOfT);
     return Primitives.wrap(classOfT).cast(object);
   }
@@ -881,7 +882,7 @@ public final class Gson {
    * @throws JsonParseException if json is not a valid representation for an object of type typeOfT
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @SuppressWarnings("unchecked")
+  @Nullable @SuppressWarnings("unchecked")
   public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -909,7 +910,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * @since 1.2
    */
-  public <T> T fromJson(Reader json, Class<T> classOfT)
+  @Nullable public <T> T fromJson(Reader json, Class<T> classOfT)
       throws JsonSyntaxException, JsonIOException {
     JsonReader jsonReader = newJsonReader(json);
     Object object = fromJson(jsonReader, classOfT);
@@ -937,7 +938,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * @since 1.2
    */
-  @SuppressWarnings("unchecked")
+  @Nullable @SuppressWarnings("unchecked")
   public <T> T fromJson(Reader json, Type typeOfT) throws JsonIOException, JsonSyntaxException {
     JsonReader jsonReader = newJsonReader(json);
     T object = (T) fromJson(jsonReader, typeOfT);
@@ -945,7 +946,7 @@ public final class Gson {
     return object;
   }
 
-  private static void assertFullConsumption(Object obj, JsonReader reader) {
+  private static void assertFullConsumption(@Nullable Object obj, JsonReader reader) {
     try {
       if (obj != null && reader.peek() != JsonToken.END_DOCUMENT) {
         throw new JsonIOException("JSON document was not fully consumed.");
@@ -965,7 +966,7 @@ public final class Gson {
    * @throws JsonIOException if there was a problem writing to the Reader
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @SuppressWarnings("unchecked")
+  @Nullable @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonReader reader, Type typeOfT)
       throws JsonIOException, JsonSyntaxException {
     boolean isEmpty = true;
@@ -1019,7 +1020,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
    */
-  public <T> T fromJson(JsonElement json, Class<T> classOfT) throws JsonSyntaxException {
+  @Nullable public <T> T fromJson(JsonElement json, Class<T> classOfT) throws JsonSyntaxException {
     Object object = fromJson(json, (Type) classOfT);
     return Primitives.wrap(classOfT).cast(object);
   }
@@ -1044,7 +1045,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
    */
-  @SuppressWarnings("unchecked")
+  @Nullable @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -1053,7 +1054,7 @@ public final class Gson {
   }
 
   static class FutureTypeAdapter<T> extends TypeAdapter<T> {
-    private TypeAdapter<T> delegate;
+    @Nullable private TypeAdapter<T> delegate;
 
     public void setDelegate(TypeAdapter<T> typeAdapter) {
       if (delegate != null) {
@@ -1062,7 +1063,7 @@ public final class Gson {
       delegate = typeAdapter;
     }
 
-    @Override
+    @Nullable @Override
     public T read(JsonReader in) throws IOException {
       if (delegate == null) {
         throw new IllegalStateException();

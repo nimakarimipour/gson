@@ -1,4 +1,0 @@
-warning: [options] module name in --add-exports option not found: jdk.compiler
-/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/Gson.java:189: error: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
-            LongSerializationPolicy.DEFAULT, null, DateFormat.DEFAULT, DateFormat.DEFAULT,
-                                             ^

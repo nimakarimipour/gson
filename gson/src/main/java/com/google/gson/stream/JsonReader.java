@@ -23,6 +23,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
+import javax.annotation.Nullable;
 
 /**
  * Reads a JSON (<a href="http://www.ietf.org/rfc/rfc7159.txt">RFC 7159</a>) encoded value as a
@@ -269,7 +270,7 @@ public class JsonReader implements Closeable {
    * A peeked string that should be parsed on the next double, long or string. This is populated
    * before a numeric value is parsed and used if that parsing fails.
    */
-  private String peekedString;
+  @Nullable private String peekedString;
 
   /*
    * The nesting stack. Using a manual array rather than an ArrayList saves 20%.
