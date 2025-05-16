@@ -15,14 +15,13 @@
  */
 package com.google.gson;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.StringReader;
-
 import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.MalformedJsonException;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 
 /**
  * A parser to parse Json into a parse tree of {@link JsonElement}s
@@ -32,7 +31,9 @@ import com.google.gson.stream.MalformedJsonException;
  * @since 1.3
  */
 public final class JsonParser {
-  /** @deprecated No need to instantiate this class, use the static methods instead. */
+  /**
+   * @deprecated No need to instantiate this class, use the static methods instead.
+   */
   @Deprecated
   public JsonParser() {}
 
@@ -74,8 +75,8 @@ public final class JsonParser {
   /**
    * Returns the next value from the JSON stream as a parse tree.
    *
-   * @throws JsonParseException if there is an IOException or if the specified
-   *     text is not valid JSON
+   * @throws JsonParseException if there is an IOException or if the specified text is not valid
+   *     JSON
    */
   public static JsonElement parseReader(JsonReader reader)
       throws JsonIOException, JsonSyntaxException {
@@ -92,19 +93,25 @@ public final class JsonParser {
     }
   }
 
-  /** @deprecated Use {@link JsonParser#parseString} */
+  /**
+   * @deprecated Use {@link JsonParser#parseString}
+   */
   @Deprecated
   public JsonElement parse(String json) throws JsonSyntaxException {
     return parseString(json);
   }
 
-  /** @deprecated Use {@link JsonParser#parseReader(Reader)} */
+  /**
+   * @deprecated Use {@link JsonParser#parseReader(Reader)}
+   */
   @Deprecated
   public JsonElement parse(Reader json) throws JsonIOException, JsonSyntaxException {
     return parseReader(json);
   }
 
-  /** @deprecated Use {@link JsonParser#parseReader(JsonReader)} */
+  /**
+   * @deprecated Use {@link JsonParser#parseReader(JsonReader)}
+   */
   @Deprecated
   public JsonElement parse(JsonReader json) throws JsonIOException, JsonSyntaxException {
     return parseReader(json);

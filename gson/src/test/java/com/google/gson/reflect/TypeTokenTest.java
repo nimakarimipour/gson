@@ -95,11 +95,15 @@ public final class TypeTokenTest extends TestCase {
     assertEquals(expectedListOfString, TypeToken.getParameterized(List.class, String.class));
 
     TypeToken<?> expectedMapOfStringToString = new TypeToken<Map<String, String>>() {};
-    assertEquals(expectedMapOfStringToString, TypeToken.getParameterized(Map.class, String.class, String.class));
+    assertEquals(
+        expectedMapOfStringToString,
+        TypeToken.getParameterized(Map.class, String.class, String.class));
 
     TypeToken<?> expectedListOfListOfListOfString = new TypeToken<List<List<List<String>>>>() {};
     Type listOfString = TypeToken.getParameterized(List.class, String.class).getType();
     Type listOfListOfString = TypeToken.getParameterized(List.class, listOfString).getType();
-    assertEquals(expectedListOfListOfListOfString, TypeToken.getParameterized(List.class, listOfListOfString));
+    assertEquals(
+        expectedListOfListOfListOfString,
+        TypeToken.getParameterized(List.class, listOfListOfString));
   }
 }

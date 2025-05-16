@@ -26,18 +26,17 @@ import junit.framework.TestCase;
  */
 public final class CommentsTest extends TestCase {
 
-  /**
-   * Test for issue 212.
-   */
+  /** Test for issue 212. */
   public void testParseComments() {
-    String json = "[\n"
-        + "  // this is a comment\n"
-        + "  \"a\",\n"
-        + "  /* this is another comment */\n"
-        + "  \"b\",\n"
-        + "  # this is yet another comment\n"
-        + "  \"c\"\n"
-        + "]";
+    String json =
+        "[\n"
+            + "  // this is a comment\n"
+            + "  \"a\",\n"
+            + "  /* this is another comment */\n"
+            + "  \"b\",\n"
+            + "  # this is yet another comment\n"
+            + "  \"c\"\n"
+            + "]";
 
     List<String> abc = new Gson().fromJson(json, new TypeToken<List<String>>() {}.getType());
     assertEquals(Arrays.asList("a", "b", "c"), abc);

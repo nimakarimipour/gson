@@ -1,4 +1,3 @@
 package com.google.gson;
 
-public @interface NullUnmarked {
-}
+public @interface NullUnmarked {}

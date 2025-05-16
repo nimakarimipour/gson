@@ -1,4 +1,3 @@
 package com.google.gson;
 
-public @interface Initializer {
-}
+public @interface Initializer {}
