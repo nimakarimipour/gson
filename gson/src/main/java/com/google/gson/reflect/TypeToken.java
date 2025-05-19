@@ -290,6 +290,7 @@ public class TypeToken<T> {
    * {@code rawType}.
    */
   public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
+    Objects.requireNonNull(rawType, "rawType must not be null");
     return new TypeToken<Object>(
         $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
   }
