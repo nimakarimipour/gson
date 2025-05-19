@@ -453,8 +453,13 @@ public final class Gson {
         List<Long> list = new ArrayList<Long>();
         in.beginArray();
         while (in.hasNext()) {
-          long value = longAdapter.read(in).longValue();
-          list.add(value);
+          Number number = longAdapter.read(in);
+          if (number != null) {
+            long value = number.longValue();
+            list.add(value);
+          } else {
+            throw new IOException("Unexpected null value for long in JSON array");
+          }
         }
         in.endArray();
         int length = list.size();
