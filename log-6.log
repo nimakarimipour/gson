@@ -1,0 +1,157 @@
+====================
+Type='RETURN_NULLABLE', message='returning @Nullable expression from method with @NonNull return type'
+/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/stream/JsonReader.java:828
+    return result;
+Log:
+---NullAway.lambda$resolveRemainingErrors$17---
+==============================
+---NullAway.lambda$resolveRemainingErrors$17---
+TOP LEVEL CALL TO FIX ERROR: Type='RETURN_NULLABLE', message='returning @Nullable expression from method with @NonNull return type'
+/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/stream/JsonReader.java:828
+    return result;
+---ChatGPT.ask---
+Asking ChatGPT:
+I want to resolve a warning reported by NullAway.
+The error is of the type of "RETURN_NULLABLE" and the full error message is: "returning @Nullable expression from method with @NonNull return type".
+The line with the error is: "    return result;".
+
+The error is within "the method: nextString()" and the code surrounding the error is:
+```java
+  public String nextString() throws IOException {
+    int p = peeked;
+    if (p == PEEKED_NONE) {
+      p = doPeek();
+    }
+    String result;
+    if (p == PEEKED_UNQUOTED) {
+      result = nextUnquotedValue();
+    } else if (p == PEEKED_SINGLE_QUOTED) {
+      result = nextQuotedValue('\'');
+    } else if (p == PEEKED_DOUBLE_QUOTED) {
+      result = nextQuotedValue('"');
+    } else if (p == PEEKED_BUFFERED) {
+      result = peekedString;
+      peekedString = null;
+    } else if (p == PEEKED_LONG) {
+      result = Long.toString(peekedLong);
+    } else if (p == PEEKED_NUMBER) {
+      result = new String(buffer, pos, peekedNumberLength);
+      pos += peekedNumberLength;
+    } else {
+      throw new IllegalStateException("Expected a string but was " + peek() + locationString());
+    }
+    peeked = PEEKED_NONE;
+    pathIndices[stackSize - 1]++;
+    return result;
+  }
+
+  /**
+   * Returns the {@link com.google.gson.stream.JsonToken#BOOLEAN boolean} value of the next token,
+   * consuming it.
+   *
+   * @throws IllegalStateException if the next token is not a boolean or if this reader is closed.
+   */
+  public boolean nextBoolean() throws IOException {
+    int p = peeked;
+    if (p == PEEKED_NONE) {
+      p = doPeek();
+    }
+    if (p == PEEKED_TRUE) {
+      peeked = PEEKED_NONE;
+      pathIndices[stackSize - 1]++;
+      return true;
+    } else if (p == PEEKED_FALSE) {
+      peeked = PEEKED_NONE;
+```
+
+Give me the fixed code snippet (ONLY THE METHOD REWRITE OF "nextString()") in XML format in <response> tag like the example below. I will apply the fix to my codebase.
+Do not import any additional libraries or classes or java comments.
+If you can provide the fixed code snippet, provide it in the following format and place the code snippet in the <code> tag within ```java block.
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  Your fixed code snippet here
+  ```
+    ]]>
+  </code>
+</response>
+
+---ChatGPT.sendRequestToOpenAI---
+Sending request to OpenAI...
+---ChatGPT.sendRequestToOpenAI---
+Response received from OpenAI.
+---Response.<init>---
+Creating Response:
+```xml
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  public String nextString() throws IOException {
+    int p = peeked;
+    if (p == PEEKED_NONE) {
+      p = doPeek();
+    }
+    String result;
+    if (p == PEEKED_UNQUOTED) {
+      result = nextUnquotedValue();
+    } else if (p == PEEKED_SINGLE_QUOTED) {
+      result = nextQuotedValue('\'');
+    } else if (p == PEEKED_DOUBLE_QUOTED) {
+      result = nextQuotedValue('"');
+    } else if (p == PEEKED_BUFFERED) {
+      result = peekedString;
+      peekedString = null;
+    } else if (p == PEEKED_LONG) {
+      result = Long.toString(peekedLong);
+    } else if (p == PEEKED_NUMBER) {
+      result = new String(buffer, pos, peekedNumberLength);
+      pos += peekedNumberLength;
+    } else {
+      throw new IllegalStateException("Expected a string but was " + peek() + locationString());
+    }
+    if (result == null) {
+      throw new IllegalStateException("Expected a non-null string result");
+    }
+    peeked = PEEKED_NONE;
+    pathIndices[stackSize - 1]++;
+    return result;
+  }
+  ```
+  ]]>
+  </code>
+</response>
+```
+---Response.<init>---
+Response created:
+public String nextString() throws IOException {
+    int p = peeked;
+    if (p == PEEKED_NONE) {
+      p = doPeek();
+    }
+    String result;
+    if (p == PEEKED_UNQUOTED) {
+      result = nextUnquotedValue();
+    } else if (p == PEEKED_SINGLE_QUOTED) {
+      result = nextQuotedValue('\'');
+    } else if (p == PEEKED_DOUBLE_QUOTED) {
+      result = nextQuotedValue('"');
+    } else if (p == PEEKED_BUFFERED) {
+      result = peekedString;
+      peekedString = null;
+    } else if (p == PEEKED_LONG) {
+      result = Long.toString(peekedLong);
+    } else if (p == PEEKED_NUMBER) {
+      result = new String(buffer, pos, peekedNumberLength);
+      pos += peekedNumberLength;
+    } else {
+      throw new IllegalStateException("Expected a string but was " + peek() + locationString());
+    }
+    if (result == null) {
+      throw new IllegalStateException("Expected a non-null string result");
+    }
+    peeked = PEEKED_NONE;
+    pathIndices[stackSize - 1]++;
+    return result;
+  }
