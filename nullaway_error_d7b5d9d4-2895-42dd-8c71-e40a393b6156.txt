@@ -1,4 +1,4 @@
 warning: [options] module name in --add-exports option not found: jdk.compiler
-/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/Gson.java:431: error: [NullAway] dereferenced expression value is @Nullable
+/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/Gson.java:434: error: [NullAway] dereferenced expression value is @Nullable
         return new AtomicLong(value.longValue());
                                    ^
