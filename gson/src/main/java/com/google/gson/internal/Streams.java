@@ -41,16 +41,15 @@ public final class Streams {
     try {
       reader.peek();
       isEmpty = false;
-      return TypeAdapters.JSON_ELEMENT.read(reader);
+      JsonElement result = TypeAdapters.JSON_ELEMENT.read(reader);
+      if (result == null) {
+        throw new JsonParseException("Parsed result is null");
+      }
+      return result;
     } catch (EOFException e) {
-      /*
-       * For compatibility with JSON 1.5 and earlier, we return a JsonNull for
-       * empty documents instead of throwing.
-       */
       if (isEmpty) {
         return JsonNull.INSTANCE;
       }
-      // The stream ended prematurely so it is likely a syntax error.
       throw new JsonSyntaxException(e);
     } catch (MalformedJsonException e) {
       throw new JsonSyntaxException(e);
