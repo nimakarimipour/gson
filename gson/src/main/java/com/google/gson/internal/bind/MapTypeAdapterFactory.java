@@ -172,7 +172,6 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       this.constructor = constructor;
     }
 
-    @Nullable
     @Override
     public Map<K, V> read(JsonReader in) throws IOException {
       JsonToken peek = in.peek();
@@ -199,7 +198,9 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       } else {
         in.beginObject();
         while (in.hasNext()) {
-          JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
+          if (JsonReaderInternalAccess.INSTANCE != null) {
+            JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
+          }
           K key = keyTypeAdapter.read(in);
           V value = valueTypeAdapter.read(in);
           V replaced = map.put(key, value);
