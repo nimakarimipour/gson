@@ -20,7 +20,6 @@ import com.google.gson.internal.$Gson$Preconditions;
 import com.google.gson.internal.LazilyParsedNumber;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import javax.annotation.Nullable;
 
 /**
  * A class representing a Json primitive value. A primitive value is either a String, a Java

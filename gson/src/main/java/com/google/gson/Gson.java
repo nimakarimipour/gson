@@ -335,7 +335,8 @@ public final class Gson {
       return TypeAdapters.DOUBLE;
     }
     return new TypeAdapter<Number>() {
-      @Nullable @Override
+      @Nullable
+      @Override
       public Double read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
@@ -362,7 +363,8 @@ public final class Gson {
       return TypeAdapters.FLOAT;
     }
     return new TypeAdapter<Number>() {
-      @Nullable @Override
+      @Nullable
+      @Override
       public Float read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
@@ -398,7 +400,8 @@ public final class Gson {
       return TypeAdapters.LONG;
     }
     return new TypeAdapter<Number>() {
-      @Nullable @Override
+      @Nullable
+      @Override
       public Number read(JsonReader in) throws IOException {
         if (in.peek() == JsonToken.NULL) {
           in.nextNull();
@@ -567,7 +570,8 @@ public final class Gson {
    * @param type Type for which the delegate adapter is being searched for.
    * @since 2.2
    */
-  public <T> TypeAdapter<T> getDelegateAdapter(@Nullable TypeAdapterFactory skipPast, TypeToken<T> type) {
+  public <T> TypeAdapter<T> getDelegateAdapter(
+      @Nullable TypeAdapterFactory skipPast, TypeToken<T> type) {
     // Hack. If the skipPast factory isn't registered, assume the factory is being requested via
     // our @JsonAdapter annotation.
     if (!factories.contains(skipPast)) {
@@ -857,7 +861,8 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    *     classOfT
    */
-  @Nullable public <T> T fromJson(String json, Class<T> classOfT) throws JsonSyntaxException {
+  @Nullable
+  public <T> T fromJson(String json, Class<T> classOfT) throws JsonSyntaxException {
     Object object = fromJson(json, (Type) classOfT);
     return Primitives.wrap(classOfT).cast(object);
   }
@@ -882,7 +887,8 @@ public final class Gson {
    * @throws JsonParseException if json is not a valid representation for an object of type typeOfT
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @Nullable @SuppressWarnings("unchecked")
+  @Nullable
+  @SuppressWarnings("unchecked")
   public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -910,7 +916,8 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * @since 1.2
    */
-  @Nullable public <T> T fromJson(Reader json, Class<T> classOfT)
+  @Nullable
+  public <T> T fromJson(Reader json, Class<T> classOfT)
       throws JsonSyntaxException, JsonIOException {
     JsonReader jsonReader = newJsonReader(json);
     Object object = fromJson(jsonReader, classOfT);
@@ -938,7 +945,8 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * @since 1.2
    */
-  @Nullable @SuppressWarnings("unchecked")
+  @Nullable
+  @SuppressWarnings("unchecked")
   public <T> T fromJson(Reader json, Type typeOfT) throws JsonIOException, JsonSyntaxException {
     JsonReader jsonReader = newJsonReader(json);
     T object = (T) fromJson(jsonReader, typeOfT);
@@ -966,7 +974,8 @@ public final class Gson {
    * @throws JsonIOException if there was a problem writing to the Reader
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
-  @Nullable @SuppressWarnings("unchecked")
+  @Nullable
+  @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonReader reader, Type typeOfT)
       throws JsonIOException, JsonSyntaxException {
     boolean isEmpty = true;
@@ -1020,7 +1029,8 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
    */
-  @Nullable public <T> T fromJson(JsonElement json, Class<T> classOfT) throws JsonSyntaxException {
+  @Nullable
+  public <T> T fromJson(JsonElement json, Class<T> classOfT) throws JsonSyntaxException {
     Object object = fromJson(json, (Type) classOfT);
     return Primitives.wrap(classOfT).cast(object);
   }
@@ -1045,7 +1055,8 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
    */
-  @Nullable @SuppressWarnings("unchecked")
+  @Nullable
+  @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
       return null;
@@ -1063,7 +1074,8 @@ public final class Gson {
       delegate = typeAdapter;
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public T read(JsonReader in) throws IOException {
       if (delegate == null) {
         throw new IllegalStateException();

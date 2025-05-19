@@ -616,7 +616,10 @@ public final class GsonBuilder {
 
   @SuppressWarnings("unchecked")
   private void addTypeAdaptersForDate(
-      @Nullable String datePattern, int dateStyle, int timeStyle, List<TypeAdapterFactory> factories) {
+      @Nullable String datePattern,
+      int dateStyle,
+      int timeStyle,
+      List<TypeAdapterFactory> factories) {
     DefaultDateTypeAdapter dateTypeAdapter;
     TypeAdapter<Timestamp> timestampTypeAdapter;
     TypeAdapter<java.sql.Date> javaSqlDateTypeAdapter;

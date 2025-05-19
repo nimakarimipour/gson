@@ -66,7 +66,8 @@ public final class JsonObject extends JsonElement {
    * @return the {@link JsonElement} object that is being removed.
    * @since 1.3
    */
-  @Nullable public JsonElement remove(String property) {
+  @Nullable
+  public JsonElement remove(String property) {
     return members.remove(property);
   }
 
@@ -159,7 +160,8 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member that is being requested.
    * @return the member matching the name. Null if no such member exists.
    */
-  @Nullable public JsonElement get(String memberName) {
+  @Nullable
+  public JsonElement get(String memberName) {
     return members.get(memberName);
   }
 
@@ -169,7 +171,8 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member being requested.
    * @return the JsonPrimitive corresponding to the specified member.
    */
-  @Nullable public JsonPrimitive getAsJsonPrimitive(String memberName) {
+  @Nullable
+  public JsonPrimitive getAsJsonPrimitive(String memberName) {
     return (JsonPrimitive) members.get(memberName);
   }
 
@@ -179,7 +182,8 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member being requested.
    * @return the JsonArray corresponding to the specified member.
    */
-  @Nullable public JsonArray getAsJsonArray(String memberName) {
+  @Nullable
+  public JsonArray getAsJsonArray(String memberName) {
     return (JsonArray) members.get(memberName);
   }
 
@@ -189,7 +193,8 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member being requested.
    * @return the JsonObject corresponding to the specified member.
    */
-  @Nullable public JsonObject getAsJsonObject(String memberName) {
+  @Nullable
+  public JsonObject getAsJsonObject(String memberName) {
     return (JsonObject) members.get(memberName);
   }
 

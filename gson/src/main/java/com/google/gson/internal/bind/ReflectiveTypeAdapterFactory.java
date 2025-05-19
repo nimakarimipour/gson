@@ -92,7 +92,8 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     return fieldNames;
   }
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public <T> TypeAdapter<T> create(Gson gson, final TypeToken<T> type) {
     Class<? super T> raw = type.getRawType();
 
@@ -218,7 +219,8 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
       this.boundFields = boundFields;
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public T read(JsonReader in) throws IOException {
       if (in.peek() == JsonToken.NULL) {
         in.nextNull();

@@ -128,7 +128,8 @@ final class DefaultDateTypeAdapter extends TypeAdapter<Date> {
     }
   }
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public Date read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

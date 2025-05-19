@@ -95,7 +95,8 @@ public final class ConstructorConstructor {
     return newUnsafeAllocator(type, rawType);
   }
 
-  @Nullable private <T> ObjectConstructor<T> newDefaultConstructor(Class<? super T> rawType) {
+  @Nullable
+  private <T> ObjectConstructor<T> newDefaultConstructor(Class<? super T> rawType) {
     try {
       final Constructor<? super T> constructor = rawType.getDeclaredConstructor();
       if (!constructor.isAccessible()) {
@@ -127,7 +128,8 @@ public final class ConstructorConstructor {
   }
 
   /** Constructors for common interface types like Map and List and their subtypes. */
-  @Nullable @SuppressWarnings("unchecked") // use runtime checks to guarantee that 'T' is what it is
+  @Nullable
+  @SuppressWarnings("unchecked") // use runtime checks to guarantee that 'T' is what it is
   private <T> ObjectConstructor<T> newDefaultImplementationConstructor(
       final Type type, Class<? super T> rawType) {
     if (Collection.class.isAssignableFrom(rawType)) {

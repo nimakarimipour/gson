@@ -36,7 +36,8 @@ import javax.annotation.Nullable;
 public final class ArrayTypeAdapter<E> extends TypeAdapter<Object> {
   public static final TypeAdapterFactory FACTORY =
       new TypeAdapterFactory() {
-        @Nullable @SuppressWarnings({"unchecked", "rawtypes"})
+        @Nullable
+        @SuppressWarnings({"unchecked", "rawtypes"})
         @Override
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
           Type type = typeToken.getType();
@@ -62,7 +63,8 @@ public final class ArrayTypeAdapter<E> extends TypeAdapter<Object> {
     this.componentType = componentType;
   }
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public Object read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

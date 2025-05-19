@@ -25,7 +25,6 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import javax.annotation.Nullable;
 
 /**
  * A streaming parser that allows reading of multiple {@link JsonElement}s from the specified reader

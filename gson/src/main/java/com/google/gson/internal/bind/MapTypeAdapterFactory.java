@@ -123,7 +123,8 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
     this.complexMapKeySerialization = complexMapKeySerialization;
   }
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
     Type type = typeToken.getType();
 
@@ -171,7 +172,8 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       this.constructor = constructor;
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public Map<K, V> read(JsonReader in) throws IOException {
       JsonToken peek = in.peek();
       if (peek == JsonToken.NULL) {

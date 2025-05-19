@@ -40,7 +40,8 @@ import javax.annotation.Nullable;
 public final class TimeTypeAdapter extends TypeAdapter<Time> {
   public static final TypeAdapterFactory FACTORY =
       new TypeAdapterFactory() {
-        @Nullable @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
+        @Nullable
+        @SuppressWarnings("unchecked") // we use a runtime check to make sure the 'T's equal
         @Override
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
           return typeToken.getRawType() == Time.class
@@ -51,7 +52,8 @@ public final class TimeTypeAdapter extends TypeAdapter<Time> {
 
   private final DateFormat format = new SimpleDateFormat("hh:mm:ss a");
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public synchronized Time read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();

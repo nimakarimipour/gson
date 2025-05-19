@@ -36,7 +36,8 @@ final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
     this.type = type;
   }
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public T read(JsonReader in) throws IOException {
     return delegate.read(in);
   }

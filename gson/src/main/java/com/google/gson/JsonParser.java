@@ -22,7 +22,6 @@ import com.google.gson.stream.MalformedJsonException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import javax.annotation.Nullable;
 
 /**
  * A parser to parse Json into a parse tree of {@link JsonElement}s

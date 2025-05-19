@@ -72,7 +72,8 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     return false;
   }
 
-  @Nullable private static Object getUnsafeInstance() {
+  @Nullable
+  private static Object getUnsafeInstance() {
     try {
       unsafeClass = Class.forName("sun.misc.Unsafe");
       Field unsafeField = unsafeClass.getDeclaredField("theUnsafe");
@@ -83,7 +84,8 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
     }
   }
 
-  @Nullable private static Field getOverrideField() {
+  @Nullable
+  private static Field getOverrideField() {
     try {
       return AccessibleObject.class.getDeclaredField("override");
     } catch (NoSuchFieldException e) {

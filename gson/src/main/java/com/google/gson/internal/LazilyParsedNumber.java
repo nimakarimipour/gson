@@ -17,7 +17,6 @@ package com.google.gson.internal;
 
 import java.io.ObjectStreamException;
 import java.math.BigDecimal;
-import javax.annotation.Nullable;
 
 /**
  * This class holds a number value that is lazily converted to a specific number type

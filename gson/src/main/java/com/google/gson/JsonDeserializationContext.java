@@ -40,5 +40,6 @@ public interface JsonDeserializationContext {
    * @return An object of type typeOfT.
    * @throws JsonParseException if the parse tree does not contain expected data.
    */
-  @Nullable public <T> T deserialize(JsonElement json, Type typeOfT) throws JsonParseException;
+  @Nullable
+  public <T> T deserialize(JsonElement json, Type typeOfT) throws JsonParseException;
 }

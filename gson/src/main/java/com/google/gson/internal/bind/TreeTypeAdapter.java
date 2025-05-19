@@ -63,7 +63,8 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     this.skipPast = skipPast;
   }
 
-  @Nullable @Override
+  @Nullable
+  @Override
   public T read(JsonReader in) throws IOException {
     if (deserializer == null) {
       return delegate().read(in);
@@ -124,7 +125,10 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     @Nullable private final JsonDeserializer<?> deserializer;
 
     SingleTypeFactory(
-        Object typeAdapter, @Nullable TypeToken<?> exactType, boolean matchRawType, @Nullable Class<?> hierarchyType) {
+        Object typeAdapter,
+        @Nullable TypeToken<?> exactType,
+        boolean matchRawType,
+        @Nullable Class<?> hierarchyType) {
       serializer = typeAdapter instanceof JsonSerializer ? (JsonSerializer<?>) typeAdapter : null;
       deserializer =
           typeAdapter instanceof JsonDeserializer ? (JsonDeserializer<?>) typeAdapter : null;
@@ -134,7 +138,8 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       this.hierarchyType = hierarchyType;
     }
 
-    @Nullable @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
+    @Nullable
+    @SuppressWarnings("unchecked") // guarded by typeToken.equals() call
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       boolean matches =
@@ -160,7 +165,8 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
       return gson.toJsonTree(src, typeOfSrc);
     }
 
-    @Nullable @SuppressWarnings("unchecked")
+    @Nullable
+    @SuppressWarnings("unchecked")
     @Override
     public <R> R deserialize(JsonElement json, Type typeOfT) throws JsonParseException {
       return (R) gson.fromJson(json, typeOfT);
