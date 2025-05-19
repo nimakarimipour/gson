@@ -94,13 +94,15 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     return findByObject(key) != null;
   }
 
-  @Nullable
   @Override
   public V put(K key, V value) {
     if (key == null) {
       throw new NullPointerException("key == null");
     }
     Node<K, V> created = find(key, true);
+    if (created == null) {
+      throw new NullPointerException("find(key, true) returned null");
+    }
     V result = created.value;
     created.value = value;
     return result;
