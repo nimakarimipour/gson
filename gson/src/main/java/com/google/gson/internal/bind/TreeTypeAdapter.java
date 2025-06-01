@@ -63,13 +63,14 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     this.skipPast = skipPast;
   }
 
+  @Nullable
   @Override
   public T read(JsonReader in) throws IOException {
     if (deserializer == null) {
       return delegate().read(in);
     }
     JsonElement value = Streams.parse(in);
-    if (NullabilityUtil.castToNonnull(value, "Streams.parse non-nullable")) {
+    if (value.isJsonNull()) {
       return null;
     }
     return deserializer.deserialize(value, typeToken.getType(), context);
