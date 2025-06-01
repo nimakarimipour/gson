@@ -342,7 +342,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    *
    * @param insert true if the node was unbalanced by an insert; false if it was by a removal.
    */
-  private void rebalance(Node<K, V> unbalanced, boolean insert) {
+  private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
     for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
       Node<K, V> left = node.left;
       Node<K, V> right = node.right;
@@ -369,7 +369,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         }
 
       } else if (delta == 2) {
-        Node<K, V> leftLeft = NullabilityUtil.castToNonnull(left, "delta equals two").left;
+        Node<K, V> leftLeft = left.left;
         Node<K, V> leftRight = left.right;
         int leftRightHeight = leftRight != null ? leftRight.height : 0;
         int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
