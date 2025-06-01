@@ -28,6 +28,7 @@ import com.google.gson.stream.MalformedJsonException;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
+import javax.annotation.Nullable;
 
 /** Reads and writes GSON parse trees over streams. */
 public final class Streams {
@@ -36,6 +37,7 @@ public final class Streams {
   }
 
   /** Takes a reader in any state and returns the next value as a JsonElement. */
+  @Nullable
   public static JsonElement parse(JsonReader reader) throws JsonParseException {
     boolean isEmpty = true;
     try {

@@ -25,6 +25,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import javax.annotation.Nullable;
 
 /**
  * A streaming parser that allows reading of multiple {@link JsonElement}s from the specified reader
@@ -77,6 +78,7 @@ public final class JsonStreamParser implements Iterator<JsonElement> {
    * @throws JsonParseException if the incoming stream is malformed JSON.
    * @since 1.4
    */
+  @Nullable
   public JsonElement next() throws JsonParseException {
     if (!hasNext()) {
       throw new NoSuchElementException();
