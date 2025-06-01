@@ -55,17 +55,19 @@ final class UnsafeReflectionAccessor extends ReflectionAccessor {
 
   // Visible for testing only
   boolean makeAccessibleWithUnsafe(AccessibleObject ao) {
-    try {
-      unsafeClass = Class.forName("sun.misc.Unsafe");
-      if (theUnsafe != null && overrideField != null && unsafeClass != null) {
+    if (theUnsafe != null && overrideField != null) {
+      try {
         Method method = unsafeClass.getMethod("objectFieldOffset", Field.class);
-        long overrideOffset = (Long) method.invoke(theUnsafe, overrideField);
+        long overrideOffset =
+            (Long) method.invoke(theUnsafe, overrideField); // long overrideOffset =
+        // theUnsafe.objectFieldOffset(overrideField);
         Method putBooleanMethod =
             unsafeClass.getMethod("putBoolean", Object.class, long.class, boolean.class);
-        putBooleanMethod.invoke(theUnsafe, ao, overrideOffset, true);
+        putBooleanMethod.invoke(
+            theUnsafe, ao, overrideOffset, true); // theUnsafe.putBoolean(ao, overrideOffset, true);
         return true;
+      } catch (Exception ignored) { // do nothing
       }
-    } catch (Exception ignored) { // do nothing
     }
     return false;
   }
