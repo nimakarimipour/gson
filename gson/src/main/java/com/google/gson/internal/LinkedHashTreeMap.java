@@ -486,15 +486,21 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     }
 
     /** Create a regular entry */
-    Node(Node<K, V> parent, K key, int hash, Node<K, V> next, @Nullable Node<K, V> prev) {
+    Node(Node<K, V> parent, K key, int hash, Node<K, V> next, Node<K, V> prev) {
       this.parent = parent;
       this.key = key;
       this.hash = hash;
       this.height = 1;
       this.next = next;
       this.prev = prev;
-      prev.next = this;
-      next.prev = this;
+
+      if (prev != null) {
+        prev.next = this;
+      }
+
+      if (next != null) {
+        next.prev = this;
+      }
     }
 
     @Nullable
@@ -726,19 +732,27 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
           // Pop right, center and left, then make center the top of the stack.
           Node<K, V> right = stack;
           Node<K, V> center = right.parent;
+          if (center == null) {
+            continue; // avoid NPE
+          }
           Node<K, V> left = center.parent;
-          center.parent = left.parent;
+          center.parent = left != null ? left.parent : null;
           stack = center;
           // Construct a tree.
           center.left = left;
           center.right = right;
           center.height = right.height + 1;
-          left.parent = center;
+          if (left != null) {
+            left.parent = center;
+          }
           right.parent = center;
         } else if (leavesSkipped == 1) {
           // Pop right and center, then make center the top of the stack.
           Node<K, V> right = stack;
           Node<K, V> center = right.parent;
+          if (center == null) {
+            continue; // avoid NPE
+          }
           stack = center;
           // Construct a tree with no left child.
           center.right = right;
@@ -753,7 +767,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
 
     Node<K, V> root() {
       Node<K, V> stackTop = this.stack;
-      if (stackTop.parent != null) {
+      if (stackTop == null || stackTop.parent != null) {
         throw new IllegalStateException();
       }
       return stackTop;
