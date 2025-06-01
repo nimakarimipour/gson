@@ -198,6 +198,9 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
         in.endArray();
       } else {
         in.beginObject();
+        if (JsonReaderInternalAccess.INSTANCE == null) {
+          return null;
+        }
         while (in.hasNext()) {
           JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
           K key = keyTypeAdapter.read(in);
