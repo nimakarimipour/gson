@@ -29,6 +29,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
 import javax.annotation.Nullable;
+import edu.ucr.cs.riple.annotator.util.Nullability;
 
 /** Reads and writes GSON parse trees over streams. */
 public final class Streams {
@@ -99,14 +100,20 @@ public final class Streams {
 
     /** A mutable char sequence pointing at a single char[]. */
     static class CurrentWrite implements CharSequence {
-      char[] chars;
+      @Nullable char[] chars;
 
       public int length() {
-        return chars.length;
-      }
+            if (chars == null) {
+                throw new NullPointerException("chars is null");
+            }
+            return chars.length;
+        }
 
       public char charAt(int i) {
-        return chars[i];
+                  if (chars == null) {
+                      throw new NullPointerException("chars is null");
+                  }
+                  return Nullability.castToNonnull(chars, "throws NPE if null")[i];
       }
 
       public CharSequence subSequence(int start, int end) {
