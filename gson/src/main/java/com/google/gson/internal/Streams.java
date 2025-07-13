@@ -38,29 +38,28 @@ public final class Streams {
 
   /** Takes a reader in any state and returns the next value as a JsonElement. */
   public static JsonElement parse(JsonReader reader) throws JsonParseException {
-    boolean isEmpty = true;
-    try {
-      reader.peek();
-      isEmpty = false;
-      return TypeAdapters.JSON_ELEMENT.read(reader);
-    } catch (EOFException e) {
-      /*
-       * For compatibility with JSON 1.5 and earlier, we return a JsonNull for
-       * empty documents instead of throwing.
-       */
-      if (isEmpty) {
-        return JsonNull.INSTANCE;
+      boolean isEmpty = true;
+      try {
+        reader.peek();
+        isEmpty = false;
+        JsonElement element = TypeAdapters.JSON_ELEMENT.read(reader);
+        if (element == null) {
+          return JsonNull.INSTANCE;
+        }
+        return element;
+      } catch (EOFException e) {
+        if (isEmpty) {
+          return JsonNull.INSTANCE;
+        }
+        throw new JsonSyntaxException(e);
+      } catch (MalformedJsonException e) {
+        throw new JsonSyntaxException(e);
+      } catch (IOException e) {
+        throw new JsonIOException(e);
+      } catch (NumberFormatException e) {
+        throw new JsonSyntaxException(e);
       }
-      // The stream ended prematurely so it is likely a syntax error.
-      throw new JsonSyntaxException(e);
-    } catch (MalformedJsonException e) {
-      throw new JsonSyntaxException(e);
-    } catch (IOException e) {
-      throw new JsonIOException(e);
-    } catch (NumberFormatException e) {
-      throw new JsonSyntaxException(e);
     }
-  }
 
   /** Writes the JSON element to the writer, recursively. */
   public static void write(JsonElement element, JsonWriter writer) throws IOException {
