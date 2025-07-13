@@ -325,8 +325,8 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
       int delta = leftHeight - rightHeight;
       if (delta == -2) {
-        Node<K, V> rightLeft = right.left;
-        Node<K, V> rightRight = right.right;
+        Node<K, V> rightLeft = right != null ? right.left : null;
+        Node<K, V> rightRight = right != null ? right.right : null;
         int rightRightHeight = rightRight != null ? rightRight.height : 0;
         int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
 
@@ -343,8 +343,8 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
         }
 
       } else if (delta == 2) {
-        Node<K, V> leftLeft = left.left;
-        Node<K, V> leftRight = left.right;
+        Node<K, V> leftLeft = left != null ? left.left : null;
+        Node<K, V> leftRight = left != null ? left.right : null;
         int leftRightHeight = leftRight != null ? leftRight.height : 0;
         int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
 
