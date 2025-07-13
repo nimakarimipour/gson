@@ -380,12 +380,10 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   private void rotateLeft(Node<K, V> root) {
     Node<K, V> left = root.left;
     Node<K, V> pivot = root.right;
-    if (pivot == null) {
-      return; // safely handle the potential null pivot
-    }
     Node<K, V> pivotLeft = pivot.left;
     Node<K, V> pivotRight = pivot.right;
 
+    // move the pivot's left child to the root's right
     root.right = pivotLeft;
     if (pivotLeft != null) {
       pivotLeft.parent = root;
@@ -393,9 +391,11 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
     replaceInParent(root, pivot);
 
+    // move the root to the pivot's left
     pivot.left = root;
     root.parent = pivot;
 
+    // fix heights
     root.height =
         Math.max(left != null ? left.height : 0, pivotLeft != null ? pivotLeft.height : 0) + 1;
     pivot.height = Math.max(root.height, pivotRight != null ? pivotRight.height : 0) + 1;
