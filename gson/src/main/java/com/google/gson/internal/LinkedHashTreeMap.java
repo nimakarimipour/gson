@@ -29,6 +29,7 @@ import java.util.LinkedHashMap;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import javax.annotation.Nullable;
+import edu.ucr.cs.riple.annotator.util.Nullability;
 
 /**
  * A map of comparable keys to values. Unlike {@code TreeMap}, this class uses insertion order for
@@ -689,68 +690,53 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     }
 
     void add(Node<K, V> node) {
-      node.left = node.parent = node.right = null;
-      node.height = 1;
-
-      // Skip a leaf if necessary.
-      if (leavesToSkip > 0 && (size & 1) == 0) {
-        size++;
-        leavesToSkip--;
-        leavesSkipped++;
-      }
-
-      node.parent = stack;
-      stack = node; // Stack push.
-      size++;
-
-      // Skip a leaf if necessary.
-      if (leavesToSkip > 0 && (size & 1) == 0) {
-        size++;
-        leavesToSkip--;
-        leavesSkipped++;
-      }
-
-      /*
-       * Combine 3 nodes into subtrees whenever the size is one less than a
-       * multiple of 4. For example we combine the nodes A, B, C into a
-       * 3-element tree with B as the root.
-       *
-       * Combine two subtrees and a spare single value whenever the size is one
-       * less than a multiple of 8. For example at 8 we may combine subtrees
-       * (A B C) and (E F G) with D as the root to form ((A B C) D (E F G)).
-       *
-       * Just as we combine single nodes when size nears a multiple of 4, and
-       * 3-element trees when size nears a multiple of 8, we combine subtrees of
-       * size (N-1) whenever the total size is 2N-1 whenever N is a power of 2.
-       */
-      for (int scale = 4; (size & scale - 1) == scale - 1; scale *= 2) {
-        if (leavesSkipped == 0) {
-          // Pop right, center and left, then make center the top of the stack.
-          Node<K, V> right = stack;
-          Node<K, V> center = right.parent;
-          Node<K, V> left = center.parent;
-          center.parent = left.parent;
-          stack = center;
-          // Construct a tree.
-          center.left = left;
-          center.right = right;
-          center.height = right.height + 1;
-          left.parent = center;
-          right.parent = center;
-        } else if (leavesSkipped == 1) {
-          // Pop right and center, then make center the top of the stack.
-          Node<K, V> right = stack;
-          Node<K, V> center = right.parent;
-          stack = center;
-          // Construct a tree with no left child.
-          center.right = right;
-          center.height = right.height + 1;
-          right.parent = center;
-          leavesSkipped = 0;
-        } else if (leavesSkipped == 2) {
-          leavesSkipped = 0;
-        }
-      }
+          node.left = node.parent = node.right = null;
+          node.height = 1;
+    
+          // Skip a leaf if necessary.
+          if (leavesToSkip > 0 && (size & 1) == 0) {
+            size++;
+            leavesToSkip--;
+            leavesSkipped++;
+          }
+    
+          node.parent = stack;
+          stack = node; // Stack push.
+          size++;
+    
+          // Skip a leaf if necessary.
+          if (leavesToSkip > 0 && (size & 1) == 0) {
+            size++;
+            leavesToSkip--;
+            leavesSkipped++;
+          }
+    
+          for (int scale = 4; (size & scale - 1) == scale - 1; scale *= 2) {
+            if (leavesSkipped == 0) {
+              // Pop right, center and left, then make center the top of the stack.
+              Node<K, V> right = stack;
+              Node<K, V> center = Nullability.castToNonnull(right.parent, "parent set in stack");
+              Node<K, V> left = center.parent;
+              center.parent = left.parent;
+              stack = center;
+              center.left = left;
+              center.right = right;
+              center.height = right.height + 1;
+              left.parent = center;
+              right.parent = center;
+            } else if (leavesSkipped == 1) {
+              // Pop right and center, then make center the top of the stack.
+              Node<K, V> right = stack;
+              Node<K, V> center = Nullability.castToNonnull(right.parent, "parent set in stack");
+              stack = center;
+              center.right = right;
+              center.height = right.height + 1;
+              right.parent = center;
+              leavesSkipped = 0;
+            } else if (leavesSkipped == 2) {
+              leavesSkipped = 0;
+            }
+          }
     }
 
     Node<K, V> root() {
