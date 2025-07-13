@@ -172,45 +172,47 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       this.constructor = constructor;
     }
 
-    @Nullable
-    @Override
-    public Map<K, V> read(JsonReader in) throws IOException {
-      JsonToken peek = in.peek();
-      if (peek == JsonToken.NULL) {
-        in.nextNull();
-        return null;
-      }
-
-      Map<K, V> map = constructor.construct();
-
-      if (peek == JsonToken.BEGIN_ARRAY) {
-        in.beginArray();
-        while (in.hasNext()) {
-          in.beginArray(); // entry array
-          K key = keyTypeAdapter.read(in);
-          V value = valueTypeAdapter.read(in);
-          V replaced = map.put(key, value);
-          if (replaced != null) {
-            throw new JsonSyntaxException("duplicate key: " + key);
+    @Nullable @Override
+      public Map<K, V> read(JsonReader in) throws IOException {
+        JsonToken peek = in.peek();
+        if (peek == JsonToken.NULL) {
+          in.nextNull();
+          return null;
+        }
+    
+        Map<K, V> map = constructor.construct();
+    
+        if (peek == JsonToken.BEGIN_ARRAY) {
+          in.beginArray();
+          while (in.hasNext()) {
+            in.beginArray(); // entry array
+            K key = keyTypeAdapter.read(in);
+            V value = valueTypeAdapter.read(in);
+            V replaced = map.put(key, value);
+            if (replaced != null) {
+              throw new JsonSyntaxException("duplicate key: " + key);
+            }
+            in.endArray();
           }
           in.endArray();
-        }
-        in.endArray();
-      } else {
-        in.beginObject();
-        while (in.hasNext()) {
-          JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
-          K key = keyTypeAdapter.read(in);
-          V value = valueTypeAdapter.read(in);
-          V replaced = map.put(key, value);
-          if (replaced != null) {
-            throw new JsonSyntaxException("duplicate key: " + key);
+        } else {
+          in.beginObject();
+          if (JsonReaderInternalAccess.INSTANCE == null) {
+            return null;
           }
+          while (in.hasNext()) {
+            JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
+            K key = keyTypeAdapter.read(in);
+            V value = valueTypeAdapter.read(in);
+            V replaced = map.put(key, value);
+            if (replaced != null) {
+              throw new JsonSyntaxException("duplicate key: " + key);
+            }
+          }
+          in.endObject();
         }
-        in.endObject();
+        return map;
       }
-      return map;
-    }
 
     @Override
     public void write(JsonWriter out, Map<K, V> map) throws IOException {
