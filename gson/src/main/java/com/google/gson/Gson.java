@@ -452,21 +452,25 @@ public final class Gson {
       }
 
       @Override
-      public AtomicLongArray read(JsonReader in) throws IOException {
-        List<Long> list = new ArrayList<Long>();
-        in.beginArray();
-        while (in.hasNext()) {
-          long value = longAdapter.read(in).longValue();
-          list.add(value);
+        public AtomicLongArray read(JsonReader in) throws IOException {
+          List<Long> list = new ArrayList<Long>();
+          in.beginArray();
+          while (in.hasNext()) {
+            Number number = longAdapter.read(in);
+            if (number == null) {
+              throw new IllegalStateException("Null value encountered in JSON input");
+            }
+            long value = number.longValue();
+            list.add(value);
+          }
+          in.endArray();
+          int length = list.size();
+          AtomicLongArray array = new AtomicLongArray(length);
+          for (int i = 0; i < length; ++i) {
+            array.set(i, list.get(i));
+          }
+          return array;
         }
-        in.endArray();
-        int length = list.size();
-        AtomicLongArray array = new AtomicLongArray(length);
-        for (int i = 0; i < length; ++i) {
-          array.set(i, list.get(i));
-        }
-        return array;
-      }
     }.nullSafe();
   }
 
