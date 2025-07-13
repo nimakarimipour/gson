@@ -24,6 +24,7 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.HashMap;
 import java.util.Map;
+import edu.ucr.cs.riple.annotator.util.Nullability;
 
 /**
  * Represents a generic type {@code T}. Java doesn't yet provide a way to represent generic types,
@@ -290,8 +291,8 @@ public class TypeToken<T> {
    * {@code rawType}.
    */
   public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
-    return new TypeToken<Object>(
-        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+      return new TypeToken<Object>(
+          $Gson$Types.newParameterizedTypeWithOwner(Nullability.castToNonnull(null), rawType, typeArguments));
   }
 
   /**
