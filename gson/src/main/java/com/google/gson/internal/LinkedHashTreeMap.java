@@ -749,12 +749,12 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
       }
 
     Node<K, V> root() {
-      Node<K, V> stackTop = this.stack;
-      if (stackTop.parent != null) {
-        throw new IllegalStateException();
-      }
-      return stackTop;
-    }
+          Node<K, V> stackTop = this.stack;
+          if (stackTop == null || stackTop.parent != null) {
+              throw new IllegalStateException();
+          }
+          return stackTop;
+        }
   }
 
   private abstract class LinkedTreeMapIterator<T> implements Iterator<T> {
