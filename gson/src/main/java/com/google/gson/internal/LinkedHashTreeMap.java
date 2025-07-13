@@ -725,26 +725,36 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         if (leavesSkipped == 0) {
           // Pop right, center and left, then make center the top of the stack.
           Node<K, V> right = stack;
-          Node<K, V> center = right.parent;
-          Node<K, V> left = center.parent;
-          center.parent = left.parent;
-          stack = center;
-          // Construct a tree.
-          center.left = left;
-          center.right = right;
-          center.height = right.height + 1;
-          left.parent = center;
-          right.parent = center;
+          if (right != null) {
+            Node<K, V> center = right.parent;
+            if (center != null) {
+              Node<K, V> left = center.parent;
+              if (left != null) {
+                center.parent = left.parent;
+                stack = center;
+                // Construct a tree.
+                center.left = left;
+                center.right = right;
+                center.height = right.height + 1;
+                left.parent = center;
+                right.parent = center;
+              }
+            }
+          }
         } else if (leavesSkipped == 1) {
           // Pop right and center, then make center the top of the stack.
           Node<K, V> right = stack;
-          Node<K, V> center = right.parent;
-          stack = center;
-          // Construct a tree with no left child.
-          center.right = right;
-          center.height = right.height + 1;
-          right.parent = center;
-          leavesSkipped = 0;
+          if (right != null) {
+            Node<K, V> center = right.parent;
+            if (center != null) {
+              stack = center;
+              // Construct a tree with no left child.
+              center.right = right;
+              center.height = right.height + 1;
+              right.parent = center;
+              leavesSkipped = 0;
+            }
+          }
         } else if (leavesSkipped == 2) {
           leavesSkipped = 0;
         }
