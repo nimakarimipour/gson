@@ -429,10 +429,13 @@ public final class Gson {
       }
 
       @Override
-      public AtomicLong read(JsonReader in) throws IOException {
-        Number value = longAdapter.read(in);
-        return new AtomicLong(value.longValue());
-      }
+            public AtomicLong read(JsonReader in) throws IOException {
+              Number value = longAdapter.read(in);
+              if (value == null) {
+                return new AtomicLong(0);  // handle null case, assuming 0 as a default value
+              }
+              return new AtomicLong(value.longValue());
+            }
     }.nullSafe();
   }
 
