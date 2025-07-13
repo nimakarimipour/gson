@@ -351,52 +351,52 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
 
       int delta = leftHeight - rightHeight;
       if (delta == -2) {
-        Node<K, V> rightLeft = right.left;
-        Node<K, V> rightRight = right.right;
+        Node<K, V> rightLeft = right != null ? right.left : null;
+        Node<K, V> rightRight = right != null ? right.right : null;
         int rightRightHeight = rightRight != null ? rightRight.height : 0;
         int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
 
         int rightDelta = rightLeftHeight - rightRightHeight;
         if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
-          rotateLeft(node); // AVL right right
+          rotateLeft(node);
         } else {
           assert (rightDelta == 1);
-          rotateRight(right); // AVL right left
+          rotateRight(right);
           rotateLeft(node);
         }
         if (insert) {
-          break; // no further rotations will be necessary
+          break;
         }
 
       } else if (delta == 2) {
-        Node<K, V> leftLeft = left.left;
-        Node<K, V> leftRight = left.right;
+        Node<K, V> leftLeft = left != null ? left.left : null;
+        Node<K, V> leftRight = left != null ? left.right : null;
         int leftRightHeight = leftRight != null ? leftRight.height : 0;
         int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
 
         int leftDelta = leftLeftHeight - leftRightHeight;
         if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
-          rotateRight(node); // AVL left left
+          rotateRight(node);
         } else {
           assert (leftDelta == -1);
-          rotateLeft(left); // AVL left right
+          rotateLeft(left);
           rotateRight(node);
         }
         if (insert) {
-          break; // no further rotations will be necessary
+          break;
         }
 
       } else if (delta == 0) {
-        node.height = leftHeight + 1; // leftHeight == rightHeight
+        node.height = leftHeight + 1;
         if (insert) {
-          break; // the insert caused balance, so rebalancing is done!
+          break;
         }
 
       } else {
         assert (delta == -1 || delta == 1);
         node.height = Math.max(leftHeight, rightHeight) + 1;
         if (!insert) {
-          break; // the height hasn't changed, so rebalancing is done!
+          break;
         }
       }
     }
