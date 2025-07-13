@@ -690,54 +690,50 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     }
 
     void add(Node<K, V> node) {
-          node.left = node.parent = node.right = null;
-          node.height = 1;
-    
-          // Skip a leaf if necessary.
-          if (leavesToSkip > 0 && (size & 1) == 0) {
-            size++;
-            leavesToSkip--;
-            leavesSkipped++;
-          }
-    
-          node.parent = stack;
-          stack = node; // Stack push.
-          size++;
-    
-          // Skip a leaf if necessary.
-          if (leavesToSkip > 0 && (size & 1) == 0) {
-            size++;
-            leavesToSkip--;
-            leavesSkipped++;
-          }
-    
-          for (int scale = 4; (size & scale - 1) == scale - 1; scale *= 2) {
-            if (leavesSkipped == 0) {
-              // Pop right, center and left, then make center the top of the stack.
-              Node<K, V> right = stack;
-              Node<K, V> center = Nullability.castToNonnull(right.parent, "parent set in stack");
-              Node<K, V> left = center.parent;
-              center.parent = left.parent;
-              stack = center;
-              center.left = left;
-              center.right = right;
-              center.height = right.height + 1;
-              left.parent = center;
-              right.parent = center;
-            } else if (leavesSkipped == 1) {
-              // Pop right and center, then make center the top of the stack.
-              Node<K, V> right = stack;
-              Node<K, V> center = Nullability.castToNonnull(right.parent, "parent set in stack");
-              stack = center;
-              center.right = right;
-              center.height = right.height + 1;
-              right.parent = center;
-              leavesSkipped = 0;
-            } else if (leavesSkipped == 2) {
-              leavesSkipped = 0;
-            }
-          }
-    }
+              node.left = node.parent = node.right = null;
+              node.height = 1;
+        
+              if (leavesToSkip > 0 && (size & 1) == 0) {
+                size++;
+                leavesToSkip--;
+                leavesSkipped++;
+              }
+        
+              node.parent = stack;
+              stack = node;
+              size++;
+        
+              if (leavesToSkip > 0 && (size & 1) == 0) {
+                size++;
+                leavesToSkip--;
+                leavesSkipped++;
+              }
+        
+              for (int scale = 4; (size & scale - 1) == scale - 1; scale *= 2) {
+                if (leavesSkipped == 0) {
+                  Node<K, V> right = stack;
+                  Node<K, V> center = Nullability.castToNonnull(right.parent, "parent set in stack");
+                  Node<K, V> left = Nullability.castToNonnull(center.parent, "right.parent non-null");
+                  center.parent = left.parent;
+                  stack = center;
+                  center.left = left;
+                  center.right = right;
+                  center.height = right.height + 1;
+                  left.parent = center;
+                  right.parent = center;
+                } else if (leavesSkipped == 1) {
+                  Node<K, V> right = stack;
+                  Node<K, V> center = Nullability.castToNonnull(right.parent, "parent set in stack");
+                  stack = center;
+                  center.right = right;
+                  center.height = right.height + 1;
+                  right.parent = center;
+                  leavesSkipped = 0;
+                } else if (leavesSkipped == 2) {
+                  leavesSkipped = 0;
+                }
+              }
+      }
 
     Node<K, V> root() {
       Node<K, V> stackTop = this.stack;
