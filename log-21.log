@@ -1,0 +1,113 @@
+====================
+Type='PASS_NULLABLE', message='passing @Nullable parameter 'null' where @NonNull is required'
+/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/reflect/TypeToken.java:294
+        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+Log:
+12:26:15.092 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+==============================
+12:26:15.092 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+CHATGPT.COUNT = 1
+12:26:15.092 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+CHATGPT.PROMPTS SIZE = 1
+12:26:15.092 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+Both set to 0 and cleared 0
+12:26:15.092 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+21 : TOP LEVEL CALL TO FIX ERROR: Type='PASS_NULLABLE', message='passing @Nullable parameter 'null' where @NonNull is required'
+/home/nima/Developer/nullness-benchmarks/gson/gson/src/main/java/com/google/gson/reflect/TypeToken.java:294
+        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+12:26:17.060 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.ask
+Asking ChatGPT:
+I want to resolve a warning reported by NullAway.
+The error is of the type of "PASS_NULLABLE" and the full error message is: "passing @Nullable parameter 'null' where @NonNull is required".
+The line with the error is: "        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));".
+
+The error is within "the method: getParameterized(java.lang.reflect.Type,java.lang.reflect.Type[])" and the code surrounding the error is:
+```java
+  public final String toString() {
+    return $Gson$Types.typeToString(type);
+  }
+
+  /** Gets type literal for the given {@code Type} instance. */
+  public static TypeToken<?> get(Type type) {
+    return new TypeToken<Object>(type);
+  }
+
+  /** Gets type literal for the given {@code Class} instance. */
+  public static <T> TypeToken<T> get(Class<T> type) {
+    return new TypeToken<T>(type);
+  }
+
+  /**
+   * Gets type literal for the parameterized type represented by applying {@code typeArguments} to
+   * {@code rawType}.
+   */
+  public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
+    return new TypeToken<Object>(
+        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+  }
+
+  /**
+   * Gets type literal for the array type whose elements are all instances of {@code componentType}.
+   */
+  public static TypeToken<?> getArray(Type componentType) {
+    return new TypeToken<Object>($Gson$Types.arrayOf(componentType));
+  }
+}
+```
+
+Give me the fixed code snippet (ONLY THE METHOD REWRITE OF "getParameterized(java.lang.reflect.Type,java.lang.reflect.Type[])") in XML format in <response> tag like the example below. I will apply the fix to my codebase.
+Do not import any additional libraries or classes or java comments.
+If you can provide the fixed code snippet, provide it in the following format and place the code snippet in the <code> tag within ```java block.
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  Your fixed code snippet here
+  ```
+    ]]>
+  </code>
+</response>
+
+12:26:17.060 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.ask
+Retrieving response from cache
+12:26:17.060 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.tryCreate
+Trying to create Response:
+```xml
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
+    Objects.requireNonNull(rawType, "rawType must not be null");
+    return new TypeToken<Object>(
+        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+  }
+  ```
+    ]]>
+  </code>
+</response>
+```
+12:26:17.061 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.<init>
+Creating Response:
+```xml
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
+    Objects.requireNonNull(rawType, "rawType must not be null");
+    return new TypeToken<Object>(
+        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+  }
+  ```
+    ]]>
+  </code>
+</response>
+```
+12:26:17.062 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.<init>
+Response created:
+public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
+    Objects.requireNonNull(rawType, "rawType must not be null");
+    return new TypeToken<Object>(
+        $Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
+  }
