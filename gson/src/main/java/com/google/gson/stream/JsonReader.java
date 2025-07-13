@@ -800,7 +800,7 @@ public class JsonReader implements Closeable {
    *
    * @throws IllegalStateException if the next token is not a string or if this reader is closed.
    */
-  public String nextString() throws IOException {
+  @SuppressWarnings("NullAway") public String nextString() throws IOException {
     int p = peeked;
     if (p == PEEKED_NONE) {
       p = doPeek();
