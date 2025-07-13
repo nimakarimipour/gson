@@ -324,7 +324,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
       int rightHeight = right != null ? right.height : 0;
 
       int delta = leftHeight - rightHeight;
-      if (delta == -2 && right != null) {
+      if (delta == -2) {
         Node<K, V> rightLeft = right.left;
         Node<K, V> rightRight = right.right;
         int rightRightHeight = rightRight != null ? rightRight.height : 0;
@@ -332,17 +332,17 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
         int rightDelta = rightLeftHeight - rightRightHeight;
         if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
-          rotateLeft(node);
+          rotateLeft(node); // AVL right right
         } else {
           assert (rightDelta == 1);
-          rotateRight(right);
+          rotateRight(right); // AVL right left
           rotateLeft(node);
         }
         if (insert) {
-          break;
+          break; // no further rotations will be necessary
         }
 
-      } else if (delta == 2 && left != null) {
+      } else if (delta == 2) {
         Node<K, V> leftLeft = left.left;
         Node<K, V> leftRight = left.right;
         int leftRightHeight = leftRight != null ? leftRight.height : 0;
@@ -350,27 +350,27 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
         int leftDelta = leftLeftHeight - leftRightHeight;
         if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
-          rotateRight(node);
+          rotateRight(node); // AVL left left
         } else {
           assert (leftDelta == -1);
-          rotateLeft(left);
+          rotateLeft(left); // AVL left right
           rotateRight(node);
         }
         if (insert) {
-          break;
+          break; // no further rotations will be necessary
         }
 
       } else if (delta == 0) {
-        node.height = leftHeight + 1;
+        node.height = leftHeight + 1; // leftHeight == rightHeight
         if (insert) {
-          break;
+          break; // the insert caused balance, so rebalancing is done!
         }
 
       } else {
         assert (delta == -1 || delta == 1);
         node.height = Math.max(leftHeight, rightHeight) + 1;
         if (!insert) {
-          break;
+          break; // the height hasn't changed, so rebalancing is done!
         }
       }
     }
