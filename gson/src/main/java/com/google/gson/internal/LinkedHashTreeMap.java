@@ -339,64 +339,64 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    * @param insert true if the node was unbalanced by an insert; false if it was by a removal.
    */
   private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
-    for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
-      Node<K, V> left = node.left;
-      Node<K, V> right = node.right;
-      int leftHeight = left != null ? left.height : 0;
-      int rightHeight = right != null ? right.height : 0;
-
-      int delta = leftHeight - rightHeight;
-      if (delta == -2) {
-        Node<K, V> rightLeft = right.left;
-        Node<K, V> rightRight = right.right;
-        int rightRightHeight = rightRight != null ? rightRight.height : 0;
-        int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
-
-        int rightDelta = rightLeftHeight - rightRightHeight;
-        if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
-          rotateLeft(node); // AVL right right
+      for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
+        Node<K, V> left = node.left;
+        Node<K, V> right = node.right;
+        int leftHeight = left != null ? left.height : 0;
+        int rightHeight = right != null ? right.height : 0;
+  
+        int delta = leftHeight - rightHeight;
+        if (delta == -2 && right != null) { // Ensure 'right' is not null before accessing its members
+          Node<K, V> rightLeft = right.left;
+          Node<K, V> rightRight = right.right;
+          int rightRightHeight = rightRight != null ? rightRight.height : 0;
+          int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
+  
+          int rightDelta = rightLeftHeight - rightRightHeight;
+          if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
+            rotateLeft(node); // AVL right right
+          } else {
+            assert (rightDelta == 1);
+            rotateRight(right); // AVL right left
+            rotateLeft(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 2 && left != null) { // Ensure 'left' is not null before accessing its members
+          Node<K, V> leftLeft = left.left;
+          Node<K, V> leftRight = left.right;
+          int leftRightHeight = leftRight != null ? leftRight.height : 0;
+          int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
+  
+          int leftDelta = leftLeftHeight - leftRightHeight;
+          if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
+            rotateRight(node); // AVL left left
+          } else {
+            assert (leftDelta == -1);
+            rotateLeft(left); // AVL left right
+            rotateRight(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 0) {
+          node.height = leftHeight + 1; // leftHeight == rightHeight
+          if (insert) {
+            break; // the insert caused balance, so rebalancing is done!
+          }
+  
         } else {
-          assert (rightDelta == 1);
-          rotateRight(right); // AVL right left
-          rotateLeft(node);
-        }
-        if (insert) {
-          break; // no further rotations will be necessary
-        }
-
-      } else if (delta == 2) {
-        Node<K, V> leftLeft = left.left;
-        Node<K, V> leftRight = left.right;
-        int leftRightHeight = leftRight != null ? leftRight.height : 0;
-        int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
-
-        int leftDelta = leftLeftHeight - leftRightHeight;
-        if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
-          rotateRight(node); // AVL left left
-        } else {
-          assert (leftDelta == -1);
-          rotateLeft(left); // AVL left right
-          rotateRight(node);
-        }
-        if (insert) {
-          break; // no further rotations will be necessary
-        }
-
-      } else if (delta == 0) {
-        node.height = leftHeight + 1; // leftHeight == rightHeight
-        if (insert) {
-          break; // the insert caused balance, so rebalancing is done!
-        }
-
-      } else {
-        assert (delta == -1 || delta == 1);
-        node.height = Math.max(leftHeight, rightHeight) + 1;
-        if (!insert) {
-          break; // the height hasn't changed, so rebalancing is done!
+          assert (delta == -1 || delta == 1);
+          node.height = Math.max(leftHeight, rightHeight) + 1;
+          if (!insert) {
+            break; // the height hasn't changed, so rebalancing is done!
+          }
         }
       }
     }
-  }
 
   /** Rotates the subtree so that its root's right child is the new root. */
   private void rotateLeft(Node<K, V> root) {
