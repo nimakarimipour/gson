@@ -403,28 +403,31 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
   /** Rotates the subtree so that its root's left child is the new root. */
   private void rotateRight(Node<K, V> root) {
-    Node<K, V> pivot = root.left;
-    Node<K, V> right = root.right;
-    Node<K, V> pivotLeft = pivot.left;
-    Node<K, V> pivotRight = pivot.right;
-
-    // move the pivot's right child to the root's left
-    root.left = pivotRight;
-    if (pivotRight != null) {
-      pivotRight.parent = root;
+      Node<K, V> pivot = root.left;
+      if (pivot == null) {
+        return; // or handle the situation accordingly, e.g., throw an exception
+      }
+      Node<K, V> right = root.right;
+      Node<K, V> pivotLeft = pivot.left;
+      Node<K, V> pivotRight = pivot.right;
+  
+      // move the pivot's right child to the root's left
+      root.left = pivotRight;
+      if (pivotRight != null) {
+        pivotRight.parent = root;
+      }
+  
+      replaceInParent(root, pivot);
+  
+      // move the root to the pivot's right
+      pivot.right = root;
+      root.parent = pivot;
+  
+      // fixup heights
+      root.height =
+          Math.max(right != null ? right.height : 0, pivotRight != null ? pivotRight.height : 0) + 1;
+      pivot.height = Math.max(root.height, pivotLeft != null ? pivotLeft.height : 0) + 1;
     }
-
-    replaceInParent(root, pivot);
-
-    // move the root to the pivot's right
-    pivot.right = root;
-    root.parent = pivot;
-
-    // fixup heights
-    root.height =
-        Math.max(right != null ? right.height : 0, pivotRight != null ? pivotRight.height : 0) + 1;
-    pivot.height = Math.max(root.height, pivotLeft != null ? pivotLeft.height : 0) + 1;
-  }
 
   @Nullable private EntrySet entrySet;
   @Nullable private KeySet keySet;
