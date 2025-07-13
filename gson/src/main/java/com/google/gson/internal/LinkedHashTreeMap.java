@@ -708,15 +708,25 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         leavesSkipped++;
       }
 
+      /*
+       * Combine 3 nodes into subtrees whenever the size is one less than a
+       * multiple of 4. For example we combine the nodes A, B, C into a
+       * 3-element tree with B as the root.
+       *
+       * Combine two subtrees and a spare single value whenever the size is one
+       * less than a multiple of 8. For example at 8 we may combine subtrees
+       * (A B C) and (E F G) with D as the root to form ((A B C) D (E F G)).
+       *
+       * Just as we combine single nodes when size nears a multiple of 4, and
+       * 3-element trees when size nears a multiple of 8, we combine subtrees of
+       * size (N-1) whenever the total size is 2N-1 whenever N is a power of 2.
+       */
       for (int scale = 4; (size & scale - 1) == scale - 1; scale *= 2) {
         if (leavesSkipped == 0) {
           // Pop right, center and left, then make center the top of the stack.
           Node<K, V> right = stack;
-          if (right == null) return;
           Node<K, V> center = right.parent;
-          if (center == null) return;
           Node<K, V> left = center.parent;
-          if (left == null) return;
           center.parent = left.parent;
           stack = center;
           // Construct a tree.
@@ -728,9 +738,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
         } else if (leavesSkipped == 1) {
           // Pop right and center, then make center the top of the stack.
           Node<K, V> right = stack;
-          if (right == null) return;
           Node<K, V> center = right.parent;
-          if (center == null) return;
           stack = center;
           // Construct a tree with no left child.
           center.right = right;
