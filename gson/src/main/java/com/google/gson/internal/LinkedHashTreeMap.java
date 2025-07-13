@@ -251,8 +251,12 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
    */
   void removeInternal(Node<K, V> node, boolean unlink) {
     if (unlink) {
-      node.prev.next = node.next;
-      node.next.prev = node.prev;
+      if (node.prev != null) {
+        node.prev.next = node.next;
+      }
+      if (node.next != null) {
+        node.next.prev = node.prev;
+      }
       node.next = node.prev = null; // Help the GC (for performance)
     }
 
@@ -261,17 +265,8 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
     Node<K, V> originalParent = node.parent;
     if (left != null && right != null) {
 
-      /*
-       * To remove a node with both left and right subtrees, move an
-       * adjacent node from one of those subtrees into this node's place.
-       *
-       * Removing the adjacent node may change this node's subtrees. This
-       * node may no longer have two subtrees once the adjacent node is
-       * gone!
-       */
-
       Node<K, V> adjacent = (left.height > right.height) ? left.last() : right.first();
-      removeInternal(adjacent, false); // takes care of rebalance and size--
+      removeInternal(adjacent, false);
 
       int leftHeight = 0;
       left = node.left;
