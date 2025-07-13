@@ -801,32 +801,35 @@ public class JsonReader implements Closeable {
    * @throws IllegalStateException if the next token is not a string or if this reader is closed.
    */
   public String nextString() throws IOException {
-    int p = peeked;
-    if (p == PEEKED_NONE) {
-      p = doPeek();
+      int p = peeked;
+      if (p == PEEKED_NONE) {
+        p = doPeek();
+      }
+      String result;
+      if (p == PEEKED_UNQUOTED) {
+        result = nextUnquotedValue();
+      } else if (p == PEEKED_SINGLE_QUOTED) {
+        result = nextQuotedValue('\'');
+      } else if (p == PEEKED_DOUBLE_QUOTED) {
+        result = nextQuotedValue('"');
+      } else if (p == PEEKED_BUFFERED) {
+        result = peekedString;
+        peekedString = null;
+      } else if (p == PEEKED_LONG) {
+        result = Long.toString(peekedLong);
+      } else if (p == PEEKED_NUMBER) {
+        result = new String(buffer, pos, peekedNumberLength);
+        pos += peekedNumberLength;
+      } else {
+        throw new IllegalStateException("Expected a string but was " + peek() + locationString());
+      }
+      if (result == null) {
+        throw new IllegalStateException("Expected a non-null string result");
+      }
+      peeked = PEEKED_NONE;
+      pathIndices[stackSize - 1]++;
+      return result;
     }
-    String result;
-    if (p == PEEKED_UNQUOTED) {
-      result = nextUnquotedValue();
-    } else if (p == PEEKED_SINGLE_QUOTED) {
-      result = nextQuotedValue('\'');
-    } else if (p == PEEKED_DOUBLE_QUOTED) {
-      result = nextQuotedValue('"');
-    } else if (p == PEEKED_BUFFERED) {
-      result = peekedString;
-      peekedString = null;
-    } else if (p == PEEKED_LONG) {
-      result = Long.toString(peekedLong);
-    } else if (p == PEEKED_NUMBER) {
-      result = new String(buffer, pos, peekedNumberLength);
-      pos += peekedNumberLength;
-    } else {
-      throw new IllegalStateException("Expected a string but was " + peek() + locationString());
-    }
-    peeked = PEEKED_NONE;
-    pathIndices[stackSize - 1]++;
-    return result;
-  }
 
   /**
    * Returns the {@link com.google.gson.stream.JsonToken#BOOLEAN boolean} value of the next token,
