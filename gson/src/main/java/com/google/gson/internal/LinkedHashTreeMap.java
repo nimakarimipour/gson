@@ -430,6 +430,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
   /** Rotates the subtree so that its root's left child is the new root. */
   private void rotateRight(Node<K, V> root) {
     Node<K, V> pivot = root.left;
+    if (pivot == null) return; // Avoid null dereference
     Node<K, V> right = root.right;
     Node<K, V> pivotLeft = pivot.left;
     Node<K, V> pivotRight = pivot.right;
