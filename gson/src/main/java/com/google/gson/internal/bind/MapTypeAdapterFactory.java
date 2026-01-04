@@ -186,7 +186,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       if (peek == JsonToken.BEGIN_ARRAY) {
         in.beginArray();
         while (in.hasNext()) {
-          in.beginArray(); // entry array
+          in.beginArray();
           K key = keyTypeAdapter.read(in);
           V value = valueTypeAdapter.read(in);
           V replaced = map.put(key, value);
@@ -197,9 +197,13 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
         }
         in.endArray();
       } else {
+        JsonReaderInternalAccess access = JsonReaderInternalAccess.INSTANCE;
+        if (access == null) {
+          return null;
+        }
         in.beginObject();
         while (in.hasNext()) {
-          JsonReaderInternalAccess.INSTANCE.promoteNameToValue(in);
+          access.promoteNameToValue(in);
           K key = keyTypeAdapter.read(in);
           V value = valueTypeAdapter.read(in);
           V replaced = map.put(key, value);
