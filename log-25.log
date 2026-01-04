@@ -1,0 +1,647 @@
+====================
+Type='DEREFERENCE_NULLABLE', message='dereferenced expression left is @Nullable'
+/Users/nima/Developer/gson/gson/src/main/java/com/google/gson/internal/LinkedTreeMap.java:346
+        Node<K, V> leftLeft = left.left;
+Log:
+20:31:09.119 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+==============================
+20:31:09.120 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+CHATGPT.COUNT = 1
+20:31:09.120 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+CHATGPT.PROMPTS SIZE = 1
+20:31:09.120 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+Both set to 0 and cleared 0
+20:31:09.120 TRACE edu.ucr.cs.riple.core.checkers.nullaway.NullAway.lambda$resolveRemainingErrors$19
+25 : TOP LEVEL CALL TO FIX ERROR: Type='DEREFERENCE_NULLABLE', message='dereferenced expression left is @Nullable'
+/Users/nima/Developer/gson/gson/src/main/java/com/google/gson/internal/LinkedTreeMap.java:346
+        Node<K, V> leftLeft = left.left;
+20:31:11.135 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.AdvancedNullAwayCodeFix.fix
+Fixing error: Type='DEREFERENCE_NULLABLE', message='dereferenced expression left is @Nullable'
+/Users/nima/Developer/gson/gson/src/main/java/com/google/gson/internal/LinkedTreeMap.java:346
+        Node<K, V> leftLeft = left.left;
+20:31:11.135 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.AdvancedNullAwayCodeFix.resolveDereferenceError
+Resolving dereference error: Type='DEREFERENCE_NULLABLE', message='dereferenced expression left is @Nullable'
+/Users/nima/Developer/gson/gson/src/main/java/com/google/gson/internal/LinkedTreeMap.java:346
+        Node<K, V> leftLeft = left.left;
+20:31:11.135 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.AdvancedNullAwayCodeFix.resolveDereferenceError
+Checking nullability possibility at error point
+20:31:11.145 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.checkNullabilityPossibilityAtErrorPoint
+Asking if the expression can be null at error point point
+20:31:11.145 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.ask
+Asking ChatGPT:
+Determine if the expression "left" at line "Node<K, V> leftLeft = left.left;" can possibly be null in the method below.
+
+**Method:**
+private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
+    for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
+      Node<K, V> left = node.left;
+      Node<K, V> right = node.right;
+      int leftHeight = left != null ? left.height : 0;
+      int rightHeight = right != null ? right.height : 0;
+
+      int delta = leftHeight - rightHeight;
+      if (delta == -2) {
+        Node<K, V> rightLeft = right.left;
+        Node<K, V> rightRight = right.right;
+        int rightRightHeight = rightRight != null ? rightRight.height : 0;
+        int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
+
+        int rightDelta = rightLeftHeight - rightRightHeight;
+        if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
+          rotateLeft(node); // AVL right right
+        } else {
+          assert (rightDelta == 1);
+          rotateRight(right); // AVL right left
+          rotateLeft(node);
+        }
+        if (insert) {
+          break; // no further rotations will be necessary
+        }
+
+      } else if (delta == 2) {
+        Node<K, V> leftLeft = left.left;
+        Node<K, V> leftRight = left.right;
+        int leftRightHeight = leftRight != null ? leftRight.height : 0;
+        int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
+
+        int leftDelta = leftLeftHeight - leftRightHeight;
+        if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
+          rotateRight(node); // AVL left left
+        } else {
+          assert (leftDelta == -1);
+          rotateLeft(left); // AVL left right
+          rotateRight(node);
+        }
+        if (insert) {
+          break; // no further rotations will be necessary
+        }
+
+      } else if (delta == 0) {
+        node.height = leftHeight + 1; // leftHeight == rightHeight
+        if (insert) {
+          break; // the insert caused balance, so rebalancing is done!
+        }
+
+      } else {
+        assert (delta == -1 || delta == 1);
+        node.height = Math.max(leftHeight, rightHeight) + 1;
+        if (!insert) {
+          break; // the height hasn't changed, so rebalancing is done!
+        }
+      }
+    }
+}
+
+### Analysis Requirements:
+- Examine all code paths leading to the expression
+- Consider variable assignments, method return values, and control flow
+- Look for null checks, initializations, and guarantees from prior operations
+- Consider the semantics and contracts of called methods
+
+### Response Format:
+
+**If the expression CAN be null:**
+```xml
+<response>
+    <reason><![CDATA[YOUR REASON]]></reason>
+    <value>YES</value>
+</response>
+```
+
+**If the expression CANNOT be null:**
+```xml
+<response>
+    <reason><![CDATA[YOUR REASON]]></reason>
+    <value>NO</value>
+</response>
+```
+
+**If you need more information to make a determination:**
+```xml
+<response>
+    <reason><![CDATA[YOUR REASON]]></reason>
+    <value>UNKNOWN</value>
+    <!-- Include <requests> only if additional information is needed -->
+    <requests>
+        <request><![CDATA[YOUR REQUEST 1]]></request>
+        <request><![CDATA[YOUR REQUEST 2]]></request>
+    </requests>
+</response>
+```
+20:31:11.145 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.ask
+Retrieving response from cache
+20:31:11.145 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.tryCreate
+Trying to create Response:
+```xml
+<response>
+    <reason><![CDATA[
+Focus on the line in question:
+
+    } else if (delta == 2) {
+        Node<K, V> leftLeft = left.left;
+
+We need to know if "left" can be null at that point.
+
+1. "left" is defined earlier in the loop as:
+   
+   Node<K, V> left = node.left;
+   ...
+   int leftHeight = left != null ? left.height : 0;
+   int rightHeight = right != null ? right.height : 0;
+   int delta = leftHeight - rightHeight;
+
+2. The branch where "leftLeft" is used is guarded by:
+   
+   } else if (delta == 2) {
+
+   So in this branch we know:
+   
+   delta = leftHeight - rightHeight = 2
+
+3. Consider whether "left" could be null when delta == 2:
+
+   - If left == null, then leftHeight = 0.
+   - rightHeight is >= 0 (because if right is null, rightHeight = 0; otherwise it's a node height, which by AVL convention is non-negative).
+   - Thus if left == null:
+       delta = leftHeight - rightHeight = 0 - rightHeight ≤ 0
+     It is impossible to get delta == 2 when left == null.
+
+   Therefore, in the delta == 2 branch, left must be non-null.
+
+4. Since execution can only reach the line:
+
+   Node<K, V> leftLeft = left.left;
+
+   when delta == 2, and delta == 2 implies left != null, "left" cannot be null at this line.
+
+Whether leftLeft itself is null is irrelevant to the question; the dereference "left.left" is safe with respect to "left" being null.
+    ]]></reason>
+    <value>NO</value>
+</response>
+```
+20:31:11.146 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.<init>
+Creating Response:
+```xml
+<response>
+    <reason><![CDATA[
+Focus on the line in question:
+
+    } else if (delta == 2) {
+        Node<K, V> leftLeft = left.left;
+
+We need to know if "left" can be null at that point.
+
+1. "left" is defined earlier in the loop as:
+   
+   Node<K, V> left = node.left;
+   ...
+   int leftHeight = left != null ? left.height : 0;
+   int rightHeight = right != null ? right.height : 0;
+   int delta = leftHeight - rightHeight;
+
+2. The branch where "leftLeft" is used is guarded by:
+   
+   } else if (delta == 2) {
+
+   So in this branch we know:
+   
+   delta = leftHeight - rightHeight = 2
+
+3. Consider whether "left" could be null when delta == 2:
+
+   - If left == null, then leftHeight = 0.
+   - rightHeight is >= 0 (because if right is null, rightHeight = 0; otherwise it's a node height, which by AVL convention is non-negative).
+   - Thus if left == null:
+       delta = leftHeight - rightHeight = 0 - rightHeight ≤ 0
+     It is impossible to get delta == 2 when left == null.
+
+   Therefore, in the delta == 2 branch, left must be non-null.
+
+4. Since execution can only reach the line:
+
+   Node<K, V> leftLeft = left.left;
+
+   when delta == 2, and delta == 2 implies left != null, "left" cannot be null at this line.
+
+Whether leftLeft itself is null is irrelevant to the question; the dereference "left.left" is safe with respect to "left" being null.
+    ]]></reason>
+    <value>NO</value>
+</response>
+```
+20:31:11.147 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.<init>
+Response created:
+Disagreement: Focus on the line in question:
+
+    } else if (delta == 2) {
+        Node<K, V> leftLeft = left.left;
+
+We need to know if "left" can be null at that point.
+
+1. "left" is defined earlier in the loop as:
+   
+   Node<K, V> left = node.left;
+   ...
+   int leftHeight = left != null ? left.height : 0;
+   int rightHeight = right != null ? right.height : 0;
+   int delta = leftHeight - rightHeight;
+
+2. The branch where "leftLeft" is used is guarded by:
+   
+   } else if (delta == 2) {
+
+   So in this branch we know:
+   
+   delta = leftHeight - rightHeight = 2
+
+3. Consider whether "left" could be null when delta == 2:
+
+   - If left == null, then leftHeight = 0.
+   - rightHeight is >= 0 (because if right is null, rightHeight = 0; otherwise it's a node height, which by AVL convention is non-negative).
+   - Thus if left == null:
+       delta = leftHeight - rightHeight = 0 - rightHeight ≤ 0
+     It is impossible to get delta == 2 when left == null.
+
+   Therefore, in the delta == 2 branch, left must be non-null.
+
+4. Since execution can only reach the line:
+
+   Node<K, V> leftLeft = left.left;
+
+   when delta == 2, and delta == 2 implies left != null, "left" cannot be null at this line.
+
+Whether leftLeft itself is null is irrelevant to the question; the dereference "left.left" is safe with respect to "left" being null.
+20:31:11.147 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.AdvancedNullAwayCodeFix.resolveDereferenceError
+False positive detected.
+20:31:11.147 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.AdvancedNullAwayCodeFix.constructCastToNonnullChange
+Constructing cast to nonnull change for reason: Focus on the line in question:
+
+    } else if (delta == 2) {
+        Node<K, V> leftLeft = left.left;
+
+We need to know if "left" can be null at that point.
+
+1. "left" is defined earlier in the loop as:
+   
+   Node<K, V> left = node.left;
+   ...
+   int leftHeight = left != null ? left.height : 0;
+   int rightHeight = right != null ? right.height : 0;
+   int delta = leftHeight - rightHeight;
+
+2. The branch where "leftLeft" is used is guarded by:
+   
+   } else if (delta == 2) {
+
+   So in this branch we know:
+   
+   delta = leftHeight - rightHeight = 2
+
+3. Consider whether "left" could be null when delta == 2:
+
+   - If left == null, then leftHeight = 0.
+   - rightHeight is >= 0 (because if right is null, rightHeight = 0; otherwise it's a node height, which by AVL convention is non-negative).
+   - Thus if left == null:
+       delta = leftHeight - rightHeight = 0 - rightHeight ≤ 0
+     It is impossible to get delta == 2 when left == null.
+
+   Therefore, in the delta == 2 branch, left must be non-null.
+
+4. Since execution can only reach the line:
+
+   Node<K, V> leftLeft = left.left;
+
+   when delta == 2, and delta == 2 implies left != null, "left" cannot be null at this line.
+
+Whether leftLeft itself is null is irrelevant to the question; the dereference "left.left" is safe with respect to "left" being null.
+20:31:11.155 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.ask
+Asking ChatGPT:
+In the method below, the expression left is not nullable at the point it is used.
+
+```java
+private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
+    for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
+      Node<K, V> left = node.left;
+      Node<K, V> right = node.right;
+      int leftHeight = left != null ? left.height : 0;
+      int rightHeight = right != null ? right.height : 0;
+
+      int delta = leftHeight - rightHeight;
+      if (delta == -2) {
+        Node<K, V> rightLeft = right.left;
+        Node<K, V> rightRight = right.right;
+        int rightRightHeight = rightRight != null ? rightRight.height : 0;
+        int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
+
+        int rightDelta = rightLeftHeight - rightRightHeight;
+        if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
+          rotateLeft(node); // AVL right right
+        } else {
+          assert (rightDelta == 1);
+          rotateRight(right); // AVL right left
+          rotateLeft(node);
+        }
+        if (insert) {
+          break; // no further rotations will be necessary
+        }
+
+      } else if (delta == 2) {
+        Node<K, V> leftLeft = left.left;
+        Node<K, V> leftRight = left.right;
+        int leftRightHeight = leftRight != null ? leftRight.height : 0;
+        int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
+
+        int leftDelta = leftLeftHeight - leftRightHeight;
+        if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
+          rotateRight(node); // AVL left left
+        } else {
+          assert (leftDelta == -1);
+          rotateLeft(left); // AVL left right
+          rotateRight(node);
+        }
+        if (insert) {
+          break; // no further rotations will be necessary
+        }
+
+      } else if (delta == 0) {
+        node.height = leftHeight + 1; // leftHeight == rightHeight
+        if (insert) {
+          break; // the insert caused balance, so rebalancing is done!
+        }
+
+      } else {
+        assert (delta == -1 || delta == 1);
+        node.height = Math.max(leftHeight, rightHeight) + 1;
+        if (!insert) {
+          break; // the height hasn't changed, so rebalancing is done!
+        }
+      }
+    }
+}
+```
+Please rewrite the method so that at the line "        Node<K, V> leftLeft = left.left;", at the occurrence of: "left" is replaced with `Nullability.castToNonnull(left)`.
+
+**Important**: If the expression "left" is a local variable, wrap the cast at its declaration point (on the right-hand side of the assignment), NOT at the use point. For all other expressions, wrap the cast at the use point.
+
+See the examples below:
+
+**Example 1: Local variable** - If `bar` is a local variable, wrap at declaration:
+```java
+public void test(){
+    String bar = foo.getBar();
+    System.out.println(bar);  // bar is used here
+}
+```
+
+will be:
+```java
+public void test(){
+    String bar = Nullability.castToNonnull(foo.getBar());
+    System.out.println(bar);  // cast applied at declaration
+}
+```
+
+**Example 2: Non-local expression** - For method calls or field access, wrap at use:
+```java
+public void test(){
+    String l = foo.getBar();
+}
+```
+
+will be:
+```java
+public void test(){
+    String l = Nullability.castToNonnull(foo.getBar());
+}
+```
+
+### Instructions:
+
+Do not import any additional classes.
+
+Do not add Java comments.
+
+Only modify relevant lines as required.
+
+Return only the modified method wrapped in the XML format shown below.
+
+Place the Java code inside the <code> tag using a CDATA block with ```java formatting.
+
+Please only provide the fixed code snippet in XML format above. I just need the XML response, no other information is needed. If you can provide the fixed code snippet, please provide it in the following format and place the code snippet in the <code> tag within ```java block. Your response should only be the xml format below, no additional text.
+
+### Response Format:
+
+**Provide a meaningful fix:**
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  Your fixed code snippet here, JUST THE METHOD.
+  ```
+    ]]>
+  </code>
+</response>
+
+
+20:31:11.155 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.ask
+Retrieving response from cache
+20:31:11.155 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.tryCreate
+Trying to create Response:
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  private void rebalance( Node<K, V> unbalanced, boolean insert) {
+      for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
+        Node<K, V> left = Nullability.castToNonnull(node.left);
+        Node<K, V> right = node.right;
+        int leftHeight = left != null ? left.height : 0;
+        int rightHeight = right != null ? right.height : 0;
+  
+        int delta = leftHeight - rightHeight;
+        if (delta == -2) {
+          Node<K, V> rightLeft = right.left;
+          Node<K, V> rightRight = right.right;
+          int rightRightHeight = rightRight != null ? rightRight.height : 0;
+          int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
+  
+          int rightDelta = rightLeftHeight - rightRightHeight;
+          if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
+            rotateLeft(node); // AVL right right
+          } else {
+            assert (rightDelta == 1);
+            rotateRight(right); // AVL right left
+            rotateLeft(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 2) {
+          Node<K, V> leftLeft = left.left;
+          Node<K, V> leftRight = left.right;
+          int leftRightHeight = leftRight != null ? leftRight.height : 0;
+          int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
+  
+          int leftDelta = leftLeftHeight - leftRightHeight;
+          if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
+            rotateRight(node); // AVL left left
+          } else {
+            assert (leftDelta == -1);
+            rotateLeft(left); // AVL left right
+            rotateRight(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 0) {
+          node.height = leftHeight + 1; // leftHeight == rightHeight
+          if (insert) {
+            break; // the insert caused balance, so rebalancing is done!
+          }
+  
+        } else {
+          assert (delta == -1 || delta == 1);
+          node.height = Math.max(leftHeight, rightHeight) + 1;
+          if (!insert) {
+            break; // the height hasn't changed, so rebalancing is done!
+          }
+        }
+      }
+  }
+  ```
+    ]]>
+  </code>
+</response>
+20:31:11.156 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.<init>
+Creating Response:
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  private void rebalance( Node<K, V> unbalanced, boolean insert) {
+      for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
+        Node<K, V> left = Nullability.castToNonnull(node.left);
+        Node<K, V> right = node.right;
+        int leftHeight = left != null ? left.height : 0;
+        int rightHeight = right != null ? right.height : 0;
+  
+        int delta = leftHeight - rightHeight;
+        if (delta == -2) {
+          Node<K, V> rightLeft = right.left;
+          Node<K, V> rightRight = right.right;
+          int rightRightHeight = rightRight != null ? rightRight.height : 0;
+          int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
+  
+          int rightDelta = rightLeftHeight - rightRightHeight;
+          if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
+            rotateLeft(node); // AVL right right
+          } else {
+            assert (rightDelta == 1);
+            rotateRight(right); // AVL right left
+            rotateLeft(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 2) {
+          Node<K, V> leftLeft = left.left;
+          Node<K, V> leftRight = left.right;
+          int leftRightHeight = leftRight != null ? leftRight.height : 0;
+          int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
+  
+          int leftDelta = leftLeftHeight - leftRightHeight;
+          if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
+            rotateRight(node); // AVL left left
+          } else {
+            assert (leftDelta == -1);
+            rotateLeft(left); // AVL left right
+            rotateRight(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 0) {
+          node.height = leftHeight + 1; // leftHeight == rightHeight
+          if (insert) {
+            break; // the insert caused balance, so rebalancing is done!
+          }
+  
+        } else {
+          assert (delta == -1 || delta == 1);
+          node.height = Math.max(leftHeight, rightHeight) + 1;
+          if (!insert) {
+            break; // the height hasn't changed, so rebalancing is done!
+          }
+        }
+      }
+  }
+  ```
+    ]]>
+  </code>
+</response>
+20:31:11.157 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.Response.<init>
+Response created:
+private void rebalance( Node<K, V> unbalanced, boolean insert) {
+      for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
+        Node<K, V> left = Nullability.castToNonnull(node.left);
+        Node<K, V> right = node.right;
+        int leftHeight = left != null ? left.height : 0;
+        int rightHeight = right != null ? right.height : 0;
+  
+        int delta = leftHeight - rightHeight;
+        if (delta == -2) {
+          Node<K, V> rightLeft = right.left;
+          Node<K, V> rightRight = right.right;
+          int rightRightHeight = rightRight != null ? rightRight.height : 0;
+          int rightLeftHeight = rightLeft != null ? rightLeft.height : 0;
+  
+          int rightDelta = rightLeftHeight - rightRightHeight;
+          if (rightDelta == -1 || (rightDelta == 0 && !insert)) {
+            rotateLeft(node); // AVL right right
+          } else {
+            assert (rightDelta == 1);
+            rotateRight(right); // AVL right left
+            rotateLeft(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 2) {
+          Node<K, V> leftLeft = left.left;
+          Node<K, V> leftRight = left.right;
+          int leftRightHeight = leftRight != null ? leftRight.height : 0;
+          int leftLeftHeight = leftLeft != null ? leftLeft.height : 0;
+  
+          int leftDelta = leftLeftHeight - leftRightHeight;
+          if (leftDelta == 1 || (leftDelta == 0 && !insert)) {
+            rotateRight(node); // AVL left left
+          } else {
+            assert (leftDelta == -1);
+            rotateLeft(left); // AVL left right
+            rotateRight(node);
+          }
+          if (insert) {
+            break; // no further rotations will be necessary
+          }
+  
+        } else if (delta == 0) {
+          node.height = leftHeight + 1; // leftHeight == rightHeight
+          if (insert) {
+            break; // the insert caused balance, so rebalancing is done!
+          }
+  
+        } else {
+          assert (delta == -1 || delta == 1);
+          node.height = Math.max(leftHeight, rightHeight) + 1;
+          if (!insert) {
+            break; // the height hasn't changed, so rebalancing is done!
+          }
+        }
+      }
+  }
+20:31:11.157 TRACE edu.ucr.cs.riple.core.checkers.nullaway.codefix.ChatGPT.fixDereferenceByAddingCastToNonnull
+Fixing the error by adding castToNonnull
