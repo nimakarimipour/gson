@@ -17,6 +17,7 @@
 
 package com.google.gson.internal;
 
+import edu.ucr.cs.riple.annotator.util.Nullability;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.AbstractMap;
@@ -319,7 +320,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
   private void rebalance(@Nullable Node<K, V> unbalanced, boolean insert) {
     for (Node<K, V> node = unbalanced; node != null; node = node.parent) {
       Node<K, V> left = node.left;
-      Node<K, V> right = node.right;
+      Node<K, V> right = Nullability.castToNonnull(node.right);
       int leftHeight = left != null ? left.height : 0;
       int rightHeight = right != null ? right.height : 0;
 
